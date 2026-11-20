@@ -239,15 +239,14 @@ body {
 /* Hero Banner Fixo */
 .hero-banner {
     width: 100%;
-    border-bottom: 2px solid var(--cor-borda-forte);
 }
 
 .hero-imagem {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+    height: auto; /* Ajuste a altura conforme o seu layout */
+    /*object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    object-position: center 80%;
+    display: block; /* Remove a pequena margem inferior padrão da tag <img> */
 }
 
 /* Banner principal e controles de acessibilidade */
