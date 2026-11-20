@@ -1,56 +1,55 @@
-/* ==========================================================================
-   TOKENS CROMÁTICOS PB07 — CONTRASTE AAA (>= 7:1) + ATKINSON HYPERLEGIBLE
-   Layout fiel ao protótipo base (Padrão Modo Claro)
-   ========================================================================== */
+/* Paleta de cores e variáveis - Modo Claro (Contraste AAA) */
 :root {
-    --bg-page: #F4F7FA;
-    --bg-surface: #FFFFFF;
-    --bg-surface-alt: #EAF1F7;
-    --bg-banner: #EAF1F7;
-    --bg-about: #EAF1F7;
-    --bg-navy: #102A43;
-    --text-primary: #1B1B1B;
-    --text-secondary: #243B53;
-    --text-on-navy: #FFFFFF;
-    --color-link: #004F8B;
-    --color-accent: #FFD166;
-    --text-on-accent: #102A43;
-    --btn-primary-bg: #102A43;
-    --btn-primary-text: #FFFFFF;
-    --btn-primary-hover: #1F5C8C;
-    --border-strong: #102A43;
-    --border-subtle: #9FB3C8;
-    --tag-bg: #FFFFFF;
-    --tag-text: #102A43;
-    --tag-border: #004F8B;
-    --focus-ring: #004F8B;
-    --card-shadow: 0 3px 0 #102A43;
+    --cor-fundo-pagina: #F4F7FA;
+    --cor-fundo-cartao: #FFFFFF;
+    --cor-fundo-destaque: #EAF1F7;
+    --cor-fundo-banner: #EAF1F7;
+    --cor-fundo-sobre: #EAF1F7;
+    --cor-fundo-escuro: #102A43;
+    --cor-texto-principal: #1B1B1B;
+    --cor-texto-secundario: #243B53;
+    --cor-texto-claro: #FFFFFF;
+    --cor-link: #004F8B;
+    --cor-destaque: #FFD166;
+    --cor-texto-no-destaque: #102A43;
+    --cor-botao-fundo: #102A43;
+    --cor-botao-texto: #FFFFFF;
+    --cor-botao-hover: #1F5C8C;
+    --cor-borda-forte: #102A43;
+    --cor-borda-suave: #9FB3C8;
+    --cor-etiqueta-fundo: #FFFFFF;
+    --cor-etiqueta-texto: #102A43;
+    --cor-etiqueta-borda: #004F8B;
+    --cor-foco: #004F8B;
+    --sombra-cartao: 0 3px 0 #102A43;
 }
 
-html.ultra-contrast {
-    --bg-page: #000000 !important;
-    --bg-surface: #000000 !important;
-    --bg-surface-alt: #000000 !important;
-    --bg-banner: #000000 !important;
-    --bg-about: #000000 !important;
-    --bg-navy: #000000 !important;
-    --text-primary: #FFFFFF !important;
-    --text-secondary: #FFFFFF !important;
-    --text-on-navy: #FFFFFF !important;
-    --color-link: #FFD166 !important;
-    --color-accent: #FFD166 !important;
-    --text-on-accent: #000000 !important;
-    --btn-primary-bg: #FFD166 !important;
-    --btn-primary-text: #000000 !important;
-    --btn-primary-hover: #FFFFFF !important;
-    --border-strong: #FFFFFF !important;
-    --border-subtle: #FFFFFF !important;
-    --tag-bg: #000000 !important;
-    --tag-text: #FFD166 !important;
-    --tag-border: #FFD166 !important;
-    --card-shadow: 0 0 0 2px #FFFFFF !important;
+/* Modo Ultra Contraste (21:1) */
+html.alto-contraste {
+    --cor-fundo-pagina: #000000 !important;
+    --cor-fundo-cartao: #000000 !important;
+    --cor-fundo-destaque: #000000 !important;
+    --cor-fundo-banner: #000000 !important;
+    --cor-fundo-sobre: #000000 !important;
+    --cor-fundo-escuro: #000000 !important;
+    --cor-texto-principal: #FFFFFF !important;
+    --cor-texto-secundario: #FFFFFF !important;
+    --cor-texto-claro: #FFFFFF !important;
+    --cor-link: #FFD166 !important;
+    --cor-destaque: #FFD166 !important;
+    --cor-texto-no-destaque: #000000 !important;
+    --cor-botao-fundo: #FFD166 !important;
+    --cor-botao-texto: #000000 !important;
+    --cor-botao-hover: #FFFFFF !important;
+    --cor-borda-forte: #FFFFFF !important;
+    --cor-borda-suave: #FFFFFF !important;
+    --cor-etiqueta-fundo: #000000 !important;
+    --cor-etiqueta-texto: #FFD166 !important;
+    --cor-etiqueta-borda: #FFD166 !important;
+    --sombra-cartao: 0 0 0 2px #FFFFFF !important;
 }
 
+/* Reset e configurações gerais */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -62,34 +61,38 @@ html {
     scroll-behavior: smooth;
 }
 
+html.fonte-ampliada {
+    font-size: 115%;
+}
+
 body {
     font-family: 'Atkinson Hyperlegible', Verdana, Arial, sans-serif;
-    font-size: 1.125rem; /* 18px PB07 */
+    font-size: 1.125rem;
     line-height: 1.5;
-    background-color: var(--bg-page);
-    color: var(--text-primary);
+    background-color: var(--cor-fundo-pagina);
+    color: var(--cor-texto-principal);
 }
 
 :focus-visible {
-    outline: 3px solid var(--focus-ring);
+    outline: 3px solid var(--cor-foco);
     outline-offset: 3px;
 }
 
-.skip-link {
+.pular-conteudo {
     position: absolute;
     top: -100px;
     left: 16px;
-    background: var(--color-accent);
-    color: var(--text-on-accent);
+    background: var(--cor-destaque);
+    color: var(--cor-texto-no-destaque);
     font-weight: 700;
     padding: 12px 20px;
     border-radius: 6px;
     text-decoration: none;
     z-index: 1000;
-    border: 2px solid var(--border-strong);
+    border: 2px solid var(--cor-borda-forte);
 }
 
-.skip-link:focus {
+.pular-conteudo:focus {
     top: 16px;
 }
 
@@ -99,18 +102,16 @@ body {
     padding: 0 28px;
 }
 
-/* ==========================================================================
-   1. HEADER SUPERIOR (Logo esquerda | Menu centro | Busca + Perfil direita)
-   ========================================================================== */
-.top-header {
-    background-color: var(--bg-surface);
-    border-bottom: 2px solid var(--border-strong);
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-fundo-cartao);
+    border-bottom: 2px solid var(--cor-borda-forte);
     min-height: 76px;
     display: flex;
     align-items: center;
 }
 
-.header-wrap {
+.cabecalho-conteudo {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -120,145 +121,169 @@ body {
     flex-wrap: wrap;
 }
 
-.brand-logo {
+.logo {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: var(--text-primary);
-    font-size: 1.375rem; /* 22px */
+    color: var(--cor-texto-principal);
+    font-size: 1.375rem;
     font-weight: 700;
     min-height: 44px;
 }
 
-.footer-brand {
+.logo-rodape {
     margin-bottom: 10px;
 }
 
-.brand-sun {
+.logo-icone {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background-color: var(--bg-navy);
-    color: var(--color-accent);
-    border: 2px solid var(--border-strong);
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-destaque);
+    border: 2px solid var(--cor-borda-forte);
 }
 
-.header-nav {
+.menu-principal {
     display: flex;
     align-items: center;
     gap: 8px;
     flex-wrap: wrap;
 }
 
-.header-nav a {
+.menu-principal a {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
     padding: 6px 14px;
     font-size: 1.125rem;
     font-weight: 700;
-    color: var(--color-link);
+    color: var(--cor-link);
     text-decoration: none;
     border-radius: 6px;
 }
 
-.header-nav a.active {
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
-    border: 2px solid var(--border-strong);
+.menu-principal a.ativo {
+    background-color: var(--cor-botao-fundo);
+    color: var(--cor-botao-texto);
+    border: 2px solid var(--cor-borda-forte);
 }
 
-.header-nav a:not(.active):hover {
-    background-color: var(--bg-surface-alt);
+.menu-principal a:not(.ativo):hover {
+    background-color: var(--cor-fundo-destaque);
     text-decoration: underline;
 }
 
-.nav-sep {
-    color: var(--border-subtle);
+.separador-menu {
+    color: var(--cor-borda-suave);
     font-weight: 700;
     user-select: none;
 }
 
-.header-actions {
+.acoes-cabecalho {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.header-search {
+.busca-cabecalho {
     display: flex;
     align-items: center;
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border-strong);
+    background-color: var(--cor-fundo-cartao);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 999px;
     padding: 4px 14px;
     min-height: 44px;
 }
 
-.header-search input {
+.busca-cabecalho input {
     border: none;
     background: transparent;
-    color: var(--text-primary);
+    color: var(--cor-texto-principal);
     font-family: inherit;
     font-size: 1rem;
     width: 150px;
     outline: none;
 }
 
-.header-search input::placeholder {
-    color: var(--text-secondary);
+.busca-cabecalho input::placeholder {
+    color: var(--cor-texto-secundario);
 }
 
-.profile-btn {
+.botao-perfil {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 2px solid var(--border-strong);
-    background-color: var(--bg-surface-alt);
-    color: var(--text-primary);
+    border: 2px solid var(--cor-borda-forte);
+    background-color: var(--cor-fundo-destaque);
+    color: var(--cor-texto-principal);
     cursor: pointer;
 }
 
-/* ==========================================================================
-   2. GALERIA / CARROSSEL HERO DE 3 PAINÉIS
-   ========================================================================== */
-.hero-carousel {
-    display: grid;
-    grid-template-columns: 1fr 3.2fr 1fr;
-    gap: 16px;
-    padding: 20px 0 12px;
-    max-width: 1440px;
-    margin: 0 auto;
+.icone-perfil {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
 }
 
-.carousel-slide {
-    position: relative;
-    height: 270px;
-    background-color: var(--bg-navy);
-    color: #FFFFFF;
-    border: 2px solid var(--border-strong);
-    border-radius: 6px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
+
+
+.hero-banner {
+    width: 100%;
 }
 
-.carousel-slide.side-peek {
-    opacity: 0.92;
+.hero-imagem {
+    width: 100%;
+    height: auto; /* Ajuste a altura conforme o seu layout */
+    /*object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    object-position: center 80%;
+    display: block; /* Remove a pequena margem inferior padrão da tag <img> */
 }
 
-.carousel-caption {
+.icone-slide-lateral {
+    width: 80px;
+    height: 80px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+}
+
+.ilustracao-carrossel {
+    width: 240px;
+    height: 130px;
+    fill: none;
+}
+
+.traco-amarelo {
+    stroke: #FFD166;
+    stroke-width: 3;
+}
+
+.traco-branco {
+    stroke: #FFFFFF;
+    stroke-width: 3;
+}
+
+.traco-azul {
+    stroke: #7CC4FA;
+    stroke-width: 3;
+}
+
+.linha-piso-carrossel {
+    stroke: #FFD166;
+    stroke-width: 4;
+}
+
+.legenda-slide {
     margin-top: 10px;
     font-size: 1rem;
     font-weight: 700;
@@ -269,16 +294,16 @@ body {
     border: 1px solid #FFD166;
 }
 
-.carousel-arrow {
+.seta-carrossel {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background-color: var(--color-accent);
-    color: var(--text-on-accent);
-    border: 2px solid var(--border-strong);
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-no-destaque);
+    border: 2px solid var(--cor-borda-forte);
     font-size: 1.25rem;
     font-weight: 700;
     display: flex;
@@ -287,18 +312,16 @@ body {
     cursor: pointer;
 }
 
-.carousel-arrow.left {
+.seta-carrossel.anterior {
     left: 16px;
 }
 
-.carousel-arrow.right {
+.seta-carrossel.proxima {
     right: 16px;
 }
 
-/* ==========================================================================
-   3. BANNER CENTRAL "TURISMO ACESSÍVEL" + BOTÕES FLUTUANTES LATERAIS
-   ========================================================================== */
-.intro-banner-row {
+/* Banner principal e controles de acessibilidade */
+.secao-boas-vindas {
     position: relative;
     display: flex;
     align-items: center;
@@ -306,33 +329,33 @@ body {
     margin: 24px auto 36px;
 }
 
-.intro-card {
-    background-color: var(--bg-banner);
-    border: 2px solid var(--border-strong);
+.banner-principal {
+    background-color: var(--cor-fundo-banner);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 8px;
     padding: 28px 40px;
     max-width: 820px;
     width: 100%;
     text-align: center;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--sombra-cartao);
 }
 
-.intro-card h1 {
-    font-size: 2.125rem; /* 34px */
+.banner-principal h1 {
+    font-size: 2.125rem;
     font-weight: 700;
     line-height: 1.2;
-    color: var(--text-primary);
+    color: var(--cor-texto-principal);
     margin-bottom: 12px;
 }
 
-.intro-card p {
-    font-size: 1.125rem; /* 18px */
-    color: var(--text-secondary);
+.banner-principal p {
+    font-size: 1.125rem;
+    color: var(--cor-texto-secundario);
     max-width: 58ch;
     margin: 0 auto;
 }
 
-.floating-a11y-stack {
+.barra-acessibilidade {
     position: absolute;
     right: 0;
     top: 50%;
@@ -342,54 +365,52 @@ body {
     gap: 10px;
 }
 
-.float-a11y-btn {
+.botao-acessibilidade {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
-    border: 2px solid var(--border-strong);
+    background-color: var(--cor-botao-fundo);
+    color: var(--cor-botao-texto);
+    border: 2px solid var(--cor-borda-forte);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--sombra-cartao);
 }
 
-.float-a11y-btn:hover {
-    background-color: var(--btn-primary-hover);
+.botao-acessibilidade:hover {
+    background-color: var(--cor-botao-hover);
 }
 
-/* ==========================================================================
-   4. GRID PRINCIPAL: SIDEBAR ESQUERDA (FILTROS) + DIREITA (6 DESTINOS)
-   ========================================================================== */
-.catalog-layout {
+/* Catálogo: Filtros e lista de destinos */
+.area-catalogo {
     display: grid;
     grid-template-columns: 310px 1fr;
     gap: 28px;
     align-items: start;
 }
 
-.filters-sidebar {
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border-strong);
+.painel-filtros {
+    background-color: var(--cor-fundo-cartao);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 14px;
     padding: 22px;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--sombra-cartao);
 }
 
-.filters-header {
+.topo-filtros {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 14px;
     margin-bottom: 18px;
-    border-bottom: 2px solid var(--border-subtle);
+    border-bottom: 2px solid var(--cor-borda-suave);
 }
 
-.filters-title {
+.titulo-filtros {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -397,10 +418,18 @@ body {
     font-weight: 700;
 }
 
-.clear-filters-btn {
+.icone-filtro {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+}
+
+.botao-limpar-filtros {
     background: none;
     border: none;
-    color: var(--color-link);
+    color: var(--cor-link);
     font-family: inherit;
     font-size: 0.95rem;
     font-weight: 700;
@@ -409,78 +438,78 @@ body {
     min-height: 44px;
 }
 
-.filter-block {
+.grupo-filtro {
     margin-bottom: 20px;
 }
 
-.filter-label {
+.rotulo-filtro {
     display: block;
     font-size: 1.0625rem;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
-.sidebar-search-box {
+.campo-busca-lateral {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: var(--bg-surface-alt);
-    border: 2px solid var(--border-strong);
+    background-color: var(--cor-fundo-destaque);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 999px;
     padding: 6px 14px;
     min-height: 48px;
 }
 
-.sidebar-search-box input {
+.campo-busca-lateral input {
     border: none;
     background: transparent;
-    color: var(--text-primary);
+    color: var(--cor-texto-principal);
     font-family: inherit;
     font-size: 1rem;
     width: 100%;
     outline: none;
 }
 
-.city-segmented {
+.seletor-cidade {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 2px solid var(--border-strong);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 999px;
     overflow: hidden;
 }
 
-.city-seg-btn {
+.botao-cidade {
     min-height: 44px;
     border: none;
-    background-color: var(--bg-surface);
-    color: var(--text-primary);
+    background-color: var(--cor-fundo-cartao);
+    color: var(--cor-texto-principal);
     font-family: inherit;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
 }
 
-.city-seg-btn.active {
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
+.botao-cidade.ativo {
+    background-color: var(--cor-botao-fundo);
+    color: var(--cor-botao-texto);
 }
 
-.resource-toggle-list {
+.lista-recursos {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.resource-toggle {
+.botao-recurso {
     display: flex;
     align-items: center;
     gap: 10px;
     min-height: 48px;
     padding: 8px 14px;
     border-radius: 999px;
-    border: 2px solid var(--border-strong);
-    background-color: var(--bg-surface);
-    color: var(--text-primary);
+    border: 2px solid var(--cor-borda-forte);
+    background-color: var(--cor-fundo-cartao);
+    color: var(--cor-texto-principal);
     font-family: inherit;
     font-size: 1rem;
     font-weight: 700;
@@ -488,34 +517,34 @@ body {
     text-align: left;
 }
 
-.resource-toggle[aria-pressed="true"] {
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
+.botao-recurso[aria-pressed="true"] {
+    background-color: var(--cor-botao-fundo);
+    color: var(--cor-botao-texto);
 }
 
-.law-callout {
-    background-color: var(--bg-surface-alt);
-    border: 2px solid var(--border-strong);
+.aviso-lei {
+    background-color: var(--cor-fundo-destaque);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 10px;
     padding: 16px;
     margin-top: 20px;
 }
 
-.law-callout h3 {
+.aviso-lei h3 {
     font-size: 1.0625rem;
     font-weight: 700;
     margin-bottom: 6px;
 }
 
-.law-callout p {
+.aviso-lei p {
     font-size: 0.95rem;
     line-height: 1.45;
-    color: var(--text-secondary);
+    color: var(--cor-texto-secundario);
 }
 
-.results-header-bar {
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border-strong);
+.barra-resultados {
+    background-color: var(--cor-fundo-cartao);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 12px;
     padding: 14px 22px;
     display: flex;
@@ -524,55 +553,73 @@ body {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 22px;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--sombra-cartao);
 }
 
-.results-header-bar h2 {
-    font-size: 1.5rem; /* 24px */
+.barra-resultados h2 {
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
-.results-sub {
+.subtitulo-resultados {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--text-secondary);
+    color: var(--cor-texto-secundario);
 }
 
-.destinations-grid {
+.grade-destinos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
 }
 
-.dest-card {
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border-strong);
+.cartao-destino {
+    background-color: var(--cor-fundo-cartao);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 14px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--sombra-cartao);
 }
 
-.dest-card-media {
+.imagem-destino {
     position: relative;
     height: 175px;
-    background-color: var(--bg-navy);
+    background-color: var(--cor-fundo-escuro);
     color: #FFFFFF;
-    border-bottom: 2px solid var(--border-strong);
+    border-bottom: 2px solid var(--cor-borda-forte);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 14px;
 }
 
-.scene-svg {
+.ilustracao-destino {
     width: 100%;
     height: 120px;
     color: #FFFFFF;
+    fill: none;
 }
 
-.media-top-pills {
+.base-ilustracao {
+    fill: currentColor;
+    fill-opacity: 0.12;
+}
+
+.contorno-ilustracao {
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linejoin: round;
+}
+
+.linha-tracejada-ilustracao {
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-dasharray: 6 6;
+}
+
+.etiquetas-topo {
     position: absolute;
     top: 12px;
     left: 12px;
@@ -581,9 +628,9 @@ body {
     flex-wrap: wrap;
 }
 
-.pill-city {
-    background-color: var(--color-accent);
-    color: var(--text-on-accent);
+.etiqueta-cidade {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-no-destaque);
     font-size: 0.875rem;
     font-weight: 700;
     padding: 3px 10px;
@@ -591,7 +638,7 @@ body {
     border: 1.5px solid #000000;
 }
 
-.pill-cat {
+.etiqueta-categoria {
     background-color: #000000;
     color: #FFFFFF;
     font-size: 0.875rem;
@@ -601,7 +648,7 @@ body {
     border: 1.5px solid #FFFFFF;
 }
 
-.pill-price {
+.etiqueta-preco {
     position: absolute;
     bottom: 10px;
     right: 12px;
@@ -614,7 +661,7 @@ body {
     border: 1.5px solid #102A43;
 }
 
-.dest-card-body {
+.corpo-destino {
     padding: 18px 20px 20px;
     display: flex;
     flex-direction: column;
@@ -622,156 +669,162 @@ body {
     flex: 1;
 }
 
-.dest-location {
+.localizacao-destino {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: var(--cor-texto-secundario);
 }
 
-.dest-card-body h3 {
-    font-size: 1.375rem; /* 22px */
+.icone-pino {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+}
+
+.corpo-destino h3 {
+    font-size: 1.375rem;
     font-weight: 700;
     line-height: 1.25;
 }
 
-.feature-tags {
+.lista-selo-acessibilidade {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     margin: 4px 0 8px;
 }
 
-.feature-tag {
+.selo-acessibilidade {
     font-size: 0.9375rem;
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 999px;
-    background-color: var(--tag-bg);
-    color: var(--tag-text);
-    border: 1.5px solid var(--tag-border);
+    background-color: var(--cor-etiqueta-fundo);
+    color: var(--cor-etiqueta-texto);
+    border: 1.5px solid var(--cor-etiqueta-borda);
 }
 
-.btn-card-cta {
+.botao-detalhes {
     margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 46px;
     width: 100%;
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
-    border: 2px solid var(--border-strong);
+    background-color: var(--cor-botao-fundo);
+    color: var(--cor-botao-texto);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 999px;
     font-size: 1.0625rem;
     font-weight: 700;
     text-decoration: none;
 }
 
-.btn-card-cta:hover {
-    background-color: var(--btn-primary-hover);
+.botao-detalhes:hover {
+    background-color: var(--cor-botao-hover);
 }
 
-/* ==========================================================================
-   5. SEÇÃO "SOBRE O PROJETO TURISMO ACESSÍVEL"
-   ========================================================================== */
-.about-section {
+/* Seção Sobre o projeto */
+.secao-sobre {
     margin-top: 48px;
-    background-color: var(--bg-about);
-    border: 2px solid var(--border-strong);
+    background-color: var(--cor-fundo-sobre);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 18px;
     padding: 36px;
     display: grid;
     grid-template-columns: 1.45fr 1fr;
     gap: 32px;
     align-items: center;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--sombra-cartao);
 }
 
-.about-badges {
+.selos-sobre {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 14px;
 }
 
-.about-pill-primary {
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
+.selo-iniciativa {
+    background-color: var(--cor-botao-fundo);
+    color: var(--cor-botao-texto);
     font-size: 0.9375rem;
     font-weight: 700;
     padding: 5px 14px;
     border-radius: 999px;
-    border: 1.5px solid var(--border-strong);
+    border: 1.5px solid var(--cor-borda-forte);
 }
 
-.about-pill-accent {
-    background-color: var(--color-accent);
-    color: var(--text-on-accent);
+.selo-lei {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-no-destaque);
     font-size: 0.9375rem;
     font-weight: 700;
     padding: 5px 14px;
     border-radius: 999px;
-    border: 1.5px solid var(--border-strong);
+    border: 1.5px solid var(--cor-borda-forte);
 }
 
-.about-section h2 {
-    font-size: 1.875rem; /* 30px */
+.secao-sobre h2 {
+    font-size: 1.875rem;
     font-weight: 700;
     margin-bottom: 14px;
 }
 
-.about-desc {
+.texto-sobre {
     font-size: 1.125rem;
-    color: var(--text-primary);
+    color: var(--cor-texto-principal);
     margin-bottom: 22px;
 }
 
-.standards-grid {
+.grade-padroes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
     margin-bottom: 18px;
 }
 
-.standard-box {
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border-strong);
+.cartao-padrao {
+    background-color: var(--cor-fundo-cartao);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 12px;
     padding: 14px;
 }
 
-.standard-box strong {
+.cartao-padrao strong {
     display: block;
     font-size: 1.375rem;
     font-weight: 700;
-    color: var(--color-link);
+    color: var(--cor-link);
     margin-bottom: 4px;
 }
 
-.standard-box span {
+.cartao-padrao span {
     display: block;
     font-size: 0.9375rem;
     font-weight: 700;
 }
 
-.standard-box small {
+.cartao-padrao small {
     display: block;
     font-size: 0.875rem;
-    color: var(--text-secondary);
+    color: var(--cor-texto-secundario);
 }
 
-.about-footnote {
+.nota-colaborativa {
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: var(--cor-texto-secundario);
 }
 
-.about-photo-card {
+.cartao-foto-sobre {
     position: relative;
-    background-color: var(--bg-navy);
+    background-color: var(--cor-fundo-escuro);
     color: #FFFFFF;
-    border: 2px solid var(--border-strong);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 16px;
     min-height: 360px;
     display: flex;
@@ -782,14 +835,22 @@ body {
     text-align: center;
 }
 
-.photo-caption-pill {
+.ilustracao-vistoria {
+    width: 140px;
+    height: 140px;
+    fill: none;
+    stroke: #FFD166;
+    stroke-width: 1.8;
+}
+
+.legenda-foto-sobre {
     position: absolute;
     bottom: 16px;
     left: 16px;
     right: 16px;
-    background-color: var(--bg-surface);
-    color: var(--text-primary);
-    border: 2px solid var(--border-strong);
+    background-color: var(--cor-fundo-cartao);
+    color: var(--cor-texto-principal);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 999px;
     padding: 8px 16px;
     font-size: 1rem;
@@ -797,24 +858,22 @@ body {
     text-align: center;
 }
 
-/* ==========================================================================
-   6. RODAPÉ EM 4 COLUNAS + BARRA LEGAL
-   ========================================================================== */
-.site-footer {
+/* Rodapé */
+.rodape {
     margin-top: 56px;
-    background-color: var(--bg-surface);
-    border-top: 3px solid var(--border-strong);
+    background-color: var(--cor-fundo-cartao);
+    border-top: 3px solid var(--cor-borda-forte);
     padding-top: 40px;
 }
 
-.footer-grid {
+.colunas-rodape {
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
     gap: 28px;
     padding-bottom: 32px;
 }
 
-.footer-col h3 {
+.coluna-rodape h3 {
     font-size: 1.0625rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -822,19 +881,19 @@ body {
     margin-bottom: 12px;
 }
 
-.footer-col p,
-.footer-col li {
+.coluna-rodape p,
+.coluna-rodape li {
     font-size: 1rem;
-    color: var(--text-secondary);
+    color: var(--cor-texto-secundario);
     margin-bottom: 8px;
 }
 
-.footer-col ul {
+.coluna-rodape ul {
     list-style: none;
 }
 
-.footer-col a {
-    color: var(--color-link);
+.coluna-rodape a {
+    color: var(--cor-link);
     font-weight: 700;
     text-decoration: underline;
     display: inline-flex;
@@ -842,60 +901,61 @@ body {
     min-height: 36px;
 }
 
-.btn-ouvidoria {
+.botao-ouvidoria {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 48px;
     padding: 10px 20px;
     margin-top: 10px;
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
-    border: 2px solid var(--border-strong);
+    background-color: var(--cor-botao-fundo);
+    color: var(--cor-botao-texto);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 999px;
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
 }
 
-.footer-bottom {
-    border-top: 2px solid var(--border-subtle);
+.rodape-inferior {
+    border-top: 2px solid var(--cor-borda-suave);
     padding: 18px 0;
     font-size: 0.9375rem;
-    color: var(--text-secondary);
+    color: var(--cor-texto-secundario);
 }
 
-.footer-bottom-wrap {
+.rodape-inferior-conteudo {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 12px;
 }
 
+/* Responsividade */
 @media (max-width: 980px) {
-    .hero-carousel {
+    .carrossel {
         grid-template-columns: 1fr;
     }
-    .carousel-slide.side-peek {
+    .slide.slide-lateral {
         display: none;
     }
-    .floating-a11y-stack {
+    .barra-acessibilidade {
         position: static;
         transform: none;
         flex-direction: row;
         margin-left: 12px;
     }
-    .intro-banner-row {
+    .secao-boas-vindas {
         flex-direction: column;
         gap: 14px;
     }
-    .catalog-layout,
-    .about-section,
-    .footer-grid {
+    .area-catalogo,
+    .secao-sobre,
+    .colunas-rodape {
         grid-template-columns: 1fr;
     }
-    .destinations-grid,
-    .standards-grid {
+    .grade-destinos,
+    .grade-padroes {
         grid-template-columns: 1fr;
     }
 }

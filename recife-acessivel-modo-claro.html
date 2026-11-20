@@ -10,34 +10,34 @@
     <link rel="stylesheet" href="recife-acessivel-modo-claro.css">
 </head>
 <body>
-    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+    <a href="#conteudo-principal" class="pular-conteudo">Pular para o conteúdo principal</a>
 
-    <!-- HEADER PRINCIPAL -->
-    <header class="top-header" role="banner">
-        <div class="container header-wrap">
-            <a href="#inicio" class="brand-logo" aria-label="Recife Acessível — Página Inicial">
-                <span class="brand-sun" aria-hidden="true">☀</span>
+    <!-- Cabeçalho -->
+    <header class="cabecalho" role="banner">
+        <div class="container cabecalho-conteudo">
+            <a href="#inicio" class="logo" aria-label="Recife Acessível — Página Inicial">
+                <span class="logo-icone" aria-hidden="true">☀</span>
                 <span>Recife Acessível</span>
             </a>
 
-            <nav class="header-nav" aria-label="Menu principal">
-                <a href="#inicio" class="active" aria-current="page">Início</a>
-                <span class="nav-sep" aria-hidden="true">|</span>
+            <nav class="menu-principal" aria-label="Menu principal">
+                <a href="#inicio" class="ativo" aria-current="page">Início</a>
+                <span class="separador-menu" aria-hidden="true">|</span>
                 <a href="#catalogo">Destinos</a>
-                <span class="nav-sep" aria-hidden="true">|</span>
+                <span class="separador-menu" aria-hidden="true">|</span>
                 <a href="#sobre">Sobre nós</a>
-                <span class="nav-sep" aria-hidden="true">|</span>
+                <span class="separador-menu" aria-hidden="true">|</span>
                 <a href="#contato">Contato</a>
             </nav>
 
-            <div class="header-actions">
-                <form class="header-search" role="search" onsubmit="event.preventDefault();">
-                    <label for="busca-topo" class="skip-link">Buscar no portal</label>
+            <div class="acoes-cabecalho">
+                <form class="busca-cabecalho" role="search" onsubmit="event.preventDefault();">
+                    <label for="busca-topo" class="pular-conteudo">Buscar no portal</label>
                     <input type="text" id="busca-topo" placeholder="Buscar">
                     <span aria-hidden="true">🔍</span>
                 </form>
-                <button type="button" class="profile-btn" aria-label="Área do usuário">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <button type="button" class="botao-perfil" aria-label="Área do usuário">
+                    <svg class="icone-perfil" viewBox="0 0 24 24" aria-hidden="true">
                         <circle cx="12" cy="8" r="4"/>
                         <path d="M4 20c2-4 14-4 16 0"/>
                     </svg>
@@ -46,100 +46,77 @@
         </div>
     </header>
 
-    <!-- CARROSSEL DE 3 PAINÉIS -->
-    <section class="hero-carousel" aria-label="Destaques visuais de Recife e Olinda">
-        <div class="carousel-slide side-peek" aria-hidden="true">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <path d="M3 21h18M5 21V9l7-5 7 5v12"/>
-            </svg>
-            <button type="button" class="carousel-arrow left" aria-label="Slide anterior">←</button>
-        </div>
-
-        <div class="carousel-slide" role="img" aria-label="Vista arquitetônica histórica da Rua do Bom Jesus no Recife Antigo">
-            <svg width="240" height="130" viewBox="0 0 240 130" fill="none" aria-hidden="true">
-                <rect x="15" y="30" width="60" height="85" stroke="#FFD166" stroke-width="3"/>
-                <rect x="85" y="20" width="70" height="95" stroke="#FFFFFF" stroke-width="3"/>
-                <rect x="165" y="35" width="60" height="80" stroke="#7CC4FA" stroke-width="3"/>
-                <line x1="5" y1="115" x2="235" y2="115" stroke="#FFD166" stroke-width="4"/>
-            </svg>
-            <span class="carousel-caption">Rua do Bom Jesus — Recife Antigo (Percurso plano acessível)</span>
-        </div>
-
-        <div class="carousel-slide side-peek" aria-hidden="true">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M12 7v5l3 3"/>
-            </svg>
-            <button type="button" class="carousel-arrow right" aria-label="Próximo slide">→</button>
-        </div>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+    <img src="imagens/recife-banner.jpg" alt="Placa artistica com o nome RECIFE, Marco Zero." class="hero-imagem">
     </section>
 
     <main id="conteudo-principal" class="container" tabindex="-1">
-        <!-- BANNER CENTRAL + BOTÕES FLUTUANTES À DIREITA -->
-        <section id="inicio" class="intro-banner-row" aria-labelledby="titulo-hero">
-            <div class="intro-card">
+        <!-- Banner principal e controles de acessibilidade -->
+        <section id="inicio" class="secao-boas-vindas" aria-labelledby="titulo-hero">
+            <div class="banner-principal">
                 <h1 id="titulo-hero">Turismo acessível:</h1>
                 <p>
                     Conectando pessoas e destinos com roteiros históricos certificados com rotas suaves, acervos táteis, audiodescrição e banheiros adaptados em Recife e Olinda.
                 </p>
             </div>
 
-            <aside class="floating-a11y-stack" aria-label="Controles rápidos de acessibilidade">
-                <button type="button" class="float-a11y-btn" id="btn-toggle-contrast" aria-pressed="false" title="Alternar Alto Contraste (21:1)" aria-label="Alternar Alto Contraste">
+            <aside class="barra-acessibilidade" aria-label="Controles rápidos de acessibilidade">
+                <button type="button" class="botao-acessibilidade" id="btn-toggle-contrast" aria-pressed="false" title="Alternar Alto Contraste (21:1)" aria-label="Alternar Alto Contraste">
                     ◐
                 </button>
-                <button type="button" class="float-a11y-btn" id="btn-toggle-font" title="Aumentar ou restaurar tamanho da fonte" aria-label="Aumentar tamanho da fonte">
+                <button type="button" class="botao-acessibilidade" id="btn-toggle-font" title="Aumentar ou restaurar tamanho da fonte" aria-label="Aumentar tamanho da fonte">
                     A+
                 </button>
             </aside>
         </section>
 
-        <!-- LAYOUT DE 2 COLUNAS: FILTROS À ESQUERDA + 6 CARDS À DIREITA -->
-        <section id="catalogo" class="catalog-layout" aria-label="Catálogo de destinos acessíveis">
-            <!-- SIDEBAR ESQUERDA -->
-            <aside class="filters-sidebar" aria-labelledby="titulo-filtros">
-                <div class="filters-header">
-                    <span id="titulo-filtros" class="filters-title">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <!-- Catálogo: Filtros e lista de destinos -->
+        <section id="catalogo" class="area-catalogo" aria-label="Catálogo de destinos acessíveis">
+            <!-- Barra lateral de filtros -->
+            <aside class="painel-filtros" aria-labelledby="titulo-filtros">
+                <div class="topo-filtros">
+                    <span id="titulo-filtros" class="titulo-filtros">
+                        <svg class="icone-filtro" viewBox="0 0 24 24" aria-hidden="true">
                             <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
                         </svg>
                         Filtros de busca
                     </span>
-                    <button type="button" class="clear-filters-btn" id="btn-clear-filters">Limpar filtros</button>
+                    <button type="button" class="botao-limpar-filtros" id="btn-clear-filters">Limpar filtros</button>
                 </div>
 
-                <div class="filter-block">
-                    <label for="filtro-local" class="filter-label">Buscar local</label>
-                    <div class="sidebar-search-box">
+                <div class="grupo-filtro">
+                    <label for="filtro-local" class="rotulo-filtro">Buscar local</label>
+                    <div class="campo-busca-lateral">
                         <span aria-hidden="true">🔍</span>
                         <input type="text" id="filtro-local" placeholder="Ex: Paço do Frevo, Sé...">
                     </div>
                 </div>
 
-                <div class="filter-block">
-                    <span class="filter-label" id="label-municipio">Município</span>
-                    <div class="city-segmented" role="group" aria-labelledby="label-municipio">
-                        <button type="button" class="city-seg-btn active" data-filter-city="all">RECIFE</button>
-                        <button type="button" class="city-seg-btn" data-filter-city="olinda">OLINDA</button>
+                <div class="grupo-filtro">
+                    <span class="rotulo-filtro" id="label-municipio">Município</span>
+                    <div class="seletor-cidade" role="group" aria-labelledby="label-municipio">
+                        <button type="button" class="botao-cidade ativo" data-filter-city="all">RECIFE</button>
+                        <button type="button" class="botao-cidade" data-filter-city="olinda">OLINDA</button>
                     </div>
                 </div>
 
-                <div class="filter-block">
-                    <span class="filter-label" id="label-recursos">Recursos verificados</span>
-                    <div class="resource-toggle-list" role="group" aria-labelledby="label-recursos">
-                        <button type="button" class="resource-toggle" aria-pressed="true" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
+                <div class="grupo-filtro">
+                    <span class="rotulo-filtro" id="label-recursos">Recursos verificados</span>
+                    <div class="lista-recursos" role="group" aria-labelledby="label-recursos">
+                        <button type="button" class="botao-recurso" aria-pressed="true" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
                             ☑ ♿ Rampas / Elevação
                         </button>
-                        <button type="button" class="resource-toggle" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
+                        <button type="button" class="botao-recurso" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
                             ☐ 🦯 Piso Tátil
                         </button>
-                        <button type="button" class="resource-toggle" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
+                        <button type="button" class="botao-recurso" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
                             ☐ 🎧 Audiodescrição
                         </button>
                     </div>
                 </div>
 
-                <div class="law-callout">
+                <div class="aviso-lei">
                     <h3>• Lei Estadual nº 14.789/12</h3>
                     <p>
                         Garante gratuidade ou meia-entrada à pessoa com deficiência e seu acompanhante em Pernambuco.
@@ -147,257 +124,274 @@
                 </div>
             </aside>
 
-            <!-- RESULTADOS À DIREITA -->
+            <!-- Grade de resultados -->
             <div>
-                <div class="results-header-bar">
+                <div class="barra-resultados">
                     <h2>6 Destinos encontrados</h2>
-                    <span class="results-sub">Recife (3) &amp; Olinda (3)</span>
+                    <span class="subtitulo-resultados">Recife (3) &amp; Olinda (3)</span>
                 </div>
 
-                <div class="destinations-grid">
-                    <article class="dest-card" data-city="recife">
-                        <div class="dest-card-media" role="img" aria-label="Representação visual de Marco Zero em Recife">
-                            <div class="media-top-pills">
-                                <span class="pill-city">Recife</span>
-                                <span class="pill-cat">Espaço aberto</span>
+                <div class="grade-destinos">
+                    <article class="cartao-destino" data-city="recife">
+                        <div class="imagem-destino" role="img" aria-label="Representação visual de Marco Zero em Recife">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">Recife</span>
+                                <span class="etiqueta-categoria">Espaço aberto</span>
                             </div>
-                            <svg class="scene-svg" viewBox="0 0 320 150" fill="none" aria-hidden="true">
-                                <rect x="20" y="95" width="280" height="35" rx="4" fill="currentColor" fill-opacity="0.12"/>
-                                <path d="M55 95V45L110 25L165 45V95" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-                                <rect x="180" y="55" width="85" height="40" rx="2" stroke="currentColor" stroke-width="3"/>
-                                <circle cx="255" cy="30" r="12" stroke="currentColor" stroke-width="3"/>
-                                <path d="M35 112H285" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 6"/>
+                            <svg class="ilustracao-destino" viewBox="0 0 320 150" aria-hidden="true">
+                                <rect class="base-ilustracao" x="20" y="95" width="280" height="35" rx="4"/>
+                                <path class="contorno-ilustracao" d="M55 95V45L110 25L165 45V95"/>
+                                <rect class="contorno-ilustracao" x="180" y="55" width="85" height="40" rx="2"/>
+                                <circle class="contorno-ilustracao" cx="255" cy="30" r="12"/>
+                                <path class="linha-tracejada-ilustracao" d="M35 112H285"/>
                             </svg>
-                            <span class="pill-price">Gratuito</span>
+                            <span class="etiqueta-preco">Gratuito</span>
                         </div>
 
-                        <div class="dest-card-body">
-                            <p class="dest-location">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
                                 Bairro do Recife, Recife - PE
                             </p>
                             <h3>Marco Zero</h3>
-                            <div class="feature-tags" aria-label="Recursos de acessibilidade">
-                                <span class="feature-tag">Piso tátil</span><span class="feature-tag">Rota plana</span><span class="feature-tag">Aberto</span>
+                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
+                                <span class="selo-acessibilidade">Piso tátil</span>
+                                <span class="selo-acessibilidade">Rota plana</span>
+                                <span class="selo-acessibilidade">Aberto</span>
                             </div>
-                            <a href="#detalhes" class="btn-card-cta">Ver detalhes do local</a>
+                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
                         </div>
                     </article>
-                    <article class="dest-card" data-city="recife">
-                        <div class="dest-card-media" role="img" aria-label="Representação visual de Instituto Ricardo Brennand em Recife">
-                            <div class="media-top-pills">
-                                <span class="pill-city">Recife</span>
-                                <span class="pill-cat">Museus</span>
+
+                    <article class="cartao-destino" data-city="recife">
+                        <div class="imagem-destino" role="img" aria-label="Representação visual de Instituto Ricardo Brennand em Recife">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">Recife</span>
+                                <span class="etiqueta-categoria">Museus</span>
                             </div>
-                            <svg class="scene-svg" viewBox="0 0 320 150" fill="none" aria-hidden="true">
-                                <rect x="20" y="95" width="280" height="35" rx="4" fill="currentColor" fill-opacity="0.12"/>
-                                <path d="M55 95V45L110 25L165 45V95" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-                                <rect x="180" y="55" width="85" height="40" rx="2" stroke="currentColor" stroke-width="3"/>
-                                <circle cx="255" cy="30" r="12" stroke="currentColor" stroke-width="3"/>
-                                <path d="M35 112H285" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 6"/>
+                            <svg class="ilustracao-destino" viewBox="0 0 320 150" aria-hidden="true">
+                                <rect class="base-ilustracao" x="20" y="95" width="280" height="35" rx="4"/>
+                                <path class="contorno-ilustracao" d="M55 95V45L110 25L165 45V95"/>
+                                <rect class="contorno-ilustracao" x="180" y="55" width="85" height="40" rx="2"/>
+                                <circle class="contorno-ilustracao" cx="255" cy="30" r="12"/>
+                                <path class="linha-tracejada-ilustracao" d="M35 112H285"/>
                             </svg>
-                            <span class="pill-price">Meia PCD / Acomp. Grat.</span>
+                            <span class="etiqueta-preco">Meia PCD / Acomp. Grat.</span>
                         </div>
 
-                        <div class="dest-card-body">
-                            <p class="dest-location">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
                                 Várzea, Recife - PE
                             </p>
                             <h3>Instituto Ricardo Brennand</h3>
-                            <div class="feature-tags" aria-label="Recursos de acessibilidade">
-                                <span class="feature-tag">Elevadores</span><span class="feature-tag">Maquetes táteis</span><span class="feature-tag">Libras</span>
+                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
+                                <span class="selo-acessibilidade">Elevadores</span>
+                                <span class="selo-acessibilidade">Maquetes táteis</span>
+                                <span class="selo-acessibilidade">Libras</span>
                             </div>
-                            <a href="#detalhes" class="btn-card-cta">Ver detalhes do local</a>
+                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
                         </div>
                     </article>
-                    <article class="dest-card" data-city="recife">
-                        <div class="dest-card-media" role="img" aria-label="Representação visual de Centro Cultural Cais do Sertão em Recife">
-                            <div class="media-top-pills">
-                                <span class="pill-city">Recife</span>
-                                <span class="pill-cat">Interativo</span>
+
+                    <article class="cartao-destino" data-city="recife">
+                        <div class="imagem-destino" role="img" aria-label="Representação visual de Centro Cultural Cais do Sertão em Recife">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">Recife</span>
+                                <span class="etiqueta-categoria">Interativo</span>
                             </div>
-                            <svg class="scene-svg" viewBox="0 0 320 150" fill="none" aria-hidden="true">
-                                <rect x="20" y="95" width="280" height="35" rx="4" fill="currentColor" fill-opacity="0.12"/>
-                                <path d="M55 95V45L110 25L165 45V95" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-                                <rect x="180" y="55" width="85" height="40" rx="2" stroke="currentColor" stroke-width="3"/>
-                                <circle cx="255" cy="30" r="12" stroke="currentColor" stroke-width="3"/>
-                                <path d="M35 112H285" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 6"/>
+                            <svg class="ilustracao-destino" viewBox="0 0 320 150" aria-hidden="true">
+                                <rect class="base-ilustracao" x="20" y="95" width="280" height="35" rx="4"/>
+                                <path class="contorno-ilustracao" d="M55 95V45L110 25L165 45V95"/>
+                                <rect class="contorno-ilustracao" x="180" y="55" width="85" height="40" rx="2"/>
+                                <circle class="contorno-ilustracao" cx="255" cy="30" r="12"/>
+                                <path class="linha-tracejada-ilustracao" d="M35 112H285"/>
                             </svg>
-                            <span class="pill-price">Gratuito (terças e PCD)</span>
+                            <span class="etiqueta-preco">Gratuito (terças e PCD)</span>
                         </div>
 
-                        <div class="dest-card-body">
-                            <p class="dest-location">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
                                 Bairro do Recife, Recife - PE
                             </p>
                             <h3>Centro Cultural Cais do Sertão</h3>
-                            <div class="feature-tags" aria-label="Recursos de acessibilidade">
-                                <span class="feature-tag">Piso tátil</span><span class="feature-tag">Braille</span><span class="feature-tag">Libras</span>
+                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
+                                <span class="selo-acessibilidade">Piso tátil</span>
+                                <span class="selo-acessibilidade">Braille</span>
+                                <span class="selo-acessibilidade">Libras</span>
                             </div>
-                            <a href="#detalhes" class="btn-card-cta">Ver detalhes do local</a>
+                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
                         </div>
                     </article>
-                    <article class="dest-card" data-city="olinda">
-                        <div class="dest-card-media" role="img" aria-label="Representação visual de Mosteiro de São Bento em Olinda">
-                            <div class="media-top-pills">
-                                <span class="pill-city">Olinda</span>
-                                <span class="pill-cat">Barroco</span>
+
+                    <article class="cartao-destino" data-city="olinda">
+                        <div class="imagem-destino" role="img" aria-label="Representação visual de Mosteiro de São Bento em Olinda">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">Olinda</span>
+                                <span class="etiqueta-categoria">Barroco</span>
                             </div>
-                            <svg class="scene-svg" viewBox="0 0 320 150" fill="none" aria-hidden="true">
-                                <rect x="20" y="95" width="280" height="35" rx="4" fill="currentColor" fill-opacity="0.12"/>
-                                <path d="M55 95V45L110 25L165 45V95" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-                                <rect x="180" y="55" width="85" height="40" rx="2" stroke="currentColor" stroke-width="3"/>
-                                <circle cx="255" cy="30" r="12" stroke="currentColor" stroke-width="3"/>
-                                <path d="M35 112H285" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 6"/>
+                            <svg class="ilustracao-destino" viewBox="0 0 320 150" aria-hidden="true">
+                                <rect class="base-ilustracao" x="20" y="95" width="280" height="35" rx="4"/>
+                                <path class="contorno-ilustracao" d="M55 95V45L110 25L165 45V95"/>
+                                <rect class="contorno-ilustracao" x="180" y="55" width="85" height="40" rx="2"/>
+                                <circle class="contorno-ilustracao" cx="255" cy="30" r="12"/>
+                                <path class="linha-tracejada-ilustracao" d="M35 112H285"/>
                             </svg>
-                            <span class="pill-price">Gratuito</span>
+                            <span class="etiqueta-preco">Gratuito</span>
                         </div>
 
-                        <div class="dest-card-body">
-                            <p class="dest-location">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
                                 Varadouro, Olinda - PE
                             </p>
                             <h3>Mosteiro de São Bento</h3>
-                            <div class="feature-tags" aria-label="Recursos de acessibilidade">
-                                <span class="feature-tag">Rampa lateral</span><span class="feature-tag">Audiodescrição</span><span class="feature-tag">Maquete</span>
+                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
+                                <span class="selo-acessibilidade">Rampa lateral</span>
+                                <span class="selo-acessibilidade">Audiodescrição</span>
+                                <span class="selo-acessibilidade">Maquete</span>
                             </div>
-                            <a href="#detalhes" class="btn-card-cta">Ver detalhes do local</a>
+                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
                         </div>
                     </article>
-                    <article class="dest-card" data-city="olinda">
-                        <div class="dest-card-media" role="img" aria-label="Representação visual de Alto da Sé em Olinda">
-                            <div class="media-top-pills">
-                                <span class="pill-city">Olinda</span>
-                                <span class="pill-cat">Mirante</span>
+
+                    <article class="cartao-destino" data-city="olinda">
+                        <div class="imagem-destino" role="img" aria-label="Representação visual de Alto da Sé em Olinda">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">Olinda</span>
+                                <span class="etiqueta-categoria">Mirante</span>
                             </div>
-                            <svg class="scene-svg" viewBox="0 0 320 150" fill="none" aria-hidden="true">
-                                <rect x="20" y="95" width="280" height="35" rx="4" fill="currentColor" fill-opacity="0.12"/>
-                                <path d="M55 95V45L110 25L165 45V95" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-                                <rect x="180" y="55" width="85" height="40" rx="2" stroke="currentColor" stroke-width="3"/>
-                                <circle cx="255" cy="30" r="12" stroke="currentColor" stroke-width="3"/>
-                                <path d="M35 112H285" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 6"/>
+                            <svg class="ilustracao-destino" viewBox="0 0 320 150" aria-hidden="true">
+                                <rect class="base-ilustracao" x="20" y="95" width="280" height="35" rx="4"/>
+                                <path class="contorno-ilustracao" d="M55 95V45L110 25L165 45V95"/>
+                                <rect class="contorno-ilustracao" x="180" y="55" width="85" height="40" rx="2"/>
+                                <circle class="contorno-ilustracao" cx="255" cy="30" r="12"/>
+                                <path class="linha-tracejada-ilustracao" d="M35 112H285"/>
                             </svg>
-                            <span class="pill-price">Gratuito</span>
+                            <span class="etiqueta-preco">Gratuito</span>
                         </div>
 
-                        <div class="dest-card-body">
-                            <p class="dest-location">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
                                 Alto da Sé, Olinda - PE
                             </p>
                             <h3>Alto da Sé</h3>
-                            <div class="feature-tags" aria-label="Recursos de acessibilidade">
-                                <span class="feature-tag">Rota plana</span><span class="feature-tag">Audiodescrição</span><span class="feature-tag">Guia tátil</span>
+                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
+                                <span class="selo-acessibilidade">Rota plana</span>
+                                <span class="selo-acessibilidade">Audiodescrição</span>
+                                <span class="selo-acessibilidade">Guia tátil</span>
                             </div>
-                            <a href="#detalhes" class="btn-card-cta">Ver detalhes do local</a>
+                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
                         </div>
                     </article>
-                    <article class="dest-card" data-city="olinda">
-                        <div class="dest-card-media" role="img" aria-label="Representação visual de Museu do Mamulengo em Olinda">
-                            <div class="media-top-pills">
-                                <span class="pill-city">Olinda</span>
-                                <span class="pill-cat">Cultura popular</span>
+
+                    <article class="cartao-destino" data-city="olinda">
+                        <div class="imagem-destino" role="img" aria-label="Representação visual de Museu do Mamulengo em Olinda">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">Olinda</span>
+                                <span class="etiqueta-categoria">Cultura popular</span>
                             </div>
-                            <svg class="scene-svg" viewBox="0 0 320 150" fill="none" aria-hidden="true">
-                                <rect x="20" y="95" width="280" height="35" rx="4" fill="currentColor" fill-opacity="0.12"/>
-                                <path d="M55 95V45L110 25L165 45V95" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-                                <rect x="180" y="55" width="85" height="40" rx="2" stroke="currentColor" stroke-width="3"/>
-                                <circle cx="255" cy="30" r="12" stroke="currentColor" stroke-width="3"/>
-                                <path d="M35 112H285" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 6"/>
+                            <svg class="ilustracao-destino" viewBox="0 0 320 150" aria-hidden="true">
+                                <rect class="base-ilustracao" x="20" y="95" width="280" height="35" rx="4"/>
+                                <path class="contorno-ilustracao" d="M55 95V45L110 25L165 45V95"/>
+                                <rect class="contorno-ilustracao" x="180" y="55" width="85" height="40" rx="2"/>
+                                <circle class="contorno-ilustracao" cx="255" cy="30" r="12"/>
+                                <path class="linha-tracejada-ilustracao" d="M35 112H285"/>
                             </svg>
-                            <span class="pill-price">Gratuito PCD</span>
+                            <span class="etiqueta-preco">Gratuito PCD</span>
                         </div>
 
-                        <div class="dest-card-body">
-                            <p class="dest-location">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
                                 Amparo, Olinda - PE
                             </p>
                             <h3>Museu do Mamulengo</h3>
-                            <div class="feature-tags" aria-label="Recursos de acessibilidade">
-                                <span class="feature-tag">Acervo tátil</span><span class="feature-tag">Acesso térreo</span><span class="feature-tag">Guia tátil</span>
+                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
+                                <span class="selo-acessibilidade">Acervo tátil</span>
+                                <span class="selo-acessibilidade">Acesso térreo</span>
+                                <span class="selo-acessibilidade">Guia tátil</span>
                             </div>
-                            <a href="#detalhes" class="btn-card-cta">Ver detalhes do local</a>
+                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO SOBRE O PROJETO TURISMO ACESSÍVEL -->
-        <section id="sobre" class="about-section" aria-labelledby="titulo-sobre">
+        <!-- Seção Sobre o projeto -->
+        <section id="sobre" class="secao-sobre" aria-labelledby="titulo-sobre">
             <div>
-                <div class="about-badges">
-                    <span class="about-pill-primary">Iniciativa Cívica &amp; Voluntária</span>
-                    <span class="about-pill-accent">Lei Brasileira de Inclusão nº 13.146</span>
+                <div class="selos-sobre">
+                    <span class="selo-iniciativa">Iniciativa Cívica &amp; Voluntária</span>
+                    <span class="selo-lei">Lei Brasileira de Inclusão nº 13.146</span>
                 </div>
 
                 <h2 id="titulo-sobre">Sobre o projeto Turismo Acessível</h2>
-                <p class="about-desc">
+                <p class="texto-sobre">
                     O portal Turismo Acessível Recife e Olinda foi idealizado para transformar o direito de ir e vir em realidade concreta para todos os viajantes e recifenses. Unimos engenharia diagnóstica de acessibilidade e sistemas para entregar opções acessíveis para pessoas com deficiências físicas, sensoriais e cognitivas.
                 </p>
 
-                <div class="standards-grid">
-                    <div class="standard-box">
+                <div class="grade-padroes">
+                    <div class="cartao-padrao">
                         <strong>100%</strong>
                         <span>Vistoria Presencial</span>
                         <small>Engenharia + Auditoria PCD</small>
                     </div>
-                    <div class="standard-box">
+                    <div class="cartao-padrao">
                         <strong>NBR 9050</strong>
                         <span>Padrão Técnico ABNT</span>
                         <small>Rampas, Pisos e Banheiros</small>
                     </div>
-                    <div class="standard-box">
+                    <div class="cartao-padrao">
                         <strong>WCAG 2.2</strong>
                         <span>Acessibilidade Digital</span>
                         <small>Alto contraste e leitores</small>
                     </div>
                 </div>
 
-                <p class="about-footnote">
+                <p class="nota-colaborativa">
                     Encontrou uma barreira em algum local ou uma informação desatualizada? O projeto é colaborativo e formado a partir da contribuição de quem vive e caminha pelos espaços. Caso encontre algo, entre em contato para vistorias e atualizações.
                 </p>
             </div>
 
-            <div class="about-photo-card" role="img" aria-label="Fotografia ilustrativa de vistoria técnica acessível no centro histórico de Recife">
-                <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="#FFD166" stroke-width="1.8" aria-hidden="true">
+            <div class="cartao-foto-sobre" role="img" aria-label="Fotografia ilustrativa de vistoria técnica acessível no centro histórico de Recife">
+                <svg class="ilustracao-vistoria" viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="4" r="2"/>
                     <path d="M9 9h5l2 5h3"/>
                     <circle cx="10" cy="17" r="4"/>
                 </svg>
-                <span class="photo-caption-pill">Vistoria Técnica em Recife</span>
+                <span class="legenda-foto-sobre">Vistoria Técnica em Recife</span>
             </div>
         </section>
     </main>
 
-    <!-- RODAPÉ EM 4 COLUNAS -->
-    <footer id="contato" class="site-footer" role="contentinfo">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <a href="#inicio" class="brand-logo footer-brand">
-                    <span class="brand-sun" aria-hidden="true">☀</span>
+    <!-- Rodapé -->
+    <footer id="contato" class="rodape" role="contentinfo">
+        <div class="container colunas-rodape">
+            <div class="coluna-rodape">
+                <a href="#inicio" class="logo logo-rodape">
+                    <span class="logo-icone" aria-hidden="true">☀</span>
                     <span>Recife Acessível</span>
                 </a>
                 <p>
@@ -405,7 +399,7 @@
                 </p>
             </div>
 
-            <div class="footer-col">
+            <div class="coluna-rodape">
                 <h3>Navegação Rápida</h3>
                 <ul>
                     <li><a href="#inicio">Página Inicial</a></li>
@@ -414,7 +408,7 @@
                 </ul>
             </div>
 
-            <div class="footer-col">
+            <div class="coluna-rodape">
                 <h3>Recursos Acessíveis</h3>
                 <ul>
                     <li><a href="#catalogo">Audiodescrição e Libras</a></li>
@@ -423,16 +417,16 @@
                 </ul>
             </div>
 
-            <div class="footer-col">
+            <div class="coluna-rodape">
                 <h3>Ouvidoria &amp; Contato</h3>
                 <p>Sugira novos locais ou melhorias para a equipe de vistoria técnica.</p>
                 <p><strong>✉ ouvidoria@turismoacessivel.pe.gov.br</strong></p>
-                <a href="#contato" class="btn-ouvidoria">Canal de Atendimento PCD</a>
+                <a href="#contato" class="botao-ouvidoria">Canal de Atendimento PCD</a>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="container footer-bottom-wrap">
+        <div class="rodape-inferior">
+            <div class="container rodape-inferior-conteudo">
                 <span>© 2026 - Turismo Acessível Recife &amp; Olinda. Decreto Federal nº 5.296/2004.</span>
                 <span>Pernambuco, Brasil - Desenvolvido com foco e inclusão</span>
             </div>
@@ -441,20 +435,18 @@
 
     <script>
         (function () {
-            const htmlEl = document.documentElement;
-            const btnContrast = document.getElementById('btn-toggle-contrast');
-            const btnFont = document.getElementById('btn-toggle-font');
-            let enlarged = false;
+            const pagina = document.documentElement;
+            const botaoContraste = document.getElementById('btn-toggle-contrast');
+            const botaoFonte = document.getElementById('btn-toggle-font');
 
-            btnContrast.addEventListener('click', function () {
-                const active = htmlEl.classList.toggle('ultra-contrast');
-                btnContrast.setAttribute('aria-pressed', active ? 'true' : 'false');
+            botaoContraste.addEventListener('click', function () {
+                const ativo = pagina.classList.toggle('alto-contraste');
+                botaoContraste.setAttribute('aria-pressed', ativo ? 'true' : 'false');
             });
 
-            btnFont.addEventListener('click', function () {
-                enlarged = !enlarged;
-                htmlEl.style.fontSize = enlarged ? '115%' : '100%';
-                btnFont.textContent = enlarged ? 'A-' : 'A+';
+            botaoFonte.addEventListener('click', function () {
+                const ampliada = pagina.classList.toggle('fonte-ampliada');
+                botaoFonte.textContent = ampliada ? 'A-' : 'A+';
             });
         })();
     </script>
