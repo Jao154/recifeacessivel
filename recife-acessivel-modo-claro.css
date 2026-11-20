@@ -585,38 +585,19 @@ body {
 
 .imagem-destino {
     position: relative;
-    height: 175px;
-    background-color: var(--cor-fundo-escuro);
-    color: #FFFFFF;
-    border-bottom: 2px solid var(--cor-borda-forte);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px;
-}
-
-.ilustracao-destino {
     width: 100%;
-    height: 120px;
-    color: #FFFFFF;
-    fill: none;
+    height: 300px;
+    background-color: var(--cor-fundo-escuro);
+    border-bottom: 2px solid var(--cor-borda-forte);
+    overflow: hidden;
 }
 
-.base-ilustracao {
-    fill: currentColor;
-    fill-opacity: 0.12;
-}
-
-.contorno-ilustracao {
-    stroke: currentColor;
-    stroke-width: 3;
-    stroke-linejoin: round;
-}
-
-.linha-tracejada-ilustracao {
-    stroke: currentColor;
-    stroke-width: 2.5;
-    stroke-dasharray: 6 6;
+.imagem-destino img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .etiquetas-topo {
@@ -626,6 +607,7 @@ body {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
+    z-index: 2;
 }
 
 .etiqueta-cidade {
@@ -650,7 +632,7 @@ body {
 
 .etiqueta-preco {
     position: absolute;
-    bottom: 10px;
+    bottom: 12px;
     right: 12px;
     background-color: #FFFFFF;
     color: #102A43;
@@ -659,6 +641,7 @@ body {
     padding: 3px 10px;
     border-radius: 6px;
     border: 1.5px solid #102A43;
+    z-index: 2;
 }
 
 .corpo-destino {
