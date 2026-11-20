@@ -656,20 +656,20 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.95rem;
+    font-size: 1.300rem;
     color: var(--cor-texto-secundario);
 }
 
 .icone-pino {
-    width: 18px;
-    height: 18px;
+    width: 19px;
+    height: 19px;
     fill: none;
     stroke: currentColor;
     stroke-width: 2.4;
 }
 
 .corpo-destino h3 {
-    font-size: 1.375rem;
+    font-size: 1.670rem;
     font-weight: 700;
     line-height: 1.25;
 }
@@ -682,7 +682,7 @@ body {
 }
 
 .selo-acessibilidade {
-    font-size: 0.9375rem;
+    font-size: 1.300rem;
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 999px;
@@ -759,7 +759,7 @@ body {
 }
 
 .texto-sobre {
-    font-size: 1.125rem;
+    font-size: 1.280rem;
     color: var(--cor-texto-principal);
     margin-bottom: 22px;
 }
