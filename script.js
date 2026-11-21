@@ -254,24 +254,47 @@
             });
         }
 
-        aplicarFiltros();
+        // Aplica termo de busca vindo pela URL (?q=...) a partir de outras páginas
+        const params = new URLSearchParams(location.search);
+        const termoUrl = params.get('q');
+        if (termoUrl) {
+            definirBusca(termoUrl, null);
+        } else {
+            aplicarFiltros();
+        }
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            iniciarFiltros();
-            iniciarControlesAcessibilidade();
-        }, { once: true });
-    } else {
-        iniciarFiltros();
-        iniciarControlesAcessibilidade();
+    function iniciarBuscaPaginasInternas() {
+        const catalogo = document.querySelector('#lista-destinos');
+        if (catalogo) return;
+
+        const inputTopo = document.querySelector('#busca-topo');
+        const formTopo = inputTopo ? inputTopo.closest('form') : null;
+
+        if (formTopo) {
+            formTopo.addEventListener('submit', (evento) => {
+                evento.preventDefault();
+                const termo = inputTopo.value.trim();
+                location.href =
+                    'index.html' +
+                    (termo ? '?q=' + encodeURIComponent(termo) : '') +
+                    '#catalogo';
+            });
+        }
     }
 
     function iniciarControlesAcessibilidade() {
         const raiz = document.documentElement;
 
-        const botaoContraste = document.querySelector('#btn-toggle-contrast');
-        const botaoFonte = document.querySelector('#btn-toggle-font');
+        const botoesContraste = [
+            document.querySelector('#btn-toggle-contrast'),
+            document.querySelector('#btn-header-contrast')
+        ].filter(Boolean);
+
+        const botoesFonte = [
+            document.querySelector('#btn-toggle-font'),
+            document.querySelector('#btn-header-font')
+        ].filter(Boolean);
 
         function lerPreferencia(chave) {
             try {
@@ -292,52 +315,59 @@
         function aplicarContraste(ativado) {
             raiz.classList.toggle('alto-contraste', ativado);
 
-            if (botaoContraste) {
-                botaoContraste.setAttribute('aria-pressed', String(ativado));
-                botaoContraste.setAttribute(
+            botoesContraste.forEach((botao) => {
+                botao.setAttribute('aria-pressed', String(ativado));
+                botao.setAttribute(
                     'aria-label',
                     ativado ? 'Desativar alto contraste' : 'Ativar alto contraste'
                 );
-            }
+            });
         }
 
         function aplicarFonte(ampliada) {
             raiz.classList.toggle('fonte-ampliada', ampliada);
 
-            if (botaoFonte) {
-                botaoFonte.setAttribute('aria-pressed', String(ampliada));
-                botaoFonte.setAttribute(
+            botoesFonte.forEach((botao) => {
+                botao.setAttribute('aria-pressed', String(ampliada));
+                botao.setAttribute(
                     'aria-label',
                     ampliada
                         ? 'Restaurar tamanho original do texto'
                         : 'Aumentar tamanho do texto'
                 );
-            }
+            });
         }
 
-        // Recupera as preferências anteriores.
+        // Recupera as preferências anteriores entre páginas.
         aplicarContraste(lerPreferencia('recife-acessivel-alto-contraste'));
         aplicarFonte(lerPreferencia('recife-acessivel-fonte-ampliada'));
 
-        if (botaoContraste) {
-            botaoContraste.addEventListener('click', () => {
+        botoesContraste.forEach((botao) => {
+            botao.addEventListener('click', () => {
                 const ativado = !raiz.classList.contains('alto-contraste');
-
                 aplicarContraste(ativado);
                 salvarPreferencia('recife-acessivel-alto-contraste', ativado);
             });
-        }
+        });
 
-        if (botaoFonte) {
-            botaoFonte.addEventListener('click', () => {
+        botoesFonte.forEach((botao) => {
+            botao.addEventListener('click', () => {
                 const ampliada = !raiz.classList.contains('fonte-ampliada');
-
                 aplicarFonte(ampliada);
                 salvarPreferencia('recife-acessivel-fonte-ampliada', ampliada);
             });
-        }
+        });
     }
 
+    function iniciarTudo() {
+        iniciarFiltros();
+        iniciarBuscaPaginasInternas();
+        iniciarControlesAcessibilidade();
+    }
 
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', iniciarTudo, { once: true });
+    } else {
+        iniciarTudo();
+    }
 })();
-

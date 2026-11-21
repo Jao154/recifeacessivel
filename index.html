@@ -4,18 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>
-        Recife Acessível — Turismo acessível em Recife e Olinda
-    </title>
+    <meta content="Portal de turismo acessível em Recife e Olinda, com detalhes de seis pontos turísticos." name="description" />
+    <title>Recife Acessível — Turismo acessível em Recife e Olinda</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
-        rel="stylesheet" />
-    <link href="recife-acessivel.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
 </head>
-
-<body>
+<body class="pagina-inicio">
     <a class="pular-conteudo" href="#conteudo-principal">
         Pular para o conteúdo principal
     </a>
@@ -67,13 +63,17 @@
                 </form>
             </div>
         </div>
+        <div aria-label="Controles de acessibilidade nas páginas de destino" class="acessibilidade-fixa" role="group">
+            <button aria-label="Ativar alto contraste" aria-pressed="false" id="btn-header-contrast" title="Alternar alto contraste" type="button">◐</button>
+            <button aria-label="Aumentar tamanho do texto" aria-pressed="false" id="btn-header-font" title="Aumentar tamanho do texto" type="button">A+</button>
+        </div>
     </header>
     <!-- Hero Banner -->
     <div class="hero-banner">
         <img alt="Placa artística com o nome Recife, no Marco Zero." class="hero-imagem"
             src="imagens/recife-banner.jpg" />
     </div>
-    <main class="container" id="conteudo-principal" tabindex="-1">
+    <main class="container" data-pagina="inicio" id="conteudo-principal" tabindex="-1">
         <!-- Banner principal e controles de acessibilidade -->
         <section aria-labelledby="titulo-hero" class="secao-boas-vindas" id="inicio">
             <div class="banner-principal">
@@ -199,8 +199,10 @@
                                     Espaço aberto
                                 </span>
                             </div>
-                            <img alt="Vista da Praça do Marco Zero no Bairro do Recife com a rosa dos ventos no chão e prédios históricos ao fundo."
+                            <a aria-label="Ver detalhes de Marco Zero" class="link-imagem-destino" href="pages/marco-zero.html">
+                                <img alt="Vista da Praça do Marco Zero no Bairro do Recife com a rosa dos ventos no chão e prédios históricos ao fundo."
                                 decoding="async" loading="lazy" src="imagens/marco-zero.jpg" />
+                            </a>
                             <span class="etiqueta-preco">
                                 Gratuito
                             </span>
@@ -216,7 +218,7 @@
                                 Bairro do Recife, Recife - PE
                             </p>
                             <h3>
-                                Marco Zero
+                                <a class="link-destino" href="pages/marco-zero.html">Marco Zero</a>
                             </h3>
                             <ul aria-label="Características e recursos informados para este destino"
                                 class="lista-selo-acessibilidade">
@@ -233,6 +235,7 @@
                             <p class="aviso-detalhes">
                                 Confirme as condições de acesso diretamente com o estabelecimento.
                             </p>
+                            <a class="botao-detalhes" href="pages/marco-zero.html">Ver detalhes do local</a>
                         </div>
                     </article>
                     <!-- 2. Instituto Ricardo Brennand -->
@@ -247,8 +250,10 @@
                                     Museus
                                 </span>
                             </div>
-                            <img alt="Fachada em estilo castelo medieval do Instituto Ricardo Brennand cercada por jardins."
+                            <a aria-label="Ver detalhes de Instituto Ricardo Brennand" class="link-imagem-destino" href="pages/instituto-ricardo-brennand.html">
+                                <img alt="Fachada em estilo castelo medieval do Instituto Ricardo Brennand cercada por jardins."
                                 decoding="async" loading="lazy" src="imagens/instituto-ricardo-brennand.jpg" />
+                            </a>
                             <span class="etiqueta-preco">
                                 Meia PCD / Acomp. Grat.
                             </span>
@@ -264,7 +269,7 @@
                                 Várzea, Recife - PE
                             </p>
                             <h3>
-                                Instituto Ricardo Brennand
+                                <a class="link-destino" href="pages/instituto-ricardo-brennand.html">Instituto Ricardo Brennand</a>
                             </h3>
                             <ul aria-label="Características e recursos informados para este destino"
                                 class="lista-selo-acessibilidade">
@@ -281,6 +286,7 @@
                             <p class="aviso-detalhes">
                                 Confirme as condições de acesso diretamente com o estabelecimento.
                             </p>
+                            <a class="botao-detalhes" href="pages/instituto-ricardo-brennand.html">Ver detalhes do local</a>
                         </div>
                     </article>
                     <!-- 3. Centro Cultural Cais do Sertão -->
@@ -294,8 +300,10 @@
                                     Interativo
                                 </span>
                             </div>
-                            <img alt="Prédio moderno do Centro Cultural Cais do Sertão com fachada vazada em cobogó."
+                            <a aria-label="Ver detalhes de Centro Cultural Cais do Sertão" class="link-imagem-destino" href="pages/cais-do-sertao.html">
+                                <img alt="Prédio moderno do Centro Cultural Cais do Sertão com fachada vazada em cobogó."
                                 decoding="async" loading="lazy" src="imagens/cais_do_sertao.jpg" />
+                            </a>
                             <span class="etiqueta-preco">
                                 Gratuito (terças e PCD)
                             </span>
@@ -311,7 +319,7 @@
                                 Bairro do Recife, Recife - PE
                             </p>
                             <h3>
-                                Centro Cultural Cais do Sertão
+                                <a class="link-destino" href="pages/cais-do-sertao.html">Centro Cultural Cais do Sertão</a>
                             </h3>
                             <ul aria-label="Características e recursos informados para este destino"
                                 class="lista-selo-acessibilidade">
@@ -328,6 +336,7 @@
                             <p class="aviso-detalhes">
                                 Confirme as condições de acesso diretamente com o estabelecimento.
                             </p>
+                            <a class="botao-detalhes" href="pages/cais-do-sertao.html">Ver detalhes do local</a>
                         </div>
                     </article>
                     <!-- 4. Mosteiro de São Bento -->
@@ -341,8 +350,10 @@
                                     Barroco
                                 </span>
                             </div>
-                            <img alt="Fachada histórica branca e ocre do Mosteiro de São Bento em Olinda."
+                            <a aria-label="Ver detalhes de Mosteiro de São Bento" class="link-imagem-destino" href="pages/mosteiro-de-sao-bento.html">
+                                <img alt="Fachada histórica branca e ocre do Mosteiro de São Bento em Olinda."
                                 decoding="async" loading="lazy" src="imagens/igreja-e-mosteiro-de.jpg" />
+                            </a>
                             <span class="etiqueta-preco">
                                 Gratuito
                             </span>
@@ -358,7 +369,7 @@
                                 Varadouro, Olinda - PE
                             </p>
                             <h3>
-                                Mosteiro de São Bento
+                                <a class="link-destino" href="pages/mosteiro-de-sao-bento.html">Mosteiro de São Bento</a>
                             </h3>
                             <ul aria-label="Características e recursos informados para este destino"
                                 class="lista-selo-acessibilidade">
@@ -375,6 +386,7 @@
                             <p class="aviso-detalhes">
                                 Confirme as condições de acesso diretamente com o estabelecimento.
                             </p>
+                            <a class="botao-detalhes" href="pages/mosteiro-de-sao-bento.html">Ver detalhes do local</a>
                         </div>
                     </article>
                     <!-- 5. Alto da Sé -->
@@ -389,8 +401,10 @@
                                     Mirante
                                 </span>
                             </div>
-                            <img alt="Vista panorâmica do mirante do Alto da Sé com a Igreja da Sé e o mar ao fundo."
+                            <a aria-label="Ver detalhes de Alto da Sé" class="link-imagem-destino" href="pages/alto-da-se.html">
+                                <img alt="Vista panorâmica do mirante do Alto da Sé com a Igreja da Sé e o mar ao fundo."
                                 decoding="async" loading="lazy" src="imagens/alto-da-se.jpg" />
+                            </a>
                             <span class="etiqueta-preco">
                                 Gratuito
                             </span>
@@ -406,7 +420,7 @@
                                 Alto da Sé, Olinda - PE
                             </p>
                             <h3>
-                                Alto da Sé
+                                <a class="link-destino" href="pages/alto-da-se.html">Alto da Sé</a>
                             </h3>
                             <ul aria-label="Características e recursos informados para este destino"
                                 class="lista-selo-acessibilidade">
@@ -423,6 +437,7 @@
                             <p class="aviso-detalhes">
                                 Confirme as condições de acesso diretamente com o estabelecimento.
                             </p>
+                            <a class="botao-detalhes" href="pages/alto-da-se.html">Ver detalhes do local</a>
                         </div>
                     </article>
                     <!-- 6. Museu do Mamulengo -->
@@ -437,8 +452,10 @@
                                     Cultura popular
                                 </span>
                             </div>
-                            <img alt="Bonecos populares coloridos expostos no Museu do Mamulengo em Olinda."
+                            <a aria-label="Ver detalhes de Museu do Mamulengo" class="link-imagem-destino" href="pages/museu-do-mamulengo.html">
+                                <img alt="Bonecos populares coloridos expostos no Museu do Mamulengo em Olinda."
                                 decoding="async" loading="lazy" src="imagens/museu-do-mamulendo1.jpg" />
+                            </a>
                             <span class="etiqueta-preco">
                                 Gratuito PCD
                             </span>
@@ -454,7 +471,7 @@
                                 Amparo, Olinda - PE
                             </p>
                             <h3>
-                                Museu do Mamulengo
+                                <a class="link-destino" href="pages/museu-do-mamulengo.html">Museu do Mamulengo</a>
                             </h3>
                             <ul aria-label="Características e recursos informados para este destino"
                                 class="lista-selo-acessibilidade">
@@ -471,6 +488,7 @@
                             <p class="aviso-detalhes">
                                 Confirme as condições de acesso diretamente com o estabelecimento.
                             </p>
+                            <a class="botao-detalhes" href="pages/museu-do-mamulengo.html">Ver detalhes do local</a>
                         </div>
                     </article>
                 </div>
@@ -555,6 +573,7 @@
             </figure>
         </section>
     </main>
+
     <!-- Rodapé -->
     <footer class="rodape" id="contato">
         <div class="container colunas-rodape">
@@ -645,8 +664,7 @@
             </div>
         </div>
     </footer>
-    <script defer="True" src="recife-acessivel.js">
-    </script>
+    <script defer src="script.js"></script>
 </body>
 
 </html>
