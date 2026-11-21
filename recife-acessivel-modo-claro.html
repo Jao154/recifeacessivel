@@ -1,423 +1,652 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html data-theme="light" lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recife Acessível — Protótipo Alto Contraste (Padrão Modo Claro)</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="recife-acessivel-modo-claro.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Recife Acessível — Turismo acessível em Recife e Olinda
+    </title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="recife-acessivel-modo-claro.css" rel="stylesheet" />
 </head>
+
 <body>
-    <a href="#conteudo-principal" class="pular-conteudo">Pular para o conteúdo principal</a>
-
+    <a class="pular-conteudo" href="#conteudo-principal">
+        Pular para o conteúdo principal
+    </a>
     <!-- Cabeçalho -->
-    <header class="cabecalho" role="banner">
+    <header class="cabecalho">
         <div class="container cabecalho-conteudo">
-            <a href="#inicio" class="logo" aria-label="Recife Acessível — Página Inicial">
-                <span class="logo-icone" aria-hidden="true">☀</span>
-                <span>Recife Acessível</span>
+            <a class="logo" href="#inicio">
+                <span aria-hidden="true" class="logo-icone">
+                    ☀
+                </span>
+                <span>
+                    Recife Acessível
+                </span>
             </a>
-
-            <nav class="menu-principal" aria-label="Menu principal">
-                <a href="#inicio" class="ativo" aria-current="page">Início</a>
-                <span class="separador-menu" aria-hidden="true">|</span>
-                <a href="#catalogo">Destinos</a>
-                <span class="separador-menu" aria-hidden="true">|</span>
-                <a href="#sobre">Sobre nós</a>
-                <span class="separador-menu" aria-hidden="true">|</span>
-                <a href="#contato">Contato</a>
+            <nav aria-label="Menu principal" class="menu-principal">
+                <a aria-current="page" class="ativo" href="#inicio">
+                    Início
+                </a>
+                <span aria-hidden="true" class="separador-menu">
+                    |
+                </span>
+                <a href="#catalogo">
+                    Destinos
+                </a>
+                <span aria-hidden="true" class="separador-menu">
+                    |
+                </span>
+                <a href="#sobre">
+                    Sobre nós
+                </a>
+                <span aria-hidden="true" class="separador-menu">
+                    |
+                </span>
+                <a href="#contato">
+                    Contato
+                </a>
             </nav>
-
             <div class="acoes-cabecalho">
-                <form class="busca-cabecalho" role="search" onsubmit="event.preventDefault();">
-                    <label for="busca-topo" class="pular-conteudo">Buscar no portal</label>
-                    <input type="text" id="busca-topo" placeholder="Buscar">
-                    <span aria-hidden="true">🔍</span>
+                <form action="#catalogo" class="busca-cabecalho" method="get" role="search">
+                    <label class="sr-only" for="busca-topo">
+                        Buscar no portal
+                    </label>
+                    <input autocomplete="off" id="busca-topo" name="q" placeholder="Buscar destinos" type="search" />
+                    <button aria-label="Executar busca" class="botao-busca" type="submit">
+                        <span aria-hidden="true">
+                            🔍
+                        </span>
+                    </button>
                 </form>
-                <button type="button" class="botao-perfil" aria-label="Área do usuário">
-                    <svg class="icone-perfil" viewBox="0 0 24 24" aria-hidden="true">
-                        <circle cx="12" cy="8" r="4"/>
-                        <path d="M4 20c2-4 14-4 16 0"/>
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
-
     <!-- Hero Banner -->
-    <section class="hero-banner">
-    <img src="imagens/recife-banner.jpg" alt="Placa artistica com o nome RECIFE, Marco Zero." class="hero-imagem">
-    </section>
-
-    <main id="conteudo-principal" class="container" tabindex="-1">
+    <div class="hero-banner">
+        <img alt="Placa artística com o nome Recife, no Marco Zero." class="hero-imagem"
+            src="imagens/recife-banner.jpg" />
+    </div>
+    <main class="container" id="conteudo-principal" tabindex="-1">
         <!-- Banner principal e controles de acessibilidade -->
-        <section id="inicio" class="secao-boas-vindas" aria-labelledby="titulo-hero">
+        <section aria-labelledby="titulo-hero" class="secao-boas-vindas" id="inicio">
             <div class="banner-principal">
-                <h1 id="titulo-hero">Turismo acessível:</h1>
+                <h1 id="titulo-hero">
+                    Turismo acessível:
+                </h1>
                 <p>
-                    Conectando pessoas e destinos com roteiros históricos certificados com rotas suaves, acervos táteis, audiodescrição e banheiros adaptados em Recife e Olinda.
+                    Encontre informações sobre recursos de acessibilidade física, sensorial e comunicacional em destinos
+                    de Recife e Olinda. Antes da visita, confirme as condições diretamente com o local.
                 </p>
             </div>
-
-            <aside class="barra-acessibilidade" aria-label="Controles rápidos de acessibilidade">
-                <button type="button" class="botao-acessibilidade" id="btn-toggle-contrast" aria-pressed="false" title="Alternar Alto Contraste (21:1)" aria-label="Alternar Alto Contraste">
+            <div aria-label="Controles de acessibilidade da página" class="barra-acessibilidade" role="group">
+                <button aria-label="Ativar alto contraste" aria-pressed="false" class="botao-acessibilidade"
+                    id="btn-toggle-contrast" type="button">
                     ◐
                 </button>
-                <button type="button" class="botao-acessibilidade" id="btn-toggle-font" title="Aumentar ou restaurar tamanho da fonte" aria-label="Aumentar tamanho da fonte">
+                <button aria-label="Aumentar tamanho do texto" aria-pressed="false" class="botao-acessibilidade"
+                    id="btn-toggle-font" type="button">
                     A+
                 </button>
-            </aside>
+            </div>
         </section>
-
         <!-- Catálogo: Filtros e lista de destinos -->
-        <section id="catalogo" class="area-catalogo" aria-label="Catálogo de destinos acessíveis">
+        data-filter-resource=<section class="area-catalogo" id="catalogo">
+            <h2 class="sr-only" id="titulo-catalogo">
+                Catálogo de destinos
+            </h2>
             <!-- Barra lateral de filtros -->
-            <aside class="painel-filtros" aria-labelledby="titulo-filtros">
-                <div class="topo-filtros">
-                    <span id="titulo-filtros" class="titulo-filtros">
-                        <svg class="icone-filtro" viewBox="0 0 24 24" aria-hidden="true">
-                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
-                        </svg>
-                        Filtros de busca
-                    </span>
-                    <button type="button" class="botao-limpar-filtros" id="btn-clear-filters">Limpar filtros</button>
-                </div>
-
-                <div class="grupo-filtro">
-                    <label for="filtro-local" class="rotulo-filtro">Buscar local</label>
-                    <div class="campo-busca-lateral">
-                        <span aria-hidden="true">🔍</span>
-                        <input type="text" id="filtro-local" placeholder="Ex: Paço do Frevo, Sé...">
-                    </div>
-                </div>
-
-                <div class="grupo-filtro">
-                    <span class="rotulo-filtro" id="label-municipio">Município</span>
-                    <div class="seletor-cidade" role="group" aria-labelledby="label-municipio">
-                        <button type="button" class="botao-cidade ativo" data-filter-city="all">RECIFE</button>
-                        <button type="button" class="botao-cidade" data-filter-city="olinda">OLINDA</button>
-                    </div>
-                </div>
-
-                <div class="grupo-filtro">
-                    <span class="rotulo-filtro" id="label-recursos">Recursos verificados</span>
-                    <div class="lista-recursos" role="group" aria-labelledby="label-recursos">
-                        <button type="button" class="botao-recurso" aria-pressed="true" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
-                            ☑ ♿ Rampas / Elevação
-                        </button>
-                        <button type="button" class="botao-recurso" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
-                            ☐ 🦯 Piso Tátil
-                        </button>
-                        <button type="button" class="botao-recurso" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
-                            ☐ 🎧 Audiodescrição
-                        </button>
-                    </div>
-                </div>
-
-                <div class="aviso-lei">
-                    <h3>• Lei Estadual nº 14.789/12</h3>
-                    <p>
-                        Garante gratuidade ou meia-entrada à pessoa com deficiência e seu acompanhante em Pernambuco.
-                    </p>
-                </div>
-            </aside>
-
+           <aside aria-labelledby="titulo-filtros" class="painel-filtros">
+    <div class="topo-filtros">
+        <h3 class="titulo-filtros" id="titulo-filtros">
+            <svg aria-hidden="true" class="icone-filtro" viewbox="0 0 24 24">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3">
+                </polygon>
+            </svg>
+            Filtros de busca
+        </h3>
+        <button class="botao-limpar-filtros" id="btn-clear-filters" type="button">
+            Limpar filtros
+        </button>
+    </div>
+    <div class="grupo-filtro">
+        <label class="rotulo-filtro" for="filtro-local">
+            Buscar local
+        </label>
+        <div class="campo-busca-lateral">
+            <span aria-hidden="true">
+                🔍
+            </span>
+            <input id="filtro-local" placeholder="Ex: Paço do Frevo, Sé..." type="text" />
+        </div>
+    </div>
+    <div class="grupo-filtro">
+        <span class="rotulo-filtro" id="label-municipio">
+            Município
+        </span>
+        <div aria-labelledby="label-municipio" class="seletor-cidade" role="group">
+            <button aria-pressed="true" class="botao-cidade ativo" data-filter-city="all" type="button">
+                Todos
+            </button>
+            <button aria-pressed="false" class="botao-cidade" data-filter-city="recife" type="button">
+                Recife
+            </button>
+            <button aria-pressed="false" class="botao-cidade" data-filter-city="olinda" type="button">
+                Olinda
+            </button>
+        </div>
+    </div>
+    <div class="grupo-filtro">
+        <span class="rotulo-filtro" id="label-recursos">
+            Recursos informados
+        </span>
+        <div aria-labelledby="label-recursos" class="lista-recursos" role="group">
+            <button aria-pressed="false" class="botao-recurso" data-filter-resource="rampas" type="button">
+                Rampas / elevação
+            </button>
+            <button aria-pressed="false" class="botao-recurso" data-filter-resource="piso-tatil" type="button">
+                Piso tátil
+            </button>
+            <button aria-pressed="false" class="botao-recurso" data-filter-resource="audiodescricao" type="button">
+                Audiodescrição
+            </button>
+            <button aria-pressed="false" class="botao-recurso" data-filter-resource="braile" type="button">
+                Braile
+            </button>
+            <button aria-pressed="false" class="botao-recurso" data-filter-resource="maquetes-tateis" type="button">
+                Maquetes táteis / Experiência sensorial
+            </button>
+        </div>
+        <p class="ajuda-filtro">
+            Ao selecionar mais de um recurso, serão exibidos destinos que tenham pelo menos um deles.
+        </p>
+    </div>
+    <div class="aviso-lei">
+        <h3>
+            Lei Estadual nº 14.789/12
+        </h3>
+        <p>
+            Consulte a legislação vigente e confirme com o estabelecimento quais benefícios, documentos e
+            condições se aplicam à sua visita.
+        </p>
+    </div>
+</aside>
             <!-- Grade de resultados -->
             <div>
                 <div class="barra-resultados">
-                    <h2>6 Destinos encontrados</h2>
-                    <span class="subtitulo-resultados">Recife (3) &amp; Olinda (3)</span>
+                    <h2 id="titulo-resultados">
+                        Destinos
+                    </h2>
+                    <p aria-atomic="true" aria-live="polite" id="resumo-resultados" role="status">
+                        6 destinos encontrados: Recife (3) e Olinda (3).
+                    </p>
                 </div>
-
-                <div class="grade-destinos">
+                <div aria-labelledby="titulo-resultados" class="grade-destinos" id="lista-destinos">
                     <!-- 1. Marco Zero -->
-                    <article class="cartao-destino" data-city="recife">
+                    <article class="cartao-destino" data-city="recife" data-resources="piso-tatil rota-plana">
                         <div class="imagem-destino">
                             <div class="etiquetas-topo">
-                                <span class="etiqueta-cidade">Recife</span>
-                                <span class="etiqueta-categoria">Espaço aberto</span>
+                                <span class="etiqueta-cidade">
+                                    Recife
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Espaço aberto
+                                </span>
                             </div>
-                            <img src="imagens/marco-zero.jpg" alt="Vista da Praça do Marco Zero no Bairro do Recife com a rosa dos ventos no chão e prédios históricos ao fundo.">
-                            <span class="etiqueta-preco">Gratuito</span>
+                            <img alt="Vista da Praça do Marco Zero no Bairro do Recife com a rosa dos ventos no chão e prédios históricos ao fundo."
+                                decoding="async" loading="lazy" src="imagens/marco-zero.jpg" />
+                            <span class="etiqueta-preco">
+                                Gratuito
+                            </span>
                         </div>
-
                         <div class="corpo-destino">
                             <p class="localizacao-destino">
-                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
                                 </svg>
                                 Bairro do Recife, Recife - PE
                             </p>
-                            <h3>Marco Zero</h3>
-                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
-                                <span class="selo-acessibilidade">Piso tátil</span>
-                                <span class="selo-acessibilidade">Rota plana</span>
-                                <span class="selo-acessibilidade">Aberto</span>
-                            </div>
-                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
+                            <h3>
+                                Marco Zero
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Piso tátil
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Rota plana
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Aberto
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
                         </div>
                     </article>
-
                     <!-- 2. Instituto Ricardo Brennand -->
-                    <article class="cartao-destino" data-city="recife">
+                    <article class="cartao-destino" data-city="recife"
+                        data-resources="elevadores maquetes-tateis libras">
                         <div class="imagem-destino">
                             <div class="etiquetas-topo">
-                                <span class="etiqueta-cidade">Recife</span>
-                                <span class="etiqueta-categoria">Museus</span>
+                                <span class="etiqueta-cidade">
+                                    Recife
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Museus
+                                </span>
                             </div>
-                            <img src="imagens/instituto-ricardo-brennand.jpg" alt="Fachada em estilo castelo medieval do Instituto Ricardo Brennand cercada por jardins.">
-                            <span class="etiqueta-preco">Meia PCD / Acomp. Grat.</span>
+                            <img alt="Fachada em estilo castelo medieval do Instituto Ricardo Brennand cercada por jardins."
+                                decoding="async" loading="lazy" src="imagens/instituto-ricardo-brennand.jpg" />
+                            <span class="etiqueta-preco">
+                                Meia PCD / Acomp. Grat.
+                            </span>
                         </div>
-
                         <div class="corpo-destino">
                             <p class="localizacao-destino">
-                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
                                 </svg>
                                 Várzea, Recife - PE
                             </p>
-                            <h3>Instituto Ricardo Brennand</h3>
-                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
-                                <span class="selo-acessibilidade">Elevadores</span>
-                                <span class="selo-acessibilidade">Maquetes táteis</span>
-                                <span class="selo-acessibilidade">Libras</span>
-                            </div>
-                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
+                            <h3>
+                                Instituto Ricardo Brennand
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Elevadores
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Maquetes táteis
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Libras
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
                         </div>
                     </article>
-
                     <!-- 3. Centro Cultural Cais do Sertão -->
-                    <article class="cartao-destino" data-city="recife">
+                    <article class="cartao-destino" data-city="recife" data-resources="piso-tatil braille libras">
                         <div class="imagem-destino">
                             <div class="etiquetas-topo">
-                                <span class="etiqueta-cidade">Recife</span>
-                                <span class="etiqueta-categoria">Interativo</span>
+                                <span class="etiqueta-cidade">
+                                    Recife
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Interativo
+                                </span>
                             </div>
-                            <img src="imagens/cais_do_sertao.jpg" alt="Prédio moderno do Centro Cultural Cais do Sertão com fachada vazada em cobogó.">
-                            <span class="etiqueta-preco">Gratuito (terças e PCD)</span>
+                            <img alt="Prédio moderno do Centro Cultural Cais do Sertão com fachada vazada em cobogó."
+                                decoding="async" loading="lazy" src="imagens/cais_do_sertao.jpg" />
+                            <span class="etiqueta-preco">
+                                Gratuito (terças e PCD)
+                            </span>
                         </div>
-
                         <div class="corpo-destino">
                             <p class="localizacao-destino">
-                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
                                 </svg>
                                 Bairro do Recife, Recife - PE
                             </p>
-                            <h3>Centro Cultural Cais do Sertão</h3>
-                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
-                                <span class="selo-acessibilidade">Piso tátil</span>
-                                <span class="selo-acessibilidade">Braille</span>
-                                <span class="selo-acessibilidade">Libras</span>
-                            </div>
-                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
+                            <h3>
+                                Centro Cultural Cais do Sertão
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Piso tátil
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Braille
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Libras
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
                         </div>
                     </article>
-
                     <!-- 4. Mosteiro de São Bento -->
-                    <article class="cartao-destino" data-city="olinda">
+                    <article class="cartao-destino" data-city="olinda" data-resources="rampas audiodescricao maquete">
                         <div class="imagem-destino">
                             <div class="etiquetas-topo">
-                                <span class="etiqueta-cidade">Olinda</span>
-                                <span class="etiqueta-categoria">Barroco</span>
+                                <span class="etiqueta-cidade">
+                                    Olinda
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Barroco
+                                </span>
                             </div>
-                            <img src="imagens/igreja-e-mosteiro-de.jpg" alt="Fachada histórica branca e ocre do Mosteiro de São Bento em Olinda.">
-                            <span class="etiqueta-preco">Gratuito</span>
+                            <img alt="Fachada histórica branca e ocre do Mosteiro de São Bento em Olinda."
+                                decoding="async" loading="lazy" src="imagens/igreja-e-mosteiro-de.jpg" />
+                            <span class="etiqueta-preco">
+                                Gratuito
+                            </span>
                         </div>
-
                         <div class="corpo-destino">
                             <p class="localizacao-destino">
-                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
                                 </svg>
                                 Varadouro, Olinda - PE
                             </p>
-                            <h3>Mosteiro de São Bento</h3>
-                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
-                                <span class="selo-acessibilidade">Rampa lateral</span>
-                                <span class="selo-acessibilidade">Audiodescrição</span>
-                                <span class="selo-acessibilidade">Maquete</span>
-                            </div>
-                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
+                            <h3>
+                                Mosteiro de São Bento
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Rampa lateral
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Audiodescrição
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Maquete
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
                         </div>
                     </article>
-
                     <!-- 5. Alto da Sé -->
-                    <article class="cartao-destino" data-city="olinda">
+                    <article class="cartao-destino" data-city="olinda"
+                        data-resources="rota-plana audiodescricao guia-tatil">
                         <div class="imagem-destino">
                             <div class="etiquetas-topo">
-                                <span class="etiqueta-cidade">Olinda</span>
-                                <span class="etiqueta-categoria">Mirante</span>
+                                <span class="etiqueta-cidade">
+                                    Olinda
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Mirante
+                                </span>
                             </div>
-                            <img src="imagens/alto-da-se.jpg" alt="Vista panorâmica do mirante do Alto da Sé com a Igreja da Sé e o mar ao fundo.">
-                            <span class="etiqueta-preco">Gratuito</span>
+                            <img alt="Vista panorâmica do mirante do Alto da Sé com a Igreja da Sé e o mar ao fundo."
+                                decoding="async" loading="lazy" src="imagens/alto-da-se.jpg" />
+                            <span class="etiqueta-preco">
+                                Gratuito
+                            </span>
                         </div>
-
                         <div class="corpo-destino">
                             <p class="localizacao-destino">
-                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
                                 </svg>
                                 Alto da Sé, Olinda - PE
                             </p>
-                            <h3>Alto da Sé</h3>
-                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
-                                <span class="selo-acessibilidade">Rota plana</span>
-                                <span class="selo-acessibilidade">Audiodescrição</span>
-                                <span class="selo-acessibilidade">Guia tátil</span>
-                            </div>
-                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
+                            <h3>
+                                Alto da Sé
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Rota plana
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Audiodescrição
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Guia tátil
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
                         </div>
                     </article>
-
                     <!-- 6. Museu do Mamulengo -->
-                    <article class="cartao-destino" data-city="olinda">
+                    <article class="cartao-destino" data-city="olinda"
+                        data-resources="acervo-tatil acesso-terreo guia-tatil">
                         <div class="imagem-destino">
                             <div class="etiquetas-topo">
-                                <span class="etiqueta-cidade">Olinda</span>
-                                <span class="etiqueta-categoria">Cultura popular</span>
+                                <span class="etiqueta-cidade">
+                                    Olinda
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Cultura popular
+                                </span>
                             </div>
-                            <img src="imagens/museu-do-mamulendo1.jpg" alt="Bonecos populares coloridos expostos no Museu do Mamulengo em Olinda.">
-                            <span class="etiqueta-preco">Gratuito PCD</span>
+                            <img alt="Bonecos populares coloridos expostos no Museu do Mamulengo em Olinda."
+                                decoding="async" loading="lazy" src="imagens/museu-do-mamulendo1.jpg" />
+                            <span class="etiqueta-preco">
+                                Gratuito PCD
+                            </span>
                         </div>
-
                         <div class="corpo-destino">
                             <p class="localizacao-destino">
-                                <svg class="icone-pino" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
                                 </svg>
                                 Amparo, Olinda - PE
                             </p>
-                            <h3>Museu do Mamulengo</h3>
-                            <div class="lista-selo-acessibilidade" aria-label="Recursos de acessibilidade">
-                                <span class="selo-acessibilidade">Acervo tátil</span>
-                                <span class="selo-acessibilidade">Acesso térreo</span>
-                                <span class="selo-acessibilidade">Guia tátil</span>
-                            </div>
-                            <a href="#detalhes" class="botao-detalhes">Ver detalhes do local</a>
+                            <h3>
+                                Museu do Mamulengo
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Acervo tátil
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Acesso térreo
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Guia tátil
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
                         </div>
                     </article>
                 </div>
+                <p class="sem-resultados" hidden="True" id="sem-resultados">
+                    Nenhum destino corresponde aos filtros selecionados. Ajuste os critérios ou limpe os filtros.
+                </p>
+            </div>
         </section>
-
         <!-- Seção Sobre o projeto -->
-        <section id="sobre" class="secao-sobre" aria-labelledby="titulo-sobre">
+        <section aria-labelledby="titulo-sobre" class="secao-sobre" id="sobre">
             <div>
                 <div class="selos-sobre">
-                    <span class="selo-iniciativa">Iniciativa Cívica &amp; Voluntária</span>
-                    <span class="selo-lei">Lei Brasileira de Inclusão nº 13.146</span>
+                    <span class="selo-iniciativa">
+                        Iniciativa Cívica &amp; Voluntária
+                    </span>
+                    <span class="selo-lei">
+                        Lei Brasileira de Inclusão nº 13.146
+                    </span>
                 </div>
-
-                <h2 id="titulo-sobre">Sobre o projeto Turismo Acessível</h2>
+                <h2 id="titulo-sobre">
+                    Sobre o projeto Turismo Acessível
+                </h2>
                 <p class="texto-sobre">
-                    O portal Turismo Acessível Recife e Olinda foi idealizado para transformar o direito de ir e vir em realidade concreta para todos os viajantes e recifenses. Unimos engenharia diagnóstica de acessibilidade e sistemas para entregar opções acessíveis para pessoas com deficiências físicas, sensoriais e cognitivas.
+                    O portal Turismo Acessível Recife e Olinda reúne informações para apoiar o planejamento de visitas
+                    por pessoas com diferentes necessidades de acessibilidade. Os dados apresentados devem ser
+                    confirmados com os responsáveis por cada espaço e podem ser atualizados com contribuições da
+                    comunidade.
                 </p>
-
                 <div class="grade-padroes">
                     <div class="cartao-padrao">
-                        <strong>100%</strong>
-                        <span>Vistoria Presencial</span>
-                        <small>Engenharia + Auditoria PCD</small>
+                        <strong>
+                            Informações
+                        </strong>
+                        <span>
+                            Colaboração
+                        </span>
+                        <small>
+                            Contribuições e atualizações da comunidade
+                        </small>
                     </div>
                     <div class="cartao-padrao">
-                        <strong>NBR 9050</strong>
-                        <span>Padrão Técnico ABNT</span>
-                        <small>Rampas, Pisos e Banheiros</small>
+                        <strong>
+                            ABNT NBR 9050
+                        </strong>
+                        <span>
+                            Referência técnica
+                        </span>
+                        <small>
+                            Parâmetros de acessibilidade física
+                        </small>
                     </div>
                     <div class="cartao-padrao">
-                        <strong>WCAG 2.2</strong>
-                        <span>Acessibilidade Digital</span>
-                        <small>Alto contraste e leitores</small>
+                        <strong>
+                            WCAG 2.2
+                        </strong>
+                        <span>
+                            Referência digital
+                        </span>
+                        <small>
+                            Diretrizes de acessibilidade para conteúdo web
+                        </small>
                     </div>
                 </div>
-
                 <p class="nota-colaborativa">
-                    Encontrou uma barreira em algum local ou uma informação desatualizada? O projeto é colaborativo e formado a partir da contribuição de quem vive e caminha pelos espaços. Caso encontre algo, entre em contato para vistorias e atualizações.
+                    Encontrou uma barreira em algum local ou uma informação desatualizada? O projeto é colaborativo e
+                    formado a partir da contribuição de quem vive e caminha pelos espaços. Caso encontre algo, entre em
+                    contato para vistorias e atualizações.
                 </p>
             </div>
-
-            <div class="cartao-foto-sobre" role="img" aria-label="Fotografia ilustrativa de vistoria técnica acessível no centro histórico de Recife">
-                <svg class="ilustracao-vistoria" viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="4" r="2"/>
-                    <path d="M9 9h5l2 5h3"/>
-                    <circle cx="10" cy="17" r="4"/>
+            <figure class="cartao-foto-sobre">
+                <svg aria-hidden="true" class="ilustracao-vistoria" viewbox="0 0 24 24">
+                    <circle cx="12" cy="4" r="2">
+                    </circle>
+                    <path d="M9 9h5l2 5h3">
+                    </path>
+                    <circle cx="10" cy="17" r="4">
+                    </circle>
                 </svg>
-                <span class="legenda-foto-sobre">Vistoria Técnica em Recife</span>
-            </div>
+                <figcaption class="legenda-foto-sobre">
+                    Ilustração de vistoria técnica em Recife
+                </figcaption>
+            </figure>
         </section>
     </main>
-
     <!-- Rodapé -->
-    <footer id="contato" class="rodape" role="contentinfo">
+    <footer class="rodape" id="contato">
         <div class="container colunas-rodape">
             <div class="coluna-rodape">
-                <a href="#inicio" class="logo logo-rodape">
-                    <span class="logo-icone" aria-hidden="true">☀</span>
-                    <span>Recife Acessível</span>
+                <a class="logo logo-rodape" href="#inicio">
+                    <span aria-hidden="true" class="logo-icone">
+                        ☀
+                    </span>
+                    <span>
+                        Recife Acessível
+                    </span>
                 </a>
                 <p>
-                    Guia técnico de acessibilidade física, sensorial e comunicacional para as cidades de Recife e Olinda, Pernambuco.
+                    Portal informativo sobre recursos de acessibilidade física, sensorial e comunicacional em Recife e
+                    Olinda, Pernambuco.
                 </p>
             </div>
-
             <div class="coluna-rodape">
-                <h3>Navegação Rápida</h3>
-                <ul>
-                    <li><a href="#inicio">Página Inicial</a></li>
-                    <li><a href="#catalogo">Catálogo de Destinos</a></li>
-                    <li><a href="#sobre">Metodologia Técnica</a></li>
-                </ul>
+                <h2>
+                    Navegação Rápida
+                </h2>
+                <nav aria-label="Navegação do rodapé">
+                    <ul>
+                        <li>
+                            <a href="#inicio">
+                                Página Inicial
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#catalogo">
+                                Catálogo de Destinos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#sobre">
+                                Metodologia Técnica
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-
             <div class="coluna-rodape">
-                <h3>Recursos Acessíveis</h3>
-                <ul>
-                    <li><a href="#catalogo">Audiodescrição e Libras</a></li>
-                    <li><a href="#sobre">Declaração W3C</a></li>
-                    <li><a href="#sobre">Dados Abertos</a></li>
-                </ul>
+                <h2>
+                    Recursos Acessíveis
+                </h2>
+                <nav aria-label="Recursos do projeto">
+                    <ul>
+                        <li>
+                            <a href="#catalogo">
+                                Consultar recursos nos destinos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#sobre">
+                                Conhecer o projeto
+                            </a>
+                        </li>
+                        <li>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-
             <div class="coluna-rodape">
-                <h3>Ouvidoria &amp; Contato</h3>
-                <p>Sugira novos locais ou melhorias para a equipe de vistoria técnica.</p>
-                <p><strong>✉ ouvidoria@turismoacessivel.pe.gov.br</strong></p>
-                <a href="#contato" class="botao-ouvidoria">Canal de Atendimento PCD</a>
+                <h2>
+                    Ouvidoria &amp; Contato
+                </h2>
+                <p>
+                    Sugira novos locais ou melhorias para a equipe de vistoria técnica.
+                </p>
+                <p>
+                    <a href="mailto:ouvidoria@turismoacessivel.pe.gov.br">
+                        ouvidoria@turismoacessivel.pe.gov.br
+                    </a>
+                </p>
+                <a class="botao-ouvidoria" href="mailto:ouvidoria@turismoacessivel.pe.gov.br">
+                    Enviar sugestão por e-mail
+                </a>
             </div>
         </div>
-
         <div class="rodape-inferior">
             <div class="container rodape-inferior-conteudo">
-                <span>© 2026 - Turismo Acessível Recife &amp; Olinda. Decreto Federal nº 5.296/2004.</span>
-                <span>Pernambuco, Brasil - Desenvolvido com foco e inclusão</span>
+                <span>
+                    © 2026 - Turismo Acessível Recife &amp; Olinda. Decreto Federal nº 5.296/2004.
+                </span>
+                <span>
+                    Pernambuco, Brasil - Desenvolvido com foco e inclusão
+                </span>
             </div>
         </div>
     </footer>
-
-    <script>
-        (function () {
-            const pagina = document.documentElement;
-            const botaoContraste = document.getElementById('btn-toggle-contrast');
-            const botaoFonte = document.getElementById('btn-toggle-font');
-
-            botaoContraste.addEventListener('click', function () {
-                const ativo = pagina.classList.toggle('alto-contraste');
-                botaoContraste.setAttribute('aria-pressed', ativo ? 'true' : 'false');
-            });
-
-            botaoFonte.addEventListener('click', function () {
-                const ampliada = pagina.classList.toggle('fonte-ampliada');
-                botaoFonte.textContent = ampliada ? 'A-' : 'A+';
-            });
-        })();
+    <script defer="True" src="recife-acessivel.js">
     </script>
 </body>
+
 </html>
