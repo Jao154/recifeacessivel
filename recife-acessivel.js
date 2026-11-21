@@ -179,6 +179,11 @@
                 estado.municipio =
                     botao.dataset.filterCity || 'all';
 
+                if (estado.busca !== '') {
+                    definirBusca('', null);
+                    return;
+                }
+
                 aplicarFiltros();
             });
         });
@@ -263,75 +268,75 @@
     }
 
     function iniciarControlesAcessibilidade() {
-    const raiz = document.documentElement;
+        const raiz = document.documentElement;
 
-    const botaoContraste = document.querySelector('#btn-toggle-contrast');
-    const botaoFonte = document.querySelector('#btn-toggle-font');
+        const botaoContraste = document.querySelector('#btn-toggle-contrast');
+        const botaoFonte = document.querySelector('#btn-toggle-font');
 
-    function lerPreferencia(chave) {
-        try {
-            return localStorage.getItem(chave) === 'true';
-        } catch (erro) {
-            return false;
+        function lerPreferencia(chave) {
+            try {
+                return localStorage.getItem(chave) === 'true';
+            } catch (erro) {
+                return false;
+            }
         }
-    }
 
-    function salvarPreferencia(chave, valor) {
-        try {
-            localStorage.setItem(chave, String(valor));
-        } catch (erro) {
-            // Mantém a funcionalidade mesmo sem armazenamento.
+        function salvarPreferencia(chave, valor) {
+            try {
+                localStorage.setItem(chave, String(valor));
+            } catch (erro) {
+                // Mantém a funcionalidade mesmo sem armazenamento.
+            }
         }
-    }
 
-    function aplicarContraste(ativado) {
-        raiz.classList.toggle('alto-contraste', ativado);
+        function aplicarContraste(ativado) {
+            raiz.classList.toggle('alto-contraste', ativado);
+
+            if (botaoContraste) {
+                botaoContraste.setAttribute('aria-pressed', String(ativado));
+                botaoContraste.setAttribute(
+                    'aria-label',
+                    ativado ? 'Desativar alto contraste' : 'Ativar alto contraste'
+                );
+            }
+        }
+
+        function aplicarFonte(ampliada) {
+            raiz.classList.toggle('fonte-ampliada', ampliada);
+
+            if (botaoFonte) {
+                botaoFonte.setAttribute('aria-pressed', String(ampliada));
+                botaoFonte.setAttribute(
+                    'aria-label',
+                    ampliada
+                        ? 'Restaurar tamanho original do texto'
+                        : 'Aumentar tamanho do texto'
+                );
+            }
+        }
+
+        // Recupera as preferências anteriores.
+        aplicarContraste(lerPreferencia('recife-acessivel-alto-contraste'));
+        aplicarFonte(lerPreferencia('recife-acessivel-fonte-ampliada'));
 
         if (botaoContraste) {
-            botaoContraste.setAttribute('aria-pressed', String(ativado));
-            botaoContraste.setAttribute(
-                'aria-label',
-                ativado ? 'Desativar alto contraste' : 'Ativar alto contraste'
-            );
-        }
-    }
+            botaoContraste.addEventListener('click', () => {
+                const ativado = !raiz.classList.contains('alto-contraste');
 
-    function aplicarFonte(ampliada) {
-        raiz.classList.toggle('fonte-ampliada', ampliada);
+                aplicarContraste(ativado);
+                salvarPreferencia('recife-acessivel-alto-contraste', ativado);
+            });
+        }
 
         if (botaoFonte) {
-            botaoFonte.setAttribute('aria-pressed', String(ampliada));
-            botaoFonte.setAttribute(
-                'aria-label',
-                ampliada
-                    ? 'Restaurar tamanho original do texto'
-                    : 'Aumentar tamanho do texto'
-            );
+            botaoFonte.addEventListener('click', () => {
+                const ampliada = !raiz.classList.contains('fonte-ampliada');
+
+                aplicarFonte(ampliada);
+                salvarPreferencia('recife-acessivel-fonte-ampliada', ampliada);
+            });
         }
     }
-
-    // Recupera as preferências anteriores.
-    aplicarContraste(lerPreferencia('recife-acessivel-alto-contraste'));
-    aplicarFonte(lerPreferencia('recife-acessivel-fonte-ampliada'));
-
-    if (botaoContraste) {
-        botaoContraste.addEventListener('click', () => {
-            const ativado = !raiz.classList.contains('alto-contraste');
-
-            aplicarContraste(ativado);
-            salvarPreferencia('recife-acessivel-alto-contraste', ativado);
-        });
-    }
-
-    if (botaoFonte) {
-        botaoFonte.addEventListener('click', () => {
-            const ampliada = !raiz.classList.contains('fonte-ampliada');
-
-            aplicarFonte(ampliada);
-            salvarPreferencia('recife-acessivel-fonte-ampliada', ampliada);
-        });
-    }
-}
 
 
 })();

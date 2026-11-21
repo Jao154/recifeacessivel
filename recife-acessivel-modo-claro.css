@@ -1006,6 +1006,8 @@ body {
 
     align-items: center;
 
+    justify-content: center;
+
     gap: 10px;
 
     min-height: 48px;
@@ -1028,7 +1030,8 @@ body {
 
     cursor: pointer;
 
-    text-align: left;
+    text-align: center;
+
 
 }
 
@@ -1917,11 +1920,20 @@ body {
     cursor: pointer;
 }
 
-.botao-busca:focus-visible,
-.busca-cabecalho input:focus-visible,
-.campo-busca-lateral input:focus-visible {
+.botao-busca:focus-visible {
     outline: 3px solid var(--cor-foco);
     outline-offset: 3px;
+}
+
+.busca-cabecalho:focus-within,
+.campo-busca-lateral:focus-within {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 2px;
+}
+
+.busca-cabecalho input:focus-visible,
+.campo-busca-lateral input:focus-visible {
+    outline: none;
 }
 
 .botao-cidade[aria-pressed="true"],
