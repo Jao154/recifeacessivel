@@ -2275,24 +2275,28 @@ html.alto-contraste .mz-check {
 }
 
 .mz-imagem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    display: block;
     overflow: hidden;
-    color: var(--cor-texto-secundario);
     background: var(--cor-fundo-destaque);
-    border: 2px dashed var(--cor-borda-suave);
+    border: 2px solid var(--cor-borda-forte);
     border-radius: 10px;
-    font-size: .95rem;
-    font-weight: 700;
-    padding: 12px;
+    
+}
+
+.mz-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .mz-imagem-principal {
     width: 100%;
-    min-height: clamp(190px, 34vw, 390px);
-    border-radius: 4px;
+    height: clamp(220px, 38vw, 420px);
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .mz-sobre {
@@ -2327,8 +2331,9 @@ html.alto-contraste .mz-check {
 }
 
 .mz-imagem-galeria {
-    aspect-ratio: 2.15 / 1;
-    border-radius: 4px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
 }
 
 .mz-informacoes-rapidas {
