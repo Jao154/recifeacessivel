@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Área de acesso, cadastro e perfil do usuário no portal Recife Acessível." name="description" />
+    <title>Perfil e Acesso — Recife Acessível</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
+    <link href="perfil.css" rel="stylesheet" />
+</head>
+<body>
+    <a class="pular-conteudo" href="#conteudo-principal">
+        Pular para o conteúdo principal
+    </a>
+
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <a class="logo" href="../index.html#inicio">
+                <span aria-hidden="true" class="logo-icone">☀</span>
+                <span>Recife Acessível</span>
+            </a>
+
+            <nav aria-label="Menu principal" class="menu-principal">
+                <a href="../index.html#inicio">Início</a>
+                <span aria-hidden="true" class="separador-menu">|</span>
+                <a href="../index.html#catalogo">Destinos</a>
+                <span aria-hidden="true" class="separador-menu">|</span>
+                <a href="../index.html#sobre">Sobre nós</a>
+                <span aria-hidden="true" class="separador-menu">|</span>
+                <a href="../index.html#contato">Contato</a>
+            </nav>
+
+            <div class="acoes-cabecalho">
+                <form action="../index.html#catalogo" class="busca-cabecalho" method="get" role="search">
+                    <label class="sr-only" for="busca-topo">Buscar no portal</label>
+                    <input autocomplete="off" id="busca-topo" name="q" placeholder="Buscar destinos" type="search" />
+                    <button aria-label="Executar busca" class="botao-busca" type="submit">
+                        <span aria-hidden="true">🔍</span>
+                    </button>
+                </form>
+                <a aria-current="page" aria-label="Área do usuário" class="botao-perfil ativo" href="perfil.html">
+                    <svg aria-hidden="true" class="icone-perfil" viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c2-4 14-4 16 0"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div aria-label="Controles de acessibilidade da página" class="acessibilidade-fixa" role="group">
+            <button aria-label="Ativar alto contraste" aria-pressed="false" id="btn-header-contrast" title="Alternar alto contraste" type="button">◐</button>
+            <button aria-label="Aumentar tamanho do texto" aria-pressed="false" id="btn-header-font" title="Aumentar tamanho do texto" type="button">A+</button>
+        </div>
+    </header>
+
+    <main class="container main-perfil" id="conteudo-principal" tabindex="-1">
+        <div class="topo-pagina-conta">
+            <a class="link-voltar" href="../index.html">← Voltar para a página inicial</a>
+
+            <div aria-label="Alternar entre acesso e perfil" class="seletor-modo-conta" role="tablist">
+                <button aria-controls="painel-login" aria-selected="true" class="aba-conta" id="aba-login" role="tab" type="button">
+                    Entrar
+                </button>
+                <button aria-controls="painel-perfil" aria-selected="false" class="aba-conta" id="aba-perfil" role="tab" type="button">
+                    Meu Perfil
+                </button>
+            </div>
+        </div>
+
+        <section aria-labelledby="aba-login" id="painel-login" role="tabpanel">
+            <div class="cartao-login-split">
+                <div class="painel-boas-vindas">
+                    <div class="marca-boas-vindas">
+                        <span aria-hidden="true" class="logo-icone">☀</span>
+                        <span>Recife Acessível</span>
+                    </div>
+
+                    <div class="texto-boas-vindas">
+                        <h1>Olá,<br>bem-vindo!</h1>
+                        <p>Entre com a sua conta para acessar seu perfil e contribuir com as informações de acessibilidade do portal.</p>
+                    </div>
+                </div>
+
+                <div class="painel-form-login">
+                    <h2>Acessar conta</h2>
+
+                    <div aria-live="polite" class="aviso-acao" hidden id="aviso-login" role="alert" tabindex="-1"></div>
+
+                    <form class="formulario-conta" id="form-login" novalidate>
+                        <div class="campo-grupo">
+                            <label class="rotulo-campo" for="login-email">E-mail</label>
+                            <input autocomplete="email" class="campo-texto" id="login-email" name="email" placeholder="nome@exemplo.com" required type="email" />
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label class="rotulo-campo" for="login-senha">Senha</label>
+                            <div class="campo-senha-grupo">
+                                <input autocomplete="current-password" class="campo-texto" id="login-senha" minlength="6" name="senha" placeholder="Sua senha" required type="password" />
+                                <button aria-label="Mostrar ou ocultar senha" aria-pressed="false" class="btn-senha" data-toggle-senha="login-senha" type="button">
+                                    Mostrar
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="linha-opcoes-login">
+                            <label class="lembrar-conta">
+                                <input id="lembrar-acesso" type="checkbox" />
+                                <span>Lembrar de mim</span>
+                            </label>
+                        </div>
+
+                        <div class="acoes-login-duplas">
+                            <button class="btn-primario" type="submit">Entrar</button>
+                            <button class="btn-secundario" id="btn-abrir-cadastro" type="button">Criar conta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="aba-perfil" hidden id="painel-perfil" role="tabpanel">
+            <article class="cartao-perfil">
+                <div aria-hidden="true" class="capa-perfil"></div>
+
+                <div class="corpo-perfil">
+                    <div class="topo-perfil-usuario">
+                        <div class="identidade-usuario">
+                            <div aria-hidden="true" class="avatar-perfil" id="perfil-avatar">MS</div>
+                            <div class="nome-bloco">
+                                <h2 id="perfil-nome" tabindex="-1">Mariana Silva</h2>
+                            </div>
+                        </div>
+
+                        <div class="acoes-topo-perfil">
+                            <button class="btn-primario" id="btn-editar-perfil" type="button">Alterar dados</button>
+                            <button class="btn-secundario" id="btn-sair-conta" type="button">Sair</button>
+                        </div>
+                    </div>
+
+                    <div aria-live="polite" class="aviso-acao" hidden id="aviso-perfil" role="status" tabindex="-1"></div>
+
+                    <div class="grade-info-perfil" id="perfil-visualizacao">
+                        <div class="bloco-info">
+                            <span aria-hidden="true" class="icone-dado">
+                                <svg viewBox="0 0 24 24">
+                                    <rect height="14" rx="2" width="18" x="3" y="5"></rect>
+                                    <path d="M3 7l9 6 9-6"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="rotulo-info">E-mail</span>
+                                <p class="valor-info" id="dado-email">mariana.silva@email.com</p>
+                            </div>
+                        </div>
+
+                        <div class="bloco-info">
+                            <span aria-hidden="true" class="icone-dado">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="rotulo-info">Telefone</span>
+                                <p class="valor-info" id="dado-telefone">(81) 99999-0000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bloco-edicao" hidden id="perfil-edicao">
+                        <h3>Alterar dados</h3>
+                        <form class="formulario-conta" id="form-editar-perfil" novalidate>
+                            <div class="grade-campos-edicao">
+                                <div class="campo-grupo campo-span-2">
+                                    <label class="rotulo-campo" for="editar-nome">Nome</label>
+                                    <input autocomplete="name" class="campo-texto" id="editar-nome" name="nome" required type="text" />
+                                </div>
+
+                                <div class="campo-grupo">
+                                    <label class="rotulo-campo" for="editar-email">E-mail</label>
+                                    <input autocomplete="email" class="campo-texto" id="editar-email" name="email" required type="email" />
+                                </div>
+
+                                <div class="campo-grupo">
+                                    <label class="rotulo-campo" for="editar-telefone">Telefone</label>
+                                    <input autocomplete="tel" class="campo-texto" id="editar-telefone" name="telefone" placeholder="(81) 99999-9999" type="tel" />
+                                </div>
+                            </div>
+
+                            <div class="acoes-form">
+                                <button class="btn-primario" type="submit">Salvar</button>
+                                <button class="btn-secundario" id="btn-cancelar-edicao" type="button">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <dialog aria-labelledby="titulo-modal" class="modal-cadastro" id="modal-cadastro">
+        <div class="topo-modal">
+            <h2 id="titulo-modal">Criar conta</h2>
+            <button aria-label="Fechar janela" class="btn-fechar-modal" id="btn-fechar-modal" type="button">×</button>
+        </div>
+
+        <div aria-live="assertive" class="aviso-acao" hidden id="aviso-cadastro" role="alert"></div>
+
+        <form class="formulario-conta" id="form-cadastro" novalidate>
+            <div class="campo-grupo">
+                <label class="rotulo-campo" for="cadastro-nome">Nome</label>
+                <input autocomplete="name" class="campo-texto" id="cadastro-nome" name="nome" placeholder="Seu nome" required type="text" />
+            </div>
+
+            <div class="campo-grupo">
+                <label class="rotulo-campo" for="cadastro-email">E-mail</label>
+                <input autocomplete="email" class="campo-texto" id="cadastro-email" name="email" placeholder="nome@exemplo.com" required type="email" />
+            </div>
+
+            <div class="campo-grupo">
+                <label class="rotulo-campo" for="cadastro-senha">Senha</label>
+                <div class="campo-senha-grupo">
+                    <input autocomplete="new-password" class="campo-texto" id="cadastro-senha" minlength="6" name="senha" placeholder="Mínimo 6 caracteres" required type="password" />
+                    <button aria-label="Mostrar ou ocultar senha" aria-pressed="false" class="btn-senha" data-toggle-senha="cadastro-senha" type="button">
+                        Mostrar
+                    </button>
+                </div>
+            </div>
+
+            <div class="acoes-form">
+                <button class="btn-primario" type="submit">Cadastrar</button>
+                <button class="btn-secundario" id="btn-cancelar-cadastro" type="button">Cancelar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer class="rodape" id="contato">
+        <div class="container colunas-rodape">
+            <div class="coluna-rodape">
+                <a class="logo logo-rodape" href="../index.html#inicio">
+                    <span aria-hidden="true" class="logo-icone">☀</span>
+                    <span>Recife Acessível</span>
+                </a>
+                <p>
+                    Portal informativo sobre recursos de acessibilidade física, sensorial e comunicacional em Recife e Olinda, Pernambuco.
+                </p>
+            </div>
+
+            <div class="coluna-rodape">
+                <h2>Navegação Rápida</h2>
+                <nav aria-label="Navegação do rodapé">
+                    <ul>
+                        <li><a href="../index.html#inicio">Página Inicial</a></li>
+                        <li><a href="../index.html#catalogo">Catálogo de Destinos</a></li>
+                        <li><a href="../index.html#sobre">Metodologia Técnica</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="coluna-rodape">
+                <h2>Recursos Acessíveis</h2>
+                <nav aria-label="Recursos do projeto">
+                    <ul>
+                        <li><a href="../index.html#catalogo">Consultar recursos nos destinos</a></li>
+                        <li><a href="../index.html#sobre">Conhecer o projeto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="coluna-rodape">
+                <h2>Ouvidoria &amp; Contato</h2>
+                <p>Sugira novos locais ou melhorias para a equipe de vistoria técnica.</p>
+                <p><a href="mailto:ouvidoria@turismoacessivel.pe.gov.br">ouvidoria@turismoacessivel.pe.gov.br</a></p>
+                <a class="botao-ouvidoria" href="mailto:ouvidoria@turismoacessivel.pe.gov.br">Enviar sugestão por e-mail</a>
+            </div>
+        </div>
+
+        <div class="rodape-inferior">
+            <div class="container rodape-inferior-conteudo">
+                <span>© 2026 - Turismo Acessível Recife &amp; Olinda. Decreto Federal nº 5.296/2004.</span>
+                <span>Pernambuco, Brasil - Desenvolvido com foco e inclusão</span>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="../script.js"></script>
+    <script defer src="perfil.js"></script>
+</body>
+</html>
