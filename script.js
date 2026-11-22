@@ -276,7 +276,7 @@
                 evento.preventDefault();
                 const termo = inputTopo.value.trim();
                 location.href =
-                    'index.html' +
+                    '../index.html' +
                     (termo ? '?q=' + encodeURIComponent(termo) : '') +
                     '#catalogo';
             });
