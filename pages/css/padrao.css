@@ -154,7 +154,7 @@
 
     color: var(--cor-texto-principal);
 
-    font-size: 1rem;
+    font-size: 1.35rem;
     line-height: 1.5;
 }
 
@@ -180,7 +180,7 @@
 .mz-main .cs-ingresso-grupo p {
     margin: 4px 0;
 
-    font-size: 1rem;
+    font-size: 1.35rem;
     line-height: 1.5;
 }
 
@@ -200,7 +200,7 @@
 
     color: var(--cor-texto-no-destaque);
 
-    font-size: .95rem;
+    font-size: 1.35rem;
     line-height: 1.5;
 
     text-align: center;
