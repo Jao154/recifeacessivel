@@ -14,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
         rel="stylesheet" />
     <link href="../style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../pages/css/padrao.css">
 </head>
 
 <body class="pagina-cais-do-sertao">
@@ -115,30 +116,108 @@
                 alt="Fachada frontal do Cais do Sertão iluminada internamente ao entardecer, destacando a estrutura revestida por cobogós brancos e o amplo vão livre térreo."
                 loading="lazy">
         </section>
+     <section aria-label="Horários, contatos e ingressos" class="mz-informacoes-rapidas">
 
-        <section aria-label="Horários, contatos e ingressos" class="mz-informacoes-rapidas cs-informacoes">
-            <div class="mz-bloco-linha cs-horarios">
-                <h2>Horários + Contatos</h2>
-                <p>domingo 13:00–18:00 | segunda-feira <strong>Fechado</strong></p>
-                <p>terça-feira 10:00–16:00 | quarta-feira 10:00–16:00</p>
-                <p>quinta-feira 10:00–16:00 | sexta-feira 10:00–16:00</p>
-                <p>sábado 13:00–18:00</p>
-                <p class="cs-telefone"><strong>Telefone:</strong> <a href="tel:+558131828267">(81) 3182-8267</a></p>
-            </div>
-            <div class="mz-bloco-linha cs-ingressos">
-                <h2>Ingressos</h2>
-                <p>terça-feira</p>
-                <p>Entrada gratuita - aberta ao público</p>
-                <div class="cs-ingresso-grupo">
-                    <p>De quarta a domingo</p>
-                    <p>Inteira: R$ 10,00 | Meia: R$ 5,00</p>
-                </div>
-                <div class="cs-meia-entrada">
-                    <strong>Meia entrada:</strong> Mediante documentação<br />comprobatória.<br />Pessoas com
-                    deficiência, estudantes,<br />professores e idosos acima de 60 anos
-                </div>
-            </div>
-        </section>
+    <!-- HORÁRIOS E CONTATOS -->
+    <div class="mz-bloco-linha">
+
+        <h2>Horários + Contatos</h2>
+
+        <div class="mz-tabela-wrapper">
+            <table class="mz-tabela-horarios">
+
+                <caption class="sr-only">
+                    Horários de funcionamento do ponto turístico
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Dia</th>
+                        <th scope="col">Abertura</th>
+                        <th scope="col">Fechamento</th>
+                        <th scope="col">Situação</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Segunda-feira</th>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>Fechado</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Terça-feira</th>
+                        <td>10:00</td>
+                        <td>16:00</td>
+                        <td>Aberto</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Quarta-feira</th>
+                        <td>10:00</td>
+                        <td>16:00</td>
+                        <td>Aberto</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Quinta-feira</th>
+                        <td>10:00</td>
+                        <td>16:00</td>
+                        <td>Aberto</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Sexta-feira</th>
+                        <td>10:00</td>
+                        <td>16:00</td>
+                        <td>Aberto</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Sábado</th>
+                        <td>13:00</td>
+                        <td>18:00</td>
+                        <td>Aberto</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Domingo</th>
+                        <td>13:00</td>
+                        <td>18:00</td>
+                        <td>Aberto</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <p class="mz-contato">
+            <strong>Telefone:</strong>
+            <a href="tel:+558134293169">(81) 3429-3169</a>
+        </p>
+
+    </div>
+
+
+    <!-- INGRESSOS -->
+    <div class="mz-bloco-linha cs-ingressos">
+        <h2>Ingressos</h2>
+        <p>terça-feira</p>
+        <p>Entrada gratuita - aberta ao público</p>
+        <div class="cs-ingresso-grupo">
+            <p>De quarta a domingo</p>
+            <p>Inteira: R$ 10,00 | Meia: R$ 5,00</p>
+        </div>
+        <div class="cs-meia-entrada">
+            <strong>Meia entrada:</strong> Mediante documentação<br />comprobatória.<br />Pessoas com
+            deficiência, estudantes,<br />professores e idosos acima de 60 anos
+        </div>
+    </div>
+
+</section>
+
 
         <section aria-labelledby="view-cais-do-sertao-titulo-recursos-cais" class="mz-recursos irb-recursos">
             <h2 id="view-cais-do-sertao-titulo-recursos-cais">O que esse lugar oferece:</h2>
