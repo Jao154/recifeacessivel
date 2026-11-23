@@ -217,7 +217,7 @@
 .mz-tabela-wrapper {
     width: 100%;
     max-width: 100%;
-
+   
     overflow-x: auto;
 
     border: 1px solid var(--cor-borda-suave);
@@ -230,8 +230,7 @@
 
 .mz-tabela-horarios {
     width: 100%;
-    min-width: 620px;
-
+    max-width: 100%;
     border-collapse: collapse;
 
     color: var(--cor-texto-principal);
