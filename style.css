@@ -715,11 +715,11 @@ body {
 
 .barra-acessibilidade {
 
-    position: absolute;
+    position: fixed;
 
-    right: 0;
+    right: 10px;
 
-    top: 50%;
+    top: 25%;
 
     transform: translateY(-50%);
 
@@ -735,9 +735,9 @@ body {
 
 .botao-acessibilidade {
 
-    width: 48px;
+    width: 56px;
 
-    height: 48px;
+    height: 56px;
 
     border-radius: 50%;
 
@@ -760,6 +760,8 @@ body {
     cursor: pointer;
 
     box-shadow: var(--sombra-cartao);
+
+    border: 4px solid var(--cor-texto-claro);
 
 }
 
@@ -2154,12 +2156,14 @@ body.pagina-inicio .acessibilidade-fixa {
 }
 
 .acessibilidade-fixa {
-    display: flex;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(50%);
     align-items: center;
     justify-content: center;
     gap: 7px;
     padding: 9px 20px 12px;
-    background: var(--cor-fundo-cartao);
 }
 
 .acessibilidade-fixa button {
@@ -3137,7 +3141,8 @@ html.alto-contraste .mz-lista-comentarios {
     }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 700px) {
+
     .mz-acoes-titulo {
         width: 100%;
         justify-content: flex-end;
@@ -3149,6 +3154,23 @@ html.alto-contraste .mz-lista-comentarios {
 
     .mz-recurso-central {
         width: 100%;
+    }
+
+    .menu-principal {
+        font-size: 10px;
+        display: flex;
+        width: auto;
+        justify-content: left;
+        gap: 1px;
+    }
+
+    .mz-galeria {
+        display: table-row;
+        margin: 70px;
+    
+        img {
+            margin: 00px 0 10px 0px;
+        }
     }
 }
 
