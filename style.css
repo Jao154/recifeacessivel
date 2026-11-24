@@ -729,6 +729,8 @@ body {
 
     gap: 10px;
 
+    z-index: 3;
+
 }
 
 
@@ -2042,7 +2044,6 @@ input:disabled {
 
     .barra-acessibilidade {
         margin-left: 0;
-        justify-content: center;
     }
 
     .area-catalogo {
@@ -2156,26 +2157,52 @@ body.pagina-inicio .acessibilidade-fixa {
 }
 
 .acessibilidade-fixa {
+
     position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(50%);
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    padding: 9px 20px 12px;
+
+    right: 10px;
+
+    top: 25%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 3;
 }
 
 .acessibilidade-fixa button {
-    cursor: pointer;
-    min-height: 42px;
-    min-width: 48px;
-    padding: 5px 12px;
-    background: var(--cor-botao-fundo);
+    width: 56px;
+
+    height: 56px;
+
+    border-radius: 50%;
+
+    background-color: var(--cor-botao-fundo);
+
     color: var(--cor-botao-texto);
+
     border: 2px solid var(--cor-borda-forte);
-    border-radius: 999px;
-    font: 700 1rem 'Atkinson Hyperlegible', Arial, sans-serif;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    box-shadow: var(--sombra-cartao);
+
+    border: 4px solid var(--cor-texto-claro);
 }
 
 .acessibilidade-fixa button:hover,
@@ -2185,11 +2212,9 @@ body.pagina-inicio .acessibilidade-fixa {
 
 @media (min-width: 981px) {
     .acessibilidade-fixa {
-        position: absolute;
+        position: fixed;
         z-index: 3;
-        right: 20px;
-        top: 84px;
-        padding: 6px;
+        top: 25%;
         background: transparent;
     }
 }
@@ -2814,9 +2839,9 @@ html.alto-contraste .mz-lista-comentarios {
 
 @media (max-width: 980px) {
     .barra-acessibilidade {
-        position: static;
+        position: fixed;
         transform: none;
-        flex-direction: row;
+        flex-direction: column;
         margin-left: 12px;
     }
 
@@ -3107,7 +3132,6 @@ html.alto-contraste .mz-lista-comentarios {
 
     .barra-acessibilidade {
         margin-left: 0;
-        justify-content: center;
     }
 
     .area-catalogo {
@@ -3139,9 +3163,32 @@ html.alto-contraste .mz-lista-comentarios {
     .rodape-inferior-conteudo {
         flex-direction: column;
     }
+
+    .barra-acessibilidade {
+        position: fixed;
+        flex-direction: column;
+        top: 75%;
+        background: transparent;
+
+        button {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    .acessibilidade-fixa {
+        position: fixed;
+        top: 85%;
+        background: transparent;
+
+        button {
+            width: 64px;
+            height: 64px;
+        }
+    }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
 
     .mz-acoes-titulo {
         width: 100%;
@@ -3157,11 +3204,9 @@ html.alto-contraste .mz-lista-comentarios {
     }
 
     .menu-principal {
-        font-size: 10px;
-        display: flex;
-        width: auto;
-        justify-content: left;
-        gap: 1px;
+        font-size: 1px;
+        gap: 0px;
+        margin: 0px;
     }
 
     .mz-galeria {
