@@ -2293,10 +2293,10 @@ html.alto-contraste .mz-check {
 
 .mz-imagem-principal {
     width: 100%;
-    height: clamp(220px, 38vw, 420px);
+    height: clamp(220px, 38vw, 600px);
     border-radius: 8px;
     object-fit: cover;
-    object-position: center;
+    object-position: center 70%;
 }
 
 .mz-sobre {
