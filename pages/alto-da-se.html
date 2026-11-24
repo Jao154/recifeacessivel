@@ -10,6 +10,8 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
     <link href="../style.css" rel="stylesheet" />
+    <!----link css padrao pages-->
+    <link rel="stylesheet" href="../pages/css/padrao.css">
 </head>
 <body class="pagina-alto-da-se">
     <a class="pular-conteudo" href="#view-alto-da-se-principal">
@@ -115,17 +117,106 @@
                 loading="lazy">
         </section>
 
-        <section aria-label="Horários, contatos e ingressos" class="mz-informacoes-rapidas">
-            <div class="mz-bloco-linha">
-                <h2>Horários + Contatos</h2>
-                <p>Aberto todos os dias.</p>
-                <p><strong>Telefone:</strong> <a href="tel:+558134293169">(81) 3429-3169</a></p>
-            </div>
-            <div class="mz-bloco-linha">
-                <h2>Ingressos</h2>
-                <p>Ponto turístico gratuito</p>
-            </div>
-        </section>
+     
+<section aria-label="Horários, contatos e ingressos" class="mz-informacoes-rapidas">
+
+    <!-- HORÁRIOS E CONTATOS -->
+    <div class="mz-bloco-linha">
+
+        <h2>Horários + Contatos</h2>
+
+        <div class="mz-tabela-wrapper">
+            <table class="mz-tabela-horarios">
+
+                <caption class="sr-only">
+                    Horários de funcionamento do ponto turístico
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Dia</th>
+                        <th scope="col">Abertura</th>
+                        <th scope="col">Fechamento</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Segunda-feira</th>
+                        <td> 00:00</td>
+                        <td>23:59 </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Terça-feira</th>
+                        <td>00:00</td>
+                        <td>23:59</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Quarta-feira</th>
+                        <td>00:00</td>
+                        <td>23:59</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Quinta-feira</th>
+                        <td>00:00</td>
+                        <td>23:59</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Sexta-feira</th>
+                        <td>00:00</td>
+                        <td>23:59</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Sábado</th>
+                        <td>00:00</td>
+                        <td>23:59</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Domingo</th>
+                        <td>00:00</td>
+                        <td>23:59</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <p class="mz-contato">
+            <strong>Telefone:</strong>
+            <a href="tel:+558134293169">(81) 3429-3169</a>
+        </p>
+
+    </div>
+
+
+    <!-- INGRESSOS -->
+    <div class="mz-bloco-linha">
+
+        <h2>Ingressos</h2>
+
+        <div class="mz-ingresso-grupo">
+
+            <p class="mz-ingresso-titulo">
+                <strong>Entrada gratuita</strong>
+            </p>
+
+            <p>
+                Não é necessário adquirir ingresso
+                para visitar este ponto turístico.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
 
         <section aria-labelledby="view-alto-da-se-titulo-recursos" class="mz-recursos">
             <h2 id="view-alto-da-se-titulo-recursos">O que esse lugar oferece:</h2>
