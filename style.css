@@ -2400,7 +2400,7 @@ html.alto-contraste .mz-check {
     background: var(--cor-destaque);
     color: var(--cor-texto-no-destaque);
     border: 2px solid var(--cor-borda-forte);
-    font-size: .95rem;
+    font-size: 1.35rem;
     line-height: 1.35;
     text-align: center;
 }
