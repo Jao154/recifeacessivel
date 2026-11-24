@@ -11,6 +11,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
 </head>
+
+<div aria-label="Controles de acessibilidade da página" class="barra-acessibilidade" role="group">
+    <button aria-label="Ativar alto contraste" aria-pressed="false" class="botao-acessibilidade"
+        id="btn-toggle-contrast" type="button">
+        ◐
+    </button>
+    <button aria-label="Aumentar tamanho do texto" aria-pressed="false" class="botao-acessibilidade"
+        id="btn-toggle-font" type="button">
+        A+
+    </button>
+</div>
+
+<div aria-label="Controles de acessibilidade nas páginas de destino" class="acessibilidade-fixa" role="group">
+    <button aria-label="Ativar alto contraste" aria-pressed="false" id="btn-header-contrast" title="Alternar alto contraste" type="button">◐</button>
+    <button aria-label="Aumentar tamanho do texto" aria-pressed="false" id="btn-header-font" title="Aumentar tamanho do texto" type="button">A+</button>
+</div>
+
 <body class="pagina-inicio">
     <a class="pular-conteudo" href="#conteudo-principal">
         Pular para o conteúdo principal
@@ -26,6 +43,7 @@
                     Recife Acessível
                 </span>
             </a>
+
             <nav aria-label="Menu principal" class="menu-principal">
                 <a aria-current="page" class="ativo" href="#inicio">
                     Início
@@ -69,10 +87,6 @@
 </a>
             </div>
         </div>
-        <div aria-label="Controles de acessibilidade nas páginas de destino" class="acessibilidade-fixa" role="group">
-            <button aria-label="Ativar alto contraste" aria-pressed="false" id="btn-header-contrast" title="Alternar alto contraste" type="button">◐</button>
-            <button aria-label="Aumentar tamanho do texto" aria-pressed="false" id="btn-header-font" title="Aumentar tamanho do texto" type="button">A+</button>
-        </div>
     </header>
     <!-- Hero Banner -->
     <div class="hero-banner">
@@ -90,16 +104,6 @@
                     Encontre informações sobre recursos de acessibilidade física, sensorial e comunicacional em destinos
                     de Recife e Olinda. Antes da visita, confirme as condições diretamente com o local.
                 </p>
-            </div>
-            <div aria-label="Controles de acessibilidade da página" class="barra-acessibilidade" role="group">
-                <button aria-label="Ativar alto contraste" aria-pressed="false" class="botao-acessibilidade"
-                    id="btn-toggle-contrast" type="button">
-                    ◐
-                </button>
-                <button aria-label="Aumentar tamanho do texto" aria-pressed="false" class="botao-acessibilidade"
-                    id="btn-toggle-font" type="button">
-                    A+
-                </button>
             </div>
         </section>
         <!-- Catálogo: Filtros e lista de destinos -->
