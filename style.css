@@ -1390,8 +1390,13 @@ body {
     border: 1.5px solid var(--cor-etiqueta-borda);
 
 }
+/* VERIFICADO DOS PONTOS T CORES E TAMANHO */
+.verificacao {
+font-weight: 600 !important;
+color: rgb(12, 155, 31) !important;
+font-size: 1.100rem !important;
 
-
+}
 
 .botao-detalhes {
 
