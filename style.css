@@ -1390,12 +1390,12 @@ body {
     border: 1.5px solid var(--cor-etiqueta-borda);
 
 }
-/* VERIFICADO DOS PONTOS T CORES E TAMANHO */
-.verificacao {
-font-weight: 600 !important;
-color: rgb(12, 155, 31) !important;
-font-size: 1.100rem !important;
 
+.mz-recurso .verificacao {
+    font-weight: 700;
+    color: rgb(12, 155, 31);
+    font-size: 1.3rem;
+    margin-bottom: 6px;
 }
 
 .botao-detalhes {
@@ -2353,7 +2353,7 @@ html.alto-contraste .mz-check {
     max-width: 80ch;
     margin: 0 auto;
     color: var(--cor-texto-secundario);
-    font-size: 1.05rem;
+    font-size: 1.10rem;
     line-height: 1.55;
 }
 
@@ -2413,11 +2413,28 @@ html.alto-contraste .mz-check {
     text-decoration: underline;
 }
 
+.mz-contato {
+    font-family: inherit;
+    font-size: 1.15rem; /* Mesmo tamanho usado em .mz-recurso time */
+    line-height: 1.4;
+}
+
+.mz-contato a {
+    font-weight: 600;
+}
+
+.mz-contato strong,
+.mz-contato a {
+    font-family: inherit;
+    font-size: inherit;
+}
+
 /* Ajustes específicos de horários e ingressos */
 .irb-horarios .irb-telefone,
 .cs-horarios .cs-telefone,
-.mm-contato {
+.mz-contato {
     margin-top: 10px;
+    font-family: inherit;
 }
 
 .irb-preco-grupo,
@@ -2476,7 +2493,7 @@ html.alto-contraste .mz-check {
 
 .mz-recurso h3 {
     color: var(--cor-link);
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.3;
     margin-bottom: 6px;
 }
@@ -2485,8 +2502,8 @@ html.alto-contraste .mz-check {
 .mz-recurso time {
     display: block;
     color: var(--cor-texto-secundario);
-    font-size: .85rem;
-    line-height: 1.35;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 .mz-check {
@@ -2535,15 +2552,16 @@ main section h2 {
 }
 
 .mz-endereco {
-    font-size: 1rem;
-    margin: 8px 0 4px;
+    font-size: 1.15rem;
+    line-height: 1.45;
+    margin: 12px 0 6px;
     text-align: center;
 }
 
 .mz-nota-embarque {
     color: var(--cor-texto-secundario);
-    font-size: .95rem;
-    line-height: 1.45;
+    font-size: 1.10rem;
+    line-height: 1.55;
     text-align: center;
 }
 
@@ -3333,9 +3351,16 @@ html.alto-contraste .mz-lista-comentarios {
     background: var(--cor-fundo-destaque);
     border-radius: 8px;
     color: var(--cor-texto-principal);
-    font-size: 1rem;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
     line-height: 1.5;
     overflow-wrap: anywhere;
+}
+
+.mz-bloco-linha:first-child > p:last-child a {
+    color: var(--cor-texto-principal);
 }
 
 /* 3. Ingressos e grupos de preços */
@@ -3433,8 +3458,11 @@ html.alto-contraste .mz-lista-comentarios {
 }
 
 .mz-recurso time {
+    font-family: inherit;
     font-weight: 700;
+    font-size: 1.05rem;
     font-variant-numeric: tabular-nums;
+    margin-top: 2px;
 }
 
 html.alto-contraste .mz-bloco-linha {
@@ -3496,4 +3524,26 @@ html.alto-contraste .mz-bloco-linha {
     .mz-recursos-grade {
         grid-template-columns: minmax(0, 1fr);
     }
+}
+
+.mz-ingresso-grupo {
+    max-width: 650px;
+    margin: 12px auto;
+    padding: 12px 16px;
+    background: var(--cor-fundo-destaque);
+    border: 1px solid var(--cor-borda-suave);
+    border-radius: 9px;
+    color: var(--cor-texto-principal);
+}
+
+.mz-ingresso-grupo .mz-ingresso-titulo {
+    font-size: 1.35rem;
+    line-height: 1.45;
+    margin-bottom: 6px;
+}
+
+.mz-ingresso-grupo p:not(.mz-ingresso-titulo) {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin: 4px 0;
 }
