@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Portal de turismo acessível em Recife e Olinda, com detalhes de seis pontos turísticos." name="description" />
-    <title>Roteiro Livre - PE — Turismo acessível em Recife e Olinda</title>
+    <title>Rota Livre — Turismo acessível em Recife e Olinda</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
@@ -13,10 +13,6 @@
 </head>
 
 <body class="pagina-inicio">
-    <a class="pular-conteudo" href="#conteudo-principal">
-        Pular para o conteúdo principal
-    </a>
-
     <div aria-label="Controles de acessibilidade da página" class="barra-acessibilidade" role="group">
         <button aria-label="Ativar alto contraste" aria-pressed="false" class="botao-acessibilidade"
         id="btn-toggle-contrast" type="button">
@@ -28,7 +24,14 @@
         </button>
     </div>
 
+    <div aria-label="Controles de acessibilidade nas páginas de destino" class="acessibilidade-fixa" role="group">
+        <button aria-label="Ativar alto contraste" aria-pressed="false" id="btn-header-contrast" title="Alternar alto contraste" type="button">◐</button>
+        <button aria-label="Aumentar tamanho do texto" aria-pressed="false" id="btn-header-font" title="Aumentar tamanho do texto" type="button">A+</button>
+    </div>
 
+    <a class="pular-conteudo" href="#conteudo-principal">
+        Pular para o conteúdo principal
+    </a>
     <!-- Cabeçalho -->
     <header class="cabecalho">
         <div class="container cabecalho-conteudo">
@@ -37,7 +40,7 @@
                     ☀
                 </span>
                 <span>
-                    Roteiro Livre - PE
+                    Rota Livre
                 </span>
             </a>
 
@@ -184,312 +187,325 @@
         </p>
     </div>
 </aside>
-    <!-- Grade de resultados -->
-    <div aria-labelledby="titulo-resultados" class="grade-destinos" id="lista-destinos">
-        <!-- 1. Marco Zero -->
-        <article class="cartao-destino" data-city="recife" data-resources="piso-tatil rota-plana">
-            <div class="imagem-destino">
-                <div class="etiquetas-topo">
-                    <span class="etiqueta-cidade">
-                        Recife
-                    </span>
-                    <span class="etiqueta-categoria">
-                        Espaço aberto
-                    </span>
+            <!-- Grade de resultados -->
+            <div>
+                <div class="barra-resultados">
+                    <h2 id="titulo-resultados">
+                        Destinos
+                    </h2>
+                    <p aria-atomic="true" aria-live="polite" id="resumo-resultados" role="status">
+                        6 destinos encontrados: Recife (3) e Olinda (3).
+                    </p>
                 </div>
-                <a aria-hidden="true" class="link-imagem-destino" href="pages/marco-zero.html" tabindex="-1">
-                    <img alt="Vista da Praça do Marco Zero no Bairro do Recife com a rosa dos ventos no chão e prédios históricos ao fundo."
-                    decoding="async" loading="lazy" src="imagens/marco-zero/marco-zero.jpg" />
-                </a>
-                <span class="etiqueta-preco">
-                    Gratuito
-                </span>
-            </div>
-            <div class="corpo-destino">
-                <p class="localizacao-destino">
-                    <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
-                        </path>
-                        <circle cx="12" cy="10" r="3">
-                        </circle>
-                    </svg>
-                    Bairro do Recife, Recife - PE
-                </p>
-                <h3>
-                    <a class="link-destino" href="pages/marco-zero.html">Marco Zero</a>
-                </h3>
-                <ul aria-label="Características e recursos informados para este destino"
-                    class="lista-selo-acessibilidade">
-                    <li class="selo-acessibilidade">
-                        Piso tátil
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Rota plana
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Aberto
-                    </li>
-                </ul>
-                <p class="aviso-detalhes">
-                    Confirme as condições de acesso diretamente com o estabelecimento.
-                </p>
-                <a aria-label="Ver detalhes de Marco Zero" class="botao-detalhes" href="pages/marco-zero.html">Ver detalhes do local</a>
-            </div>
-        </article>
-        <!-- 2. Instituto Ricardo Brennand -->
-        <article class="cartao-destino" data-city="recife"
-            data-resources="elevadores maquetes-tateis libras">
-            <div class="imagem-destino">
-                <div class="etiquetas-topo">
-                    <span class="etiqueta-cidade">
-                        Recife
-                    </span>
-                    <span class="etiqueta-categoria">
-                        Museus
-                    </span>
+                <div aria-labelledby="titulo-resultados" class="grade-destinos" id="lista-destinos">
+                    <!-- 1. Marco Zero -->
+                    <article class="cartao-destino" data-city="recife" data-resources="piso-tatil rota-plana">
+                        <div class="imagem-destino">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">
+                                    Recife
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Espaço aberto
+                                </span>
+                            </div>
+                            <a aria-label="Ver detalhes de Marco Zero" class="link-imagem-destino" href="pages/marco-zero.html">
+                                <img alt="Vista da Praça do Marco Zero no Bairro do Recife com a rosa dos ventos no chão e prédios históricos ao fundo."
+                                decoding="async" loading="lazy" src="imagens/marco-zero/marco-zero.jpg" />
+                            </a>
+                            <span class="etiqueta-preco">
+                                Gratuito
+                            </span>
+                        </div>
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
+                                </svg>
+                                Bairro do Recife, Recife - PE
+                            </p>
+                            <h3>
+                                <a class="link-destino" href="pages/marco-zero.html">Marco Zero</a>
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Piso tátil
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Rota plana
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Aberto
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
+                            <a class="botao-detalhes" href="pages/marco-zero.html">Ver detalhes do local</a>
+                        </div>
+                    </article>
+                    <!-- 2. Instituto Ricardo Brennand -->
+                    <article class="cartao-destino" data-city="recife"
+                        data-resources="elevadores maquetes-tateis libras">
+                        <div class="imagem-destino">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">
+                                    Recife
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Museus
+                                </span>
+                            </div>
+                            <a aria-label="Ver detalhes de Instituto Ricardo Brennand" class="link-imagem-destino" href="pages/instituto-ricardo-brennand.html">
+                                <img alt="Fachada em estilo castelo medieval do Instituto Ricardo Brennand cercada por jardins."
+                                decoding="async" loading="lazy" src="imagens/ricardo-brennand/instituto-ricardo-brennand.jpg" />
+                            </a>
+                            <span class="etiqueta-preco">
+                                Meia PCD / Acomp. Grat.
+                            </span>
+                        </div>
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
+                                </svg>
+                                Várzea, Recife - PE
+                            </p>
+                            <h3>
+                                <a class="link-destino" href="pages/instituto-ricardo-brennand.html">Instituto Ricardo Brennand</a>
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Elevadores
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Maquetes táteis
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Libras
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
+                            <a class="botao-detalhes" href="pages/instituto-ricardo-brennand.html">Ver detalhes do local</a>
+                        </div>
+                    </article>
+                    <!-- 3. Centro Cultural Cais do Sertão -->
+                    <article class="cartao-destino" data-city="recife" data-resources="piso-tatil braille libras">
+                        <div class="imagem-destino">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">
+                                    Recife
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Interativo
+                                </span>
+                            </div>
+                            <a aria-label="Ver detalhes de Centro Cultural Cais do Sertão" class="link-imagem-destino" href="pages/cais-do-sertao.html">
+                                <img alt="Prédio moderno do Centro Cultural Cais do Sertão com fachada vazada em cobogó."
+                                decoding="async" loading="lazy" src="imagens/cais-do-sertao/cais_do_sertao.jpg" />
+                            </a>
+                            <span class="etiqueta-preco">
+                                Gratuito (terças e PCD)
+                            </span>
+                        </div>
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
+                                </svg>
+                                Bairro do Recife, Recife - PE
+                            </p>
+                            <h3>
+                                <a class="link-destino" href="pages/cais-do-sertao.html">Centro Cultural Cais do Sertão</a>
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Piso tátil
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Braille
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Libras
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
+                            <a class="botao-detalhes" href="pages/cais-do-sertao.html">Ver detalhes do local</a>
+                        </div>
+                    </article>
+                    <!-- 4. Mosteiro de São Bento -->
+                    <article class="cartao-destino" data-city="olinda" data-resources="rampas audiodescricao maquete">
+                        <div class="imagem-destino">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">
+                                    Olinda
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Barroco
+                                </span>
+                            </div>
+                            <a aria-label="Ver detalhes de Mosteiro de São Bento" class="link-imagem-destino" href="pages/mosteiro-de-sao-bento.html">
+                                <img alt="Fachada histórica do Mosteiro de São Bento em Olinda."
+                                decoding="async" loading="lazy" src="imagens/mosteiro-de-sao-bento/mosteiro-sao-bento.jpg" style="object-position: 25% 30%">
+                            </a>
+                            <span class="etiqueta-preco">
+                                Gratuito
+                            </span>
+                        </div>
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
+                                </svg>
+                                Varadouro, Olinda - PE
+                            </p>
+                            <h3>
+                                <a class="link-destino" href="pages/mosteiro-de-sao-bento.html">Mosteiro de São Bento</a>
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Rampa lateral
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Audiodescrição
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Maquete
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
+                            <a class="botao-detalhes" href="pages/mosteiro-de-sao-bento.html">Ver detalhes do local</a>
+                        </div>
+                    </article>
+                    <!-- 5. Alto da Sé -->
+                    <article class="cartao-destino" data-city="olinda"
+                        data-resources="rota-plana audiodescricao guia-tatil">
+                        <div class="imagem-destino">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">
+                                    Olinda
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Mirante
+                                </span>
+                            </div>
+                            <a aria-label="Ver detalhes de Alto da Sé" class="link-imagem-destino" href="pages/alto-da-se.html">
+                                <img alt="Vista panorâmica do mirante do Alto da Sé com a Igreja da Sé e o mar ao fundo."
+                                decoding="async" loading="lazy" src="imagens/alto-da-se/alto-da-se3.jpg" />
+                            </a>
+                            <span class="etiqueta-preco">
+                                Gratuito
+                            </span>
+                        </div>
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
+                                </svg>
+                                Alto da Sé, Olinda - PE
+                            </p>
+                            <h3>
+                                <a class="link-destino" href="pages/alto-da-se.html">Alto da Sé</a>
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Rota plana
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Audiodescrição
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Guia tátil
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
+                            <a class="botao-detalhes" href="pages/alto-da-se.html">Ver detalhes do local</a>
+                        </div>
+                    </article>
+                    <!-- 6. Museu do Mamulengo -->
+                    <article class="cartao-destino" data-city="olinda"
+                        data-resources="acervo-tatil acesso-terreo guia-tatil">
+                        <div class="imagem-destino">
+                            <div class="etiquetas-topo">
+                                <span class="etiqueta-cidade">
+                                    Olinda
+                                </span>
+                                <span class="etiqueta-categoria">
+                                    Cultura popular
+                                </span>
+                            </div>
+                            <a aria-label="Ver detalhes de Museu do Mamulengo" class="link-imagem-destino" href="pages/museu-do-mamulengo.html">
+                                <img alt="Bonecos populares coloridos expostos no Museu do Mamulengo em Olinda."
+                                decoding="async" loading="lazy" src="imagens/museu-do-mamulengo/museu-do-mamulengo2.jpg" />
+                            </a>
+                            <span class="etiqueta-preco">
+                                Gratuito PCD
+                            </span>
+                        </div>
+                        <div class="corpo-destino">
+                            <p class="localizacao-destino">
+                                <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3">
+                                    </circle>
+                                </svg>
+                                Amparo, Olinda - PE
+                            </p>
+                            <h3>
+                                <a class="link-destino" href="pages/museu-do-mamulengo.html">Museu do Mamulengo</a>
+                            </h3>
+                            <ul aria-label="Características e recursos informados para este destino"
+                                class="lista-selo-acessibilidade">
+                                <li class="selo-acessibilidade">
+                                    Acervo tátil
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Acesso térreo
+                                </li>
+                                <li class="selo-acessibilidade">
+                                    Guia tátil
+                                </li>
+                            </ul>
+                            <p class="aviso-detalhes">
+                                Confirme as condições de acesso diretamente com o estabelecimento.
+                            </p>
+                            <a class="botao-detalhes" href="pages/museu-do-mamulengo.html">Ver detalhes do local</a>
+                        </div>
+                    </article>
                 </div>
-                <a aria-hidden="true" class="link-imagem-destino" href="pages/instituto-ricardo-brennand.html" tabindex="-1">
-                    <img alt="Fachada em estilo castelo medieval do Instituto Ricardo Brennand cercada por jardins."
-                    decoding="async" loading="lazy" src="imagens/ricardo-brennand/instituto-ricardo-brennand.jpg" />
-                </a>
-                <span class="etiqueta-preco">
-                    Meia PCD / Acomp. Grat.
-                </span>
-            </div>
-            <div class="corpo-destino">
-                <p class="localizacao-destino">
-                    <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
-                        </path>
-                        <circle cx="12" cy="10" r="3">
-                        </circle>
-                    </svg>
-                    Várzea, Recife - PE
+                <p class="sem-resultados" hidden="True" id="sem-resultados">
+                    Nenhum destino corresponde aos filtros selecionados. Ajuste os critérios ou limpe os filtros.
                 </p>
-                <h3>
-                    <a class="link-destino" href="pages/instituto-ricardo-brennand.html">Instituto Ricardo Brennand</a>
-                </h3>
-                <ul aria-label="Características e recursos informados para este destino"
-                    class="lista-selo-acessibilidade">
-                    <li class="selo-acessibilidade">
-                        Elevadores
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Maquetes táteis
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Libras
-                    </li>
-                </ul>
-                <p class="aviso-detalhes">
-                    Confirme as condições de acesso diretamente com o estabelecimento.
-                </p>
-                <a aria-label="Ver detalhes de Instituto Ricardo Brennand" class="botao-detalhes" href="pages/instituto-ricardo-brennand.html">Ver detalhes do local</a>
             </div>
-        </article>
-        <!-- 3. Centro Cultural Cais do Sertão -->
-        <article class="cartao-destino" data-city="recife" data-resources="piso-tatil braile libras">
-            <div class="imagem-destino">
-                <div class="etiquetas-topo">
-                    <span class="etiqueta-cidade">
-                        Recife
-                    </span>
-                    <span class="etiqueta-categoria">
-                        Interativo
-                    </span>
-                </div>
-                <a aria-hidden="true" class="link-imagem-destino" href="pages/cais-do-sertao.html" tabindex="-1">
-                    <img alt="Prédio moderno do Centro Cultural Cais do Sertão com fachada vazada em cobogó."
-                    decoding="async" loading="lazy" src="imagens/cais-do-sertao/cais_do_sertao.jpg" />
-                </a>
-                <span class="etiqueta-preco">
-                    Gratuito (terças e PCD)
-                </span>
-            </div>
-            <div class="corpo-destino">
-                <p class="localizacao-destino">
-                    <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
-                        </path>
-                        <circle cx="12" cy="10" r="3">
-                        </circle>
-                    </svg>
-                    Bairro do Recife, Recife - PE
-                </p>
-                <h3>
-                    <a class="link-destino" href="pages/cais-do-sertao.html">Centro Cultural Cais do Sertão</a>
-                </h3>
-                <ul aria-label="Características e recursos informados para este destino"
-                    class="lista-selo-acessibilidade">
-                    <li class="selo-acessibilidade">
-                        Piso tátil
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Braille
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Libras
-                    </li>
-                </ul>
-                <p class="aviso-detalhes">
-                    Confirme as condições de acesso diretamente com o estabelecimento.
-                </p>
-                <a aria-label="Ver detalhes de Centro Cultural Cais do Sertão" class="botao-detalhes" href="pages/cais-do-sertao.html">Ver detalhes do local</a>
-            </div>
-        </article>
-        <!-- 4. Mosteiro de São Bento -->
-        <article class="cartao-destino" data-city="olinda" data-resources="rampas audiodescricao maquetes-tateis">
-            <div class="imagem-destino">
-                <div class="etiquetas-topo">
-                    <span class="etiqueta-cidade">
-                        Olinda
-                    </span>
-                    <span class="etiqueta-categoria">
-                        Barroco
-                    </span>
-                </div>
-                <a aria-hidden="true" class="link-imagem-destino" href="pages/mosteiro-de-sao-bento.html" tabindex="-1">
-                    <img alt="Fachada histórica do Mosteiro de São Bento em Olinda."
-                    decoding="async" loading="lazy" src="imagens/mosteiro-de-sao-bento/mosteiro-sao-bento.jpg" style="object-position: 25% 30%">
-                </a>
-                <span class="etiqueta-preco">
-                    Gratuito
-                </span>
-            </div>
-            <div class="corpo-destino">
-                <p class="localizacao-destino">
-                    <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
-                        </path>
-                        <circle cx="12" cy="10" r="3">
-                        </circle>
-                    </svg>
-                    Varadouro, Olinda - PE
-                </p>
-                <h3>
-                    <a class="link-destino" href="pages/mosteiro-de-sao-bento.html">Mosteiro de São Bento</a>
-                </h3>
-                <ul aria-label="Características e recursos informados para este destino"
-                    class="lista-selo-acessibilidade">
-                    <li class="selo-acessibilidade">
-                        Rampa lateral
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Audiodescrição
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Maquete
-                    </li>
-                </ul>
-                <p class="aviso-detalhes">
-                    Confirme as condições de acesso diretamente com o estabelecimento.
-                </p>
-                <a aria-label="Ver detalhes de Mosteiro de São Bento" class="botao-detalhes" href="pages/mosteiro-de-sao-bento.html">Ver detalhes do local</a>
-            </div>
-        </article>
-        <!-- 5. Alto da Sé -->
-        <article class="cartao-destino" data-city="olinda"
-            data-resources="rota-plana audiodescricao guia-tatil">
-            <div class="imagem-destino">
-                <div class="etiquetas-topo">
-                    <span class="etiqueta-cidade">
-                        Olinda
-                    </span>
-                    <span class="etiqueta-categoria">
-                        Mirante
-                    </span>
-                </div>
-                <a aria-hidden="true" class="link-imagem-destino" href="pages/alto-da-se.html" tabindex="-1">
-                    <img alt="Vista panorâmica do mirante do Alto da Sé com a Igreja da Sé e o mar ao fundo."
-                    decoding="async" loading="lazy" src="imagens/alto-da-se/alto-da-se3.jpg" />
-                </a>
-                <span class="etiqueta-preco">
-                    Gratuito
-                </span>
-            </div>
-            <div class="corpo-destino">
-                <p class="localizacao-destino">
-                    <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
-                        </path>
-                        <circle cx="12" cy="10" r="3">
-                        </circle>
-                    </svg>
-                    Alto da Sé, Olinda - PE
-                </p>
-                <h3>
-                    <a class="link-destino" href="pages/alto-da-se.html">Alto da Sé</a>
-                </h3>
-                <ul aria-label="Características e recursos informados para este destino"
-                    class="lista-selo-acessibilidade">
-                    <li class="selo-acessibilidade">
-                        Rota plana
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Audiodescrição
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Guia tátil
-                    </li>
-                </ul>
-                <p class="aviso-detalhes">
-                    Confirme as condições de acesso diretamente com o estabelecimento.
-                </p>
-                <a aria-label="Ver detalhes de Alto da Sé" class="botao-detalhes" href="pages/alto-da-se.html">Ver detalhes do local</a>
-            </div>
-        </article>
-        <!-- 6. Museu do Mamulengo -->
-        <article class="cartao-destino" data-city="olinda"
-            data-resources="acervo-tatil acesso-terreo guia-tatil">
-            <div class="imagem-destino">
-                <div class="etiquetas-topo">
-                    <span class="etiqueta-cidade">
-                        Olinda
-                    </span>
-                    <span class="etiqueta-categoria">
-                        Cultura popular
-                    </span>
-                </div>
-                <a aria-hidden="true" class="link-imagem-destino" href="pages/museu-do-mamulengo.html" tabindex="-1">
-                    <img alt="Bonecos populares coloridos expostos no Museu do Mamulengo em Olinda."
-                    decoding="async" loading="lazy" src="imagens/museu-do-mamulengo/museu-do-mamulengo2.jpg" />
-                </a>
-                <span class="etiqueta-preco">
-                    Gratuito PCD
-                </span>
-            </div>
-            <div class="corpo-destino">
-                <p class="localizacao-destino">
-                    <svg aria-hidden="true" class="icone-pino" viewbox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
-                        </path>
-                        <circle cx="12" cy="10" r="3">
-                        </circle>
-                    </svg>
-                    Amparo, Olinda - PE
-                </p>
-                <h3>
-                    <a class="link-destino" href="pages/museu-do-mamulengo.html">Museu do Mamulengo</a>
-                </h3>
-                <ul aria-label="Características e recursos informados para este destino"
-                    class="lista-selo-acessibilidade">
-                    <li class="selo-acessibilidade">
-                        Acervo tátil
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Acesso térreo
-                    </li>
-                    <li class="selo-acessibilidade">
-                        Guia tátil
-                    </li>
-                </ul>
-                <p class="aviso-detalhes">
-                    Confirme as condições de acesso diretamente com o estabelecimento.
-                </p>
-                <a aria-label="Ver detalhes de Museu do Mamulengo" class="botao-detalhes" href="pages/museu-do-mamulengo.html">Ver detalhes do local</a>
-            </div>
-        </article>
-    </div>
         </section>
         <!-- Seção Sobre o projeto -->
         <section aria-labelledby="titulo-sobre" class="secao-sobre" id="sobre">
@@ -503,10 +519,10 @@
                     </span>
                 </div>
                 <h2 id="titulo-sobre">
-                    Sobre o projeto Roteiro Livre - PE
+                    Sobre o projeto Rota Livre
                 </h2>
                 <p class="texto-sobre">
-                    O portal Roteiro Livre - PE reúne informações para apoiar o planejamento de visitas
+                    O portal Rota Livre reúne informações para apoiar o planejamento de visitas
                     por pessoas com diferentes necessidades de acessibilidade. Os dados apresentados devem ser
                     confirmados com os responsáveis por cada espaço e podem ser atualizados com contribuições da
                     comunidade.
@@ -577,7 +593,7 @@
                         ☀
                     </span>
                     <span>
-                        Roteiro Livre - PE
+                        Rota Livre
                     </span>
                 </a>
                 <p>
@@ -625,6 +641,8 @@
                                 Conhecer o projeto
                             </a>
                         </li>
+                        <li>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -648,7 +666,7 @@
         <div class="rodape-inferior">
             <div class="container rodape-inferior-conteudo">
                 <span>
-                    © 2026 - Roteiro Livre - PE. Decreto Federal nº 5.296/2004.
+                    © 2026 - Rota Livre. Decreto Federal nº 5.296/2004.
                 </span>
                 <span>
                     Pernambuco, Brasil - Desenvolvido com foco e inclusão
