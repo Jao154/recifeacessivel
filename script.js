@@ -179,11 +179,6 @@
                 estado.municipio =
                     botao.dataset.filterCity || 'all';
 
-                if (estado.busca !== '') {
-                    definirBusca('', null);
-                    return;
-                }
-
                 aplicarFiltros();
             });
         });

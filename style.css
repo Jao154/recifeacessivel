@@ -1394,9 +1394,13 @@ body {
 
 .mz-recurso .verificacao {
     font-weight: 700;
-    color: rgb(12, 155, 31);
+    color: #176747;
     font-size: 1.3rem;
     margin-bottom: 6px;
+}
+
+html.alto-contraste .mz-recurso .verificacao {
+    color: var(--cor-destaque);
 }
 
 .botao-detalhes {
@@ -1781,9 +1785,6 @@ body {
 
     min-height: 36px;
 
-}
-.coluna-rodape a {
-    text-decoration: none;
 }
 
 
@@ -2654,7 +2655,7 @@ main section h2 {
 
 .mz-barra-nota {
     display: grid;
-    grid-template-columns: 80px minmax(30px, 1fr) 42px;
+    grid-template-columns: minmax(95px, auto) minmax(30px, 1fr) 42px;
     gap: 8px;
     align-items: center;
     font-size: .85rem;
@@ -3062,7 +3063,7 @@ html.alto-contraste .mz-lista-comentarios {
     }
 
     .mz-barra-nota {
-        grid-template-columns: 58px minmax(24px, 1fr) 30px;
+        grid-template-columns: minmax(68px, auto) minmax(24px, 1fr) 30px;
         gap: 5px;
         font-size: .7rem;
     }
