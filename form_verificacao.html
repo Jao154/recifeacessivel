@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roteiro Livre PE — Formulário de Auditoria Presencial</title>
+    <!-- Tailwind CSS para estilização responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonte Inter para máxima legibilidade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1e3a8a',
+                            900: '#0B192C',
+                            950: '#07101d',
+                        },
+                        emerald: {
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Variáveis de acessibilidade para controle dinâmico de fonte e alto contraste */
+        :root {
+            --font-scale: 1;
+        }
+
+        html {
+            font-size: calc(16px * var(--font-scale));
+            scroll-behavior: smooth;
+        }
+
+        /* Modo Alto Contraste (WCAG AAA) */
+        body.high-contrast {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+        }
+
+        body.high-contrast .bg-white,
+        body.high-contrast .bg-slate-50,
+        body.high-contrast .bg-slate-100,
+        body.high-contrast .bg-blue-50,
+        body.high-contrast .bg-emerald-50,
+        body.high-contrast .bg-amber-50 {
+            background-color: #0a0a0a !important;
+            color: #ffffff !important;
+            border-color: #ffff00 !important;
+        }
+
+        body.high-contrast header {
+            background: #000000 !important;
+            border-bottom: 2px solid #ffff00 !important;
+        }
+
+        body.high-contrast input,
+        body.high-contrast select,
+        body.high-contrast textarea {
+            background-color: #000000 !important;
+            color: #ffff00 !important;
+            border: 2px solid #ffff00 !important;
+        }
+
+        body.high-contrast .text-slate-600,
+        body.high-contrast .text-slate-700,
+        body.high-contrast .text-slate-800,
+        body.high-contrast .text-slate-900,
+        body.high-contrast .text-blue-900,
+        body.high-contrast .text-emerald-800 {
+            color: #ffffff !important;
+        }
+
+        body.high-contrast .accent-badge {
+            background-color: #ffff00 !important;
+            color: #000000 !important;
+            font-weight: 800 !important;
+        }
+
+        /* Transição suave para abertura condicional dos campos */
+        .conditional-panel {
+            transition: all 0.25s ease-in-out;
+        }
+
+        /* Foco visível aprimorado para navegação por teclado */
+        *:focus-visible {
+            outline: 3px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        body.high-contrast *:focus-visible {
+            outline: 3px solid #ffff00;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Barra Superior de Acessibilidade -->
+    <nav aria-label="Controles de Acessibilidade" class="bg-navy-950 text-white py-2 px-4 border-b border-slate-800">
+        <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+            <span class="text-slate-300 font-medium flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Ferramenta Interna de Campo • NBR 9050 & WCAG
+            </span>
+
+            <div class="flex items-center gap-2">
+                <button type="button" id="btn-decrease-font" aria-label="Diminuir tamanho da fonte" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold transition cursor-pointer">
+                    A-
+                </button>
+                <button type="button" id="btn-reset-font" aria-label="Restaurar tamanho padrão da fonte" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold transition cursor-pointer">
+                    A
+                </button>
+                <button type="button" id="btn-increase-font" aria-label="Aumentar tamanho da fonte" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold transition cursor-pointer">
+                    A+
+                </button>
+                <button type="button" id="btn-high-contrast" aria-pressed="false" class="ml-1 px-3 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold transition flex items-center gap-1.5 cursor-pointer">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 2v12a6 6 0 000-12z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Alto Contraste</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho Institucional -->
+    <header class="bg-gradient-to-r from-navy-900 via-blue-900 to-navy-900 text-white py-8 px-4 shadow-md">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3 accent-badge">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Auditoria & Curadoria Interna
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
+                <!-- Botões rápidos no cabeçalho: Exemplo de Teste e Histórico -->
+                <div class="shrink-0 flex flex-wrap items-center gap-2.5">
+                    <button type="button" id="btn-fill-demo" class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-sm font-bold shadow-sm transition flex items-center justify-center gap-2 cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <span>Preencher Exemplo</span>
+                    </button>
+
+                    <button type="button" id="btn-open-history" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white text-sm font-semibold transition flex items-center justify-center gap-2 cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Registros Salvos (<span id="history-count">0</span>)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Área de Alertas / Mensagens de Feedback (Substitui alert()) -->
+    <div id="toast-container" role="alert" aria-live="polite" class="fixed bottom-4 right-4 z-50 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+    <!-- Conteúdo Principal: Formulário de Auditoria -->
+    <main class="flex-1 max-w-4xl w-full mx-auto px-4 py-8">
+        <form id="audit-form" novalidate class="space-y-8">
+
+            <!-- ============================================================
+                 BLOCO 1: IDENTIFICAÇÃO DA VISITA E DO LOCAL
+            ============================================================= -->
+            <section aria-labelledby="bloco1-title" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-blue-900 text-white font-bold flex items-center justify-center text-sm">1</span>
+                        <div>
+                            <h2 id="bloco1-title" class="text-lg font-bold text-slate-900">Identificação da Visita e do Local</h2>
+                            <p class="text-xs text-slate-500">Mapeamento direto com as tabelas <code class="font-mono bg-slate-200/70 px-1 rounded">validacoes</code> e <code class="font-mono bg-slate-200/70 px-1 rounded">pontos_turisticos</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Nome do Avaliador (validado_por) -->
+                    <div>
+                        <label for="validado_por" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                            Nome do Avaliador(a) <span class="text-red-600" aria-hidden="true">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="validado_por"
+                            name="validado_por"
+                            maxlength="50"
+                            required
+                            placeholder="Ex: Mariana Silva (Equipe ADS)"
+                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                        >
+                        <p class="mt-1 text-xs text-slate-500">Máximo de 50 caracteres (<code class="font-mono">validado_por</code>).</p>
+                    </div>
+
+                    <!-- Data da Visita (data_envio) -->
+                    <div>
+                        <label for="data_envio" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                            Data da Visita Presencial <span class="text-red-600" aria-hidden="true">*</span>
+                        </label>
+                        <input
+                            type="date"
+                            id="data_envio"
+                            name="data_envio"
+                            required
+                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                        >
+                        <p class="mt-1 text-xs text-slate-500">Registrada automaticamente como <code class="font-mono">data_envio</code>.</p>
+                    </div>
+
+                    <!-- Ponto Turístico Avaliado (id_ponto) -->
+                    <div class="md:col-span-2">
+                        <label for="id_ponto" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                            Ponto Turístico Avaliado <span class="text-red-600" aria-hidden="true">*</span>
+                        </label>
+                        <select
+                            id="id_ponto"
+                            name="id_ponto"
+                            required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm font-medium focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                        >
+                            <option value="">-- Selecione o atrativo turístico cadastrado --</option>
+                            <option value="100">100 — Praça do Marco Zero (Recife Antigo)</option>
+                            <option value="101">101 — Museu Cais do Sertão (Recife Antigo)</option>
+                            <option value="102">102 — Rua do Bom Jesus (Recife Antigo)</option>
+                            <option value="103">103 — Mosteiro de São Bento (Sítio Histórico de Olinda)</option>
+                            <option value="104">104 — Museu do Mamulengo (Sítio Histórico de Olinda)</option>
+                            <option value="105">105 — Instituto Ricardo Brennand (Várzea, Recife)</option>
+                        </select>
+                    </div>
+
+                    <!-- Tipo de Acesso / Ingresso na Entrada -->
+                    <div class="md:col-span-2">
+                        <fieldset>
+                            <legend class="block text-sm font-semibold text-slate-800 mb-2">
+                                Política de Acesso / Ingresso na Entrada <span class="text-red-600" aria-hidden="true">*</span>
+                            </legend>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                                <label class="relative flex items-start gap-2.5 p-3.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-blue-50/50 cursor-pointer transition">
+                                    <input type="radio" name="tipo_ingresso" value="GRATUITA" required class="mt-1 w-4 h-4 text-blue-700 focus:ring-blue-600">
+                                    <div class="text-xs sm:text-sm">
+                                        <span class="font-bold text-slate-900 block">Gratuita</span>
+                                        <span class="text-slate-600 text-xs">Acesso livre para todos</span>
+                                    </div>
+                                </label>
+
+                                <label class="relative flex items-start gap-2.5 p-3.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-blue-50/50 cursor-pointer transition">
+                                    <input type="radio" name="tipo_ingresso" value="ISENCAO_PCD" class="mt-1 w-4 h-4 text-blue-700 focus:ring-blue-600">
+                                    <div class="text-xs sm:text-sm">
+                                        <span class="font-bold text-slate-900 block">Isenção PcD</span>
+                                        <span class="text-slate-600 text-xs">Gratuidade p/ PcD + acompanhante</span>
+                                    </div>
+                                </label>
+
+                                <label class="relative flex items-start gap-2.5 p-3.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-blue-50/50 cursor-pointer transition">
+                                    <input type="radio" name="tipo_ingresso" value="MEIA_PCD" class="mt-1 w-4 h-4 text-blue-700 focus:ring-blue-600">
+                                    <div class="text-xs sm:text-sm">
+                                        <span class="font-bold text-slate-900 block">Meia-entrada PcD</span>
+                                        <span class="text-slate-600 text-xs">Desconto legal na bilheteria</span>
+                                    </div>
+                                </label>
+
+                                <label class="relative flex items-start gap-2.5 p-3.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-blue-50/50 cursor-pointer transition">
+                                    <input type="radio" name="tipo_ingresso" value="INTEGRAL" class="mt-1 w-4 h-4 text-blue-700 focus:ring-blue-600">
+                                    <div class="text-xs sm:text-sm">
+                                        <span class="font-bold text-slate-900 block">Integral</span>
+                                        <span class="text-slate-600 text-xs">Entrada paga sem isenção</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 BLOCO 2: VALIDAÇÃO DOS 5 RECURSOS DE ACESSIBILIDADE
+            ============================================================= -->
+            <section aria-labelledby="bloco2-title" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">2</span>
+                        <div>
+                            <h2 id="bloco2-title" class="text-lg font-bold text-slate-900">Validação dos 5 Recursos de Acessibilidade</h2>
+                            <p class="text-xs text-slate-500">Núcleo de filtros do portal (<code class="font-mono bg-slate-200/70 px-1 rounded">recursos_acess</code> & <code class="font-mono bg-slate-200/70 px-1 rounded">validacao_ponto</code>)</p>
+                        </div>
+                    </div>
+                    <span id="verified-counter" class="self-start sm:self-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold accent-badge">
+                        0 de 5 verificados
+                    </span>
+                </div>
+
+                <!-- Aviso sobre uso interno das fotos -->
+                <div class="mx-6 mt-6 p-4 rounded-xl bg-blue-50 border border-blue-200 flex items-start gap-3">
+                    <svg class="w-5 h-5 text-blue-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p class="text-xs sm:text-sm text-blue-900 leading-relaxed">
+                        <strong>Instrução de Campo:</strong> Ao marcar que o local possui o recurso (em boas condições ou com problemas), os campos de <strong>descrição técnica</strong> e <strong>evidência fotográfica interna</strong> serão exibidos automaticamente. As fotos enviadas servem apenas para comprovação da curadoria e não são publicadas no site.
+                    </p>
+                </div>
+
+                <!-- Container onde os 5 cards de recursos são renderizados via JS -->
+                <div id="resources-container" class="p-6 space-y-5"></div>
+            </section>
+
+            <!-- ============================================================
+                 BLOCO 3: PARECER GERAL E TRIAGEM DE CURADORIA
+            ============================================================= -->
+            <section aria-labelledby="bloco3-title" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-xl bg-navy-900 text-white font-bold flex items-center justify-center text-sm">3</span>
+                    <div>
+                        <h2 id="bloco3-title" class="text-lg font-bold text-slate-900">Parecer Geral e Triagem de Curadoria</h2>
+                        <p class="text-xs text-slate-500">Avaliação do entorno urbano, síntese da visita e status de aprovação</p>
+                    </div>
+                </div>
+
+                <div class="p-6 space-y-6">
+                    <!-- Barreiras Arquitetônicas / Urbanas no Entorno -->
+                    <fieldset>
+                        <legend class="block text-sm font-semibold text-slate-800 mb-2">
+                            Barreiras Arquitetônicas ou Urbanas Encontradas no Entorno
+                        </legend>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                                <input type="checkbox" name="barreiras" value="Calçada irregular ou sem rebaixamento de guia" class="barreira-check w-4 h-4 rounded text-blue-700">
+                                <span>Calçada irregular ou sem rebaixamento</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                                <input type="checkbox" name="barreiras" value="Paralelepípedo irregular difícil para cadeira de rodas" class="barreira-check w-4 h-4 rounded text-blue-700">
+                                <span>Paralelepípedo irregular no trajeto</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                                <input type="checkbox" name="barreiras" value="Falta de iluminação adequada" class="barreira-check w-4 h-4 rounded text-blue-700">
+                                <span>Falta de iluminação adequada</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                                <input type="checkbox" name="barreiras" value="Degraus isolados sem rampa alternativa" class="barreira-check w-4 h-4 rounded text-blue-700">
+                                <span>Degraus isolados sem rampa alternativa</span>
+                            </label>
+                            <label class="sm:col-span-2 flex items-center gap-3 p-3 rounded-xl border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-50 cursor-pointer text-sm font-medium text-emerald-900">
+                                <input type="checkbox" id="barreira-nenhuma" name="barreiras" value="Nenhuma barreira relevante encontrada" class="w-4 h-4 rounded text-emerald-600">
+                                <span>Nenhuma barreira arquitetônica relevante encontrada no acesso</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Resumo Geral da Visita para Curadoria -->
+                    <div>
+                        <label for="resumo_visita" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                            Resumo Geral da Visita para a Curadoria
+                        </label>
+                        <textarea
+                            id="resumo_visita"
+                            name="resumo_visita"
+                            rows="3"
+                            maxlength="500"
+                            placeholder="Sintetize a experiência real de visitação (ex: atendimento da recepção, facilidade de deslocamento entre salas, pontos de atenção para o texto do site)..."
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                        ></textarea>
+                    </div>
+
+                    <!-- Status da Validação (validacoes.status) e Link Drive -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="status_validacao" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                                Status Inicial da Validação (<code class="font-mono text-xs">validacoes.status</code>)
+                            </label>
+                            <select
+                                id="status_validacao"
+                                name="status_validacao"
+                                class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm font-semibold focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                            >
+                                <option value="PENDENTE" selected>PENDENTE (Aguardando revisão da equipe)</option>
+                                <option value="APROVADO">APROVADO (Liberado para atualizar o portal)</option>
+                                <option value="REJEITADO">REJEITADO (Dados/fotos insuficientes)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="url_formulario" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                                Link da Pasta de Evidências / Drive (<code class="font-mono text-xs">url_formulario</code>) <span class="text-red-600" aria-hidden="true">*</span>
+                            </label>
+                            <input
+                                type="url"
+                                id="url_formulario"
+                                name="url_formulario"
+                                required
+                                placeholder="https://drive.google.com/drive/folders/roteiro-livre-pe-auditoria"
+                                value="https://drive.google.com/drive/folders/roteiro-livre-pe-vistoria"
+                                class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Declaração Obrigatória de Visita Presencial -->
+                    <div class="pt-2 border-t border-slate-200">
+                        <label class="flex items-start gap-3 p-4 rounded-xl bg-amber-50 border border-amber-200 cursor-pointer">
+                            <input
+                                type="checkbox"
+                                id="declaracao_presencial"
+                                name="declaracao_presencial"
+                                required
+                                class="mt-1 w-5 h-5 rounded text-blue-700 focus:ring-blue-600 shrink-0"
+                            >
+                            <span class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+                                <strong>Declaração de Autenticidade <span class="text-red-600">*</span>:</strong> Confirmo que estive presencialmente no ponto turístico selecionado na data informada e que as evidências fotográficas anexadas foram registradas durante esta vistoria técnica.
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Barra de Ações do Formulário -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 pb-12">
+                <button
+                    type="button"
+                    id="btn-reset-form"
+                    class="w-full sm:w-auto px-5 py-3 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm transition cursor-pointer"
+                >
+                    Limpar Formulário
+                </button>
+
+                <button
+                    type="submit"
+                    class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-600/25 transition flex items-center justify-center gap-2 cursor-pointer"
+                >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>Finalizar e Gerar Registro de Auditoria</span>
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- ============================================================
+         MODAL / PAINEL DE RESUMO E INTEGRAÇÃO SQL/JSON
+    ============================================================= -->
+    <div id="result-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-950/75 backdrop-blur-sm p-4 sm:p-6">
+        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-4">
+            <!-- Cabeçalho do Modal -->
+            <div class="bg-navy-900 text-white px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                    <h3 id="modal-title" class="text-lg font-bold">Registro de Auditoria Gerado</h3>
+                </div>
+                <button type="button" id="btn-close-modal" aria-label="Fechar janela de resumo" class="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition cursor-pointer">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Corpo do Modal -->
+            <div class="p-6 space-y-6 max-h-[80vh] overflow-y-auto">
+                <!-- Cabeçalho do Relatório -->
+                <div id="modal-summary-header" class="p-4 rounded-xl bg-slate-50 border border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm"></div>
+
+                <!-- Tags HTML (data-resources) prontas para o site -->
+                <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-1">
+                        Atributo HTML para o Card do Portal (<code class="font-mono">data-resources</code>):
+                    </span>
+                    <code id="modal-data-resources" class="text-sm font-mono font-bold text-slate-900 break-all"></code>
+                </div>
+
+                <!-- Lista Visual dos 5 Recursos Avaliados -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3">Checklist Técnico & Evidências Internas</h4>
+                    <div id="modal-resources-list" class="space-y-3"></div>
+                </div>
+
+                <!-- Bloco de Saída SQL (INSERTs prontos para roteiro_livre_pe) -->
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                            Script SQL Pronto (<code class="font-mono text-xs">roteiro_livre_pe</code>)
+                        </h4>
+                        <div class="flex items-center gap-2">
+                            <button type="button" id="btn-copy-sql" class="px-3 py-1.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                                </svg>
+                                <span>Copiar SQL (INSERTs)</span>
+                            </button>
+                            <button type="button" id="btn-copy-json" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
+                                <span>Copiar JSON / Resumo</span>
+                            </button>
+                        </div>
+                    </div>
+                    <pre id="modal-sql-output" class="p-4 rounded-xl bg-slate-900 text-emerald-300 text-xs font-mono overflow-x-auto leading-relaxed"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         MODAL DE HISTÓRICO DE AUDITORIAS (LOCALSTORAGE)
+    ============================================================= -->
+    <div id="history-modal" role="dialog" aria-modal="true" aria-labelledby="history-modal-title" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-950/75 backdrop-blur-sm p-4 sm:p-6">
+        <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-8">
+            <div class="bg-navy-900 text-white px-6 py-4 flex items-center justify-between">
+                <h3 id="history-modal-title" class="text-lg font-bold">Histórico de Auditorias Salvas na Sessão</h3>
+                <button type="button" id="btn-close-history" aria-label="Fechar histórico" class="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition cursor-pointer">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6">
+                <div id="history-list" class="space-y-3 max-h-[60vh] overflow-y-auto"></div>
+                <div class="mt-6 pt-4 border-t border-slate-200 flex justify-between items-center">
+                    <button type="button" id="btn-clear-history" class="px-4 py-2 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 text-xs font-bold transition cursor-pointer">
+                        Limpar Histórico Local
+                    </button>
+                    <button type="button" id="btn-close-history-footer" class="px-4 py-2 rounded-xl bg-slate-800 text-white text-xs font-bold cursor-pointer">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-white border-t border-slate-200 py-6 px-4 text-center text-xs text-slate-500">
+        <p class="font-semibold text-slate-700">Roteiro Livre PE — Projeto Integrador (Análise e Desenvolvimento de Sistemas)</p>
+        <p class="mt-1">Sistema interno de validação de acessibilidade turística • Recife e Olinda, Pernambuco.</p>
+    </footer>
+
+    <!-- ============================================================
+         JAVASCRIPT: LÓGICA DO FORMULÁRIO, FOTOS, SQL E ACESSIBILIDADE
+    ============================================================= -->
+    <script>
+        /**
+         * Definição dos 5 recursos centrais de acessibilidade do portal Roteiro Livre PE,
+         * alinhados exatamente com os botões de filtro do site e a tabela `recursos_acess`.
+         */
+        const ACCESSIBILITY_RESOURCES = [
+            {
+                id_recurso: 1,
+                tag: 'rampas-elevacao',
+                nome: 'Rampas / elevação',
+                placeholder: 'Ex: Rampa na entrada principal com corrimão duplo e piso antiderrapante, além de plataforma elevatória funcional dando acesso ao pavimento superior.'
+            },
+            {
+                id_recurso: 2,
+                tag: 'piso-tatil',
+                nome: 'Piso tátil',
+                placeholder: 'Ex: Piso tátil direcional desde a entrada até a recepção e salas principais, com piso tátil de alerta antes das escadas e desníveis.'
+            },
+            {
+                id_recurso: 3,
+                tag: 'audiodescricao',
+                nome: 'Audiodescrição',
+                placeholder: 'Ex: Audioguia gratuito disponível na recepção ou QR Codes nas obras principais com faixas de audiodescrição em português.'
+            },
+            {
+                id_recurso: 4,
+                tag: 'braile',
+                nome: 'Braile',
+                placeholder: 'Ex: Placas de identificação das salas, legendas de obras selecionadas e botoeiras do elevador com leitura em Braile e alto-relevo.'
+            },
+            {
+                id_recurso: 5,
+                tag: 'maquetes-tateis',
+                nome: 'Maquetes táteis / Experiência sensorial',
+                placeholder: 'Ex: Maquete tátil em escala da fachada histórica na entrada e réplicas autorizadas para toque durante a visita mediada.'
+            }
+        ];
+
+        const STORAGE_KEY = 'roteiro_livre_pe_auditorias_v1';
+        const attachedPhotos = {}; // { [id_recurso]: { name, dataUrl } }
+
+        // Inicialização geral após carregamento do DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            setTodayDate();
+            renderResourceCards();
+            initAccessibilityControls();
+            initBarrierCheckboxes();
+            initFormSubmission();
+            initModalsAndActions();
+            updateHistoryBadge();
+        });
+
+        function setTodayDate() {
+            const dateInput = document.getElementById('data_envio');
+            if (dateInput && !dateInput.value) {
+                const today = new Date();
+                const yyyy = today.getFullYear();
+                const mm = String(today.getMonth() + 1).padStart(2, '0');
+                const dd = String(today.getDate()).padStart(2, '0');
+                dateInput.value = `${yyyy}-${mm}-${dd}`;
+            }
+        }
+
+        /**
+         * Renderiza dinamicamente os 5 cards de recursos de acessibilidade com ramificação condicional
+         */
+        function renderResourceCards() {
+            const container = document.getElementById('resources-container');
+            container.innerHTML = ACCESSIBILITY_RESOURCES.map((res, index) => `
+                <article id="card-recurso-${res.id_recurso}" class="rounded-2xl border border-slate-200 bg-slate-50/60 p-5 transition hover:border-slate-300">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-7 h-7 rounded-lg bg-navy-900 text-white text-xs font-bold flex items-center justify-center shrink-0">
+                                2.${index + 1}
+                            </span>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900">${res.nome}</h3>
+                                <span class="text-xs text-slate-500 font-mono">id_recurso: ${res.id_recurso} • tag: "${res.tag}"</span>
+                            </div>
+                        </div>
+                        <span id="badge-recurso-${res.id_recurso}" class="self-start sm:self-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-700">
+                            Aguardando avaliação
+                        </span>
+                    </div>
+
+                    <fieldset>
+                        <legend class="sr-only">Condição do recurso ${res.nome}</legend>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+                            <label class="flex items-start gap-2.5 p-3 rounded-xl border border-slate-200 bg-white hover:border-emerald-400 cursor-pointer transition">
+                                <input type="radio" name="status_recurso_${res.id_recurso}" value="FUNCIONAL" data-recurso-id="${res.id_recurso}" class="recurso-radio mt-0.5 w-4 h-4 text-emerald-600 focus:ring-emerald-600">
+                                <div class="text-xs sm:text-sm">
+                                    <span class="font-bold text-emerald-800 block">Possui e está funcional</span>
+                                    <span class="text-slate-500 text-xs">Gera selo VERIFICADO</span>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start gap-2.5 p-3 rounded-xl border border-slate-200 bg-white hover:border-amber-400 cursor-pointer transition">
+                                <input type="radio" name="status_recurso_${res.id_recurso}" value="COM_PROBLEMAS" data-recurso-id="${res.id_recurso}" class="recurso-radio mt-0.5 w-4 h-4 text-amber-600 focus:ring-amber-600">
+                                <div class="text-xs sm:text-sm">
+                                    <span class="font-bold text-amber-800 block">Possui, com problemas</span>
+                                    <span class="text-slate-500 text-xs">Gera NAO_VERIFICADO</span>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start gap-2.5 p-3 rounded-xl border border-slate-200 bg-white hover:border-slate-400 cursor-pointer transition">
+                                <input type="radio" name="status_recurso_${res.id_recurso}" value="NAO_POSSUI" data-recurso-id="${res.id_recurso}" class="recurso-radio mt-0.5 w-4 h-4 text-slate-600 focus:ring-slate-600">
+                                <div class="text-xs sm:text-sm">
+                                    <span class="font-bold text-slate-700 block">Não possui</span>
+                                    <span class="text-slate-500 text-xs">Inexistente no local</span>
+                                </div>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Painel Condicional (Abre apenas se 'FUNCIONAL' ou 'COM_PROBLEMAS') -->
+                    <div id="panel-recurso-${res.id_recurso}" class="conditional-panel hidden mt-4 pt-4 border-t border-slate-200 space-y-4">
+                        <div>
+                            <label for="desc_recurso_${res.id_recurso}" class="block text-xs sm:text-sm font-semibold text-slate-800 mb-1">
+                                Localização Exata e Descrição Técnica <span class="text-red-600">*</span>
+                            </label>
+                            <textarea
+                                id="desc_recurso_${res.id_recurso}"
+                                rows="2"
+                                maxlength="500"
+                                placeholder="${res.placeholder}"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                            ></textarea>
+                        </div>
+
+                        <div>
+                            <span class="block text-xs sm:text-sm font-semibold text-slate-800 mb-1.5">
+                                Evidência Fotográfica Interna (Não publicada no portal)
+                            </span>
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                                <label for="foto_recurso_${res.id_recurso}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dashed border-blue-400 bg-blue-50/70 hover:bg-blue-100/70 text-blue-900 text-xs sm:text-sm font-semibold cursor-pointer transition">
+                                    <svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>Anexar / Tirar Foto de Vistoria</span>
+                                    <input
+                                        type="file"
+                                        id="foto_recurso_${res.id_recurso}"
+                                        accept="image/*"
+                                        capture="environment"
+                                        data-recurso-id="${res.id_recurso}"
+                                        class="foto-input sr-only"
+                                    >
+                                </label>
+                                <span id="foto-nome-${res.id_recurso}" class="text-xs text-slate-500">Nenhuma foto anexada</span>
+                            </div>
+
+                            <!-- Preview da Foto Interna -->
+                            <div id="foto-preview-box-${res.id_recurso}" class="hidden mt-3 p-2.5 rounded-xl bg-white border border-slate-200 inline-flex items-center gap-3">
+                                <img id="foto-preview-img-${res.id_recurso}" src="" alt="Pré-visualização da evidência interna de ${res.nome}" class="w-20 h-16 object-cover rounded-lg border border-slate-200">
+                                <div class="text-xs">
+                                    <p class="font-bold text-emerald-800">Evidência anexada</p>
+                                    <button type="button" data-remove-foto="${res.id_recurso}" class="mt-1 text-red-600 hover:text-red-800 font-semibold underline cursor-pointer">
+                                        Remover foto
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+
+            // Listeners de ramificação condicional
+            document.querySelectorAll('.recurso-radio').forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    const id = Number(e.target.dataset.recursoId);
+                    handleResourceConditionChange(id, e.target.value);
+                });
+            });
+
+            // Listeners de upload e preview de foto
+            document.querySelectorAll('.foto-input').forEach(input => {
+                input.addEventListener('change', (e) => {
+                    const id = Number(e.target.dataset.recursoId);
+                    handlePhotoUpload(id, e.target.files[0]);
+                });
+            });
+
+            // Listeners de remoção de foto
+            document.querySelectorAll('[data-remove-foto]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = Number(e.target.dataset.removeFoto);
+                    clearResourcePhoto(id);
+                });
+            });
+        }
+
+        function handleResourceConditionChange(id, value) {
+            const panel = document.getElementById(`panel-recurso-${id}`);
+            const badge = document.getElementById(`badge-recurso-${id}`);
+            const card = document.getElementById(`card-recurso-${id}`);
+
+            if (value === 'FUNCIONAL') {
+                panel.classList.remove('hidden');
+                badge.textContent = 'VERIFICADO';
+                badge.className = 'self-start sm:self-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 accent-badge';
+                card.classList.remove('border-amber-300', 'border-slate-200');
+                card.classList.add('border-emerald-300');
+            } else if (value === 'COM_PROBLEMAS') {
+                panel.classList.remove('hidden');
+                badge.textContent = 'COM PROBLEMAS (NAO_VERIFICADO)';
+                badge.className = 'self-start sm:self-center px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 accent-badge';
+                card.classList.remove('border-emerald-300', 'border-slate-200');
+                card.classList.add('border-amber-300');
+            } else {
+                panel.classList.add('hidden');
+                badge.textContent = 'NÃO POSSUI (NAO_VERIFICADO)';
+                badge.className = 'self-start sm:self-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-700';
+                card.classList.remove('border-emerald-300', 'border-amber-300');
+                card.classList.add('border-slate-200');
+            }
+
+            updateVerifiedCounter();
+        }
+
+        function updateVerifiedCounter() {
+            let verifiedCount = 0;
+            ACCESSIBILITY_RESOURCES.forEach(res => {
+                const checked = document.querySelector(`input[name="status_recurso_${res.id_recurso}"]:checked`);
+                if (checked && checked.value === 'FUNCIONAL') {
+                    verifiedCount++;
+                }
+            });
+            document.getElementById('verified-counter').textContent = `${verifiedCount} de 5 verificados`;
+        }
+
+        function handlePhotoUpload(id, file) {
+            if (!file) return;
+            if (!file.type.startsWith('image/')) {
+                showToast('Selecione apenas arquivos de imagem (JPG, PNG, WEBP).', 'error');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                attachedPhotos[id] = {
+                    name: file.name,
+                    dataUrl: ev.target.result
+                };
+                document.getElementById(`foto-nome-${id}`).textContent = file.name;
+                document.getElementById(`foto-preview-img-${id}`).src = ev.target.result;
+                document.getElementById(`foto-preview-box-${id}`).classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function clearResourcePhoto(id) {
+            delete attachedPhotos[id];
+            const input = document.getElementById(`foto_recurso_${id}`);
+            if (input) input.value = '';
+            document.getElementById(`foto-nome-${id}`).textContent = 'Nenhuma foto anexada';
+            document.getElementById(`foto-preview-img-${id}`).src = '';
+            document.getElementById(`foto-preview-box-${id}`).classList.add('hidden');
+        }
+
+        /**
+         * Exclusão mútua entre "Nenhuma barreira" e as barreiras específicas
+         */
+        function initBarrierCheckboxes() {
+            const noneCheckbox = document.getElementById('barreira-nenhuma');
+            const specificCheckboxes = document.querySelectorAll('.barreira-check');
+
+            noneCheckbox.addEventListener('change', () => {
+                if (noneCheckbox.checked) {
+                    specificCheckboxes.forEach(cb => cb.checked = false);
+                }
+            });
+
+            specificCheckboxes.forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) {
+                        noneCheckbox.checked = false;
+                    }
+                });
+            });
+        }
+
+        /**
+         * Controles de acessibilidade (tamanho de fonte e alto contraste)
+         */
+        function initAccessibilityControls() {
+            let fontScale = 1;
+            const root = document.documentElement;
+
+            document.getElementById('btn-increase-font').addEventListener('click', () => {
+                fontScale = Math.min(1.25, +(fontScale + 0.08).toFixed(2));
+                root.style.setProperty('--font-scale', fontScale);
+            });
+
+            document.getElementById('btn-decrease-font').addEventListener('click', () => {
+                fontScale = Math.max(0.85, +(fontScale - 0.08).toFixed(2));
+                root.style.setProperty('--font-scale', fontScale);
+            });
+
+            document.getElementById('btn-reset-font').addEventListener('click', () => {
+                fontScale = 1;
+                root.style.setProperty('--font-scale', fontScale);
+            });
+
+            const contrastBtn = document.getElementById('btn-high-contrast');
+            contrastBtn.addEventListener('click', () => {
+                const isActive = document.body.classList.toggle('high-contrast');
+                contrastBtn.setAttribute('aria-pressed', String(isActive));
+            });
+        }
+
+        /**
+         * Validação completa e submissão do formulário
+         */
+        function initFormSubmission() {
+            const form = document.getElementById('audit-form');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const validadoPorInput = document.getElementById('validado_por');
+                const dataEnvioInput = document.getElementById('data_envio');
+                const pontoSelect = document.getElementById('id_ponto');
+                const urlFormInput = document.getElementById('url_formulario');
+                const tipoIngressoEl = document.querySelector('input[name="tipo_ingresso"]:checked');
+                const declaracaoEl = document.getElementById('declaracao_presencial');
+
+                const validadoPor = validadoPorInput.value.trim();
+                const dataEnvio = dataEnvioInput.value;
+                const idPonto = pontoSelect.value;
+                const urlFormulario = urlFormInput.value.trim();
+
+                if (!validadoPor) {
+                    validadoPorInput.focus();
+                    showToast('Informe o nome do(a) avaliador(a) no Bloco 1.', 'error');
+                    return;
+                }
+
+                if (!dataEnvio) {
+                    dataEnvioInput.focus();
+                    showToast('Selecione a data da visita presencial.', 'error');
+                    return;
+                }
+
+                if (!idPonto) {
+                    pontoSelect.focus();
+                    showToast('Selecione o ponto turístico avaliado.', 'error');
+                    return;
+                }
+
+                if (!tipoIngressoEl) {
+                    document.querySelector('input[name="tipo_ingresso"]').focus();
+                    showToast('Selecione a política de ingresso na entrada.', 'error');
+                    return;
+                }
+
+                // Valida cada um dos 5 recursos
+                const recursosData = [];
+                for (const res of ACCESSIBILITY_RESOURCES) {
+                    const checkedRadio = document.querySelector(`input[name="status_recurso_${res.id_recurso}"]:checked`);
+                    if (!checkedRadio) {
+                        const card = document.getElementById(`card-recurso-${res.id_recurso}`);
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        showToast(`Avalie o recurso "${res.nome}" antes de finalizar.`, 'error');
+                        return;
+                    }
+
+                    const condicao = checkedRadio.value;
+                    const descEl = document.getElementById(`desc_recurso_${res.id_recurso}`);
+                    const descricao = descEl ? descEl.value.trim() : '';
+
+                    if ((condicao === 'FUNCIONAL' || condicao === 'COM_PROBLEMAS') && !descricao) {
+                        descEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        descEl.focus();
+                        showToast(`Descreva a localização/condição de "${res.nome}".`, 'error');
+                        return;
+                    }
+
+                    recursosData.push({
+                        id_recurso: res.id_recurso,
+                        tag: res.tag,
+                        nome: res.nome,
+                        condicao: condicao,
+                        resultado_sql: condicao === 'FUNCIONAL' ? 'VERIFICADO' : 'NAO_VERIFICADO',
+                        descricao: condicao === 'NAO_POSSUI' ? 'Recurso inexistente no atrativo.' : descricao,
+                        foto: attachedPhotos[res.id_recurso] || null
+                    });
+                }
+
+                if (!urlFormulario) {
+                    urlFormInput.focus();
+                    showToast('Informe o link da pasta de evidências/Drive (url_formulario).', 'error');
+                    return;
+                }
+
+                if (!declaracaoEl.checked) {
+                    declaracaoEl.focus();
+                    showToast('Marque a declaração de visita presencial no Bloco 3.', 'error');
+                    return;
+                }
+
+                const barreiras = Array.from(document.querySelectorAll('input[name="barreiras"]:checked')).map(cb => cb.value);
+                const resumoVisita = document.getElementById('resumo_visita').value.trim();
+                const statusValidacao = document.getElementById('status_validacao').value;
+                const nomePonto = pontoSelect.options[pontoSelect.selectedIndex].text;
+
+                const auditRecord = {
+                    id_registro: Date.now(),
+                    validado_por: validadoPor,
+                    data_envio: dataEnvio,
+                    id_ponto: Number(idPonto),
+                    nome_ponto: nomePonto,
+                    tipo_ingresso: tipoIngressoEl.value,
+                    recursos: recursosData,
+                    barreiras: barreiras.length ? barreiras : ['Nenhuma barreira informada'],
+                    resumo_visita: resumoVisita,
+                    status_validacao: statusValidacao,
+                    url_formulario: urlFormulario
+                };
+
+                saveAuditToHistory(auditRecord);
+                openResultModal(auditRecord);
+                showToast('Registro de auditoria gerado com sucesso!', 'success');
+            });
+        }
+
+        /**
+         * Gera os comandos SQL INSERT 100% compatíveis com o schema RecifeAcessivel / roteiro_livre_pe
+         */
+        function generateSqlScript(record) {
+            const escapeSql = (str) => String(str).replace(/'/g, "''");
+            const validadoPorSafe = escapeSql(record.validado_por.slice(0, 50));
+            const urlSafe = escapeSql(record.url_formulario.slice(0, 2048));
+
+            const lines = [
+                `-- =========================================================================`,
+                `-- AUDITORIA PRESENCIAL: ${record.nome_ponto}`,
+                `-- Avaliador(a): ${record.validado_por} | Data: ${record.data_envio}`,
+                `-- =========================================================================`,
+                `USE roteiro_livre_pe;`,
+                ``,
+                `-- 1. Inserir registro mestre na tabela 'validacoes'`,
+                `INSERT INTO validacoes (data_envio, status, validado_por, url_formulario)`,
+                `VALUES ('${record.data_envio}', '${record.status_validacao}', '${validadoPorSafe}', '${urlSafe}');`,
+                ``,
+                `SET @id_validacao_gerada = LAST_INSERT_ID();`,
+                ``,
+                `-- 2. Inserir resultado dos 5 recursos na tabela 'validacao_ponto'`
+            ];
+
+            record.recursos.forEach(r => {
+                lines.push(`-- Recurso: ${r.nome} (${r.condicao})`);
+                lines.push(
+                    `INSERT INTO validacao_ponto (id_ponto, id_recurso, id_validacao, data_validacao, resultado) ` +
+                    `VALUES (${record.id_ponto}, ${r.id_recurso}, @id_validacao_gerada, '${record.data_envio}', '${r.resultado_sql}');`
+                );
+            });
+
+            return lines.join('\n');
+        }
+
+        /**
+         * Abre o modal de resultado com resumo, data-resources e SQL
+         */
+        function openResultModal(record) {
+            const modal = document.getElementById('result-modal');
+            const headerEl = document.getElementById('modal-summary-header');
+            const tagsEl = document.getElementById('modal-data-resources');
+            const listEl = document.getElementById('modal-resources-list');
+            const sqlEl = document.getElementById('modal-sql-output');
+
+            headerEl.innerHTML = `
+                <div><span class="text-slate-500 block text-xs">Ponto Turístico</span><strong class="text-slate-900">${record.nome_ponto}</strong></div>
+                <div><span class="text-slate-500 block text-xs">Avaliador(a) • Data</span><strong class="text-slate-900">${record.validado_por} • ${record.data_envio}</strong></div>
+                <div><span class="text-slate-500 block text-xs">Política de Ingresso</span><strong class="text-slate-900">${record.tipo_ingresso}</strong></div>
+                <div><span class="text-slate-500 block text-xs">Status Curadoria</span><strong class="text-blue-900">${record.status_validacao}</strong></div>
+                <div class="sm:col-span-2"><span class="text-slate-500 block text-xs">Barreiras no Entorno</span><span class="text-slate-800 font-medium">${record.barreiras.join('; ')}</span></div>
+                ${record.resumo_visita ? `<div class="sm:col-span-2"><span class="text-slate-500 block text-xs">Parecer Geral</span><p class="text-slate-800">${record.resumo_visita}</p></div>` : ''}
+            `;
+
+            const verifiedTags = record.recursos
+                .filter(r => r.resultado_sql === 'VERIFICADO')
+                .map(r => r.tag);
+
+            tagsEl.textContent = `data-resources="${verifiedTags.join(' ')}"`;
+
+            listEl.innerHTML = record.recursos.map(r => {
+                const isVerified = r.resultado_sql === 'VERIFICADO';
+                const badgeClass = isVerified
+                    ? 'bg-emerald-100 text-emerald-800'
+                    : (r.condicao === 'COM_PROBLEMAS' ? 'bg-amber-100 text-amber-900' : 'bg-slate-200 text-slate-700');
+
+                return `
+                    <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/70 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="space-y-1">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <strong class="text-sm text-slate-900">${r.nome}</strong>
+                                <span class="px-2 py-0.5 rounded-full text-xs font-bold ${badgeClass}">${r.resultado_sql}</span>
+                            </div>
+                            <p class="text-xs text-slate-600">${r.descricao}</p>
+                        </div>
+                        ${r.foto ? `
+                            <div class="shrink-0 flex items-center gap-2 bg-white p-1.5 rounded-lg border border-slate-200">
+                                <img src="${r.foto.dataUrl}" alt="Evidência ${r.nome}" class="w-14 h-11 object-cover rounded">
+                                <span class="text-[11px] font-semibold text-slate-600 max-w-[110px] truncate">${r.foto.name}</span>
+                            </div>
+                        ` : `<span class="text-[11px] text-slate-400 shrink-0">Sem foto anexada</span>`}
+                    </div>
+                `;
+            }).join('');
+
+            const sqlScript = generateSqlScript(record);
+            sqlEl.textContent = sqlScript;
+            modal.dataset.currentSql = sqlScript;
+            modal.dataset.currentJson = JSON.stringify({
+                ...record,
+                recursos: record.recursos.map(r => ({
+                    ...r,
+                    foto: r.foto ? r.foto.name : null
+                }))
+            }, null, 2);
+
+            modal.classList.remove('hidden');
+        }
+
+        /**
+         * Modal, botões de cópia, histórico local e preenchimento de exemplo para banca
+         */
+        function initModalsAndActions() {
+            const resultModal = document.getElementById('result-modal');
+            const historyModal = document.getElementById('history-modal');
+
+            document.getElementById('btn-close-modal').addEventListener('click', () => {
+                resultModal.classList.add('hidden');
+            });
+
+            document.getElementById('btn-copy-sql').addEventListener('click', () => {
+                copyTextToClipboard(resultModal.dataset.currentSql || '', 'Script SQL copiado para a área de transferência!');
+            });
+
+            document.getElementById('btn-copy-json').addEventListener('click', () => {
+                copyTextToClipboard(resultModal.dataset.currentJson || '', 'Resumo JSON copiado!');
+            });
+
+            // Reset do formulário
+            document.getElementById('btn-reset-form').addEventListener('click', () => {
+                document.getElementById('audit-form').reset();
+                setTodayDate();
+                ACCESSIBILITY_RESOURCES.forEach(res => {
+                    clearResourcePhoto(res.id_recurso);
+                    const panel = document.getElementById(`panel-recurso-${res.id_recurso}`);
+                    const badge = document.getElementById(`badge-recurso-${res.id_recurso}`);
+                    const card = document.getElementById(`card-recurso-${res.id_recurso}`);
+                    panel.classList.add('hidden');
+                    badge.textContent = 'Aguardando avaliação';
+                    badge.className = 'self-start sm:self-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-700';
+                    card.classList.remove('border-emerald-300', 'border-amber-300');
+                    card.classList.add('border-slate-200');
+                });
+                updateVerifiedCounter();
+                showToast('Formulário limpo e pronto para nova vistoria.', 'info');
+            });
+
+            // Preencher Exemplo Realista para Apresentação
+            document.getElementById('btn-fill-demo').addEventListener('click', () => {
+                document.getElementById('validado_por').value = 'Equipe ADS - Roteiro Livre PE';
+                setTodayDate();
+                document.getElementById('id_ponto').value = '105'; // Instituto Ricardo Brennand
+                const isencaoRadio = document.querySelector('input[name="tipo_ingresso"][value="ISENCAO_PCD"]');
+                if (isencaoRadio) isencaoRadio.checked = true;
+
+                const demoConfigs = [
+                    {
+                        id: 1,
+                        status: 'FUNCIONAL',
+                        desc: 'Rampa de acesso na entrada principal do Castelo São João com guarda-corpo e inclinação suave, além de rotas niveladas nos jardins.'
+                    },
+                    {
+                        id: 2,
+                        status: 'COM_PROBLEMAS',
+                        desc: 'Piso tátil presente apenas na área de recepção e bilheteria; áreas externas em pedra portuguesa não possuem guia tátil.'
+                    },
+                    {
+                        id: 3,
+                        status: 'FUNCIONAL',
+                        desc: 'Audioguia disponível na recepção com faixas descritivas das principais armaduras e obras da pinacoteca.'
+                    },
+                    {
+                        id: 4,
+                        status: 'FUNCIONAL',
+                        desc: 'Placas de identificação das galerias e mapa tátil na entrada principal contam com legendas em Braile.'
+                    },
+                    {
+                        id: 5,
+                        status: 'NAO_POSSUI',
+                        desc: ''
+                    }
+                ];
+
+                demoConfigs.forEach(cfg => {
+                    const radio = document.querySelector(`input[name="status_recurso_${cfg.id}"][value="${cfg.status}"]`);
+                    if (radio) {
+                        radio.checked = true;
+                        handleResourceConditionChange(cfg.id, cfg.status);
+                        if (cfg.desc) {
+                            document.getElementById(`desc_recurso_${cfg.id}`).value = cfg.desc;
+                        }
+                    }
+                });
+
+                document.getElementById('barreira-nenhuma').checked = false;
+                document.querySelectorAll('.barreira-check').forEach((cb, idx) => {
+                    cb.checked = idx === 1; // Paralelepípedo irregular no trajeto
+                });
+
+                document.getElementById('resumo_visita').value = 'Excelente estrutura interna com rampas bem sinalizadas e equipe atenciosa. Recomenda-se atenção ao piso de pedra na alameda externa.';
+                document.getElementById('status_validacao').value = 'APROVADO';
+                document.getElementById('declaracao_presencial').checked = true;
+
+                showToast('Exemplo do Instituto Ricardo Brennand preenchido!', 'success');
+            });
+
+            // Histórico Local
+            document.getElementById('btn-open-history').addEventListener('click', () => {
+                renderHistoryList();
+                historyModal.classList.remove('hidden');
+            });
+
+            document.getElementById('btn-close-history').addEventListener('click', () => historyModal.classList.add('hidden'));
+            document.getElementById('btn-close-history-footer').addEventListener('click', () => historyModal.classList.add('hidden'));
+
+            document.getElementById('btn-clear-history').addEventListener('click', () => {
+                localStorage.removeItem(STORAGE_KEY);
+                updateHistoryBadge();
+                renderHistoryList();
+                showToast('Histórico local removido.', 'info');
+            });
+        }
+
+        function getSavedAudits() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            } catch {
+                return [];
+            }
+        }
+
+        function saveAuditToHistory(record) {
+            const list = getSavedAudits();
+            // Salva sem DataURL pesada no localStorage para evitar estourar cota do navegador
+            const lightweightRecord = {
+                ...record,
+                recursos: record.recursos.map(r => ({
+                    ...r,
+                    foto: r.foto ? { name: r.foto.name, dataUrl: '' } : null
+                }))
+            };
+            list.unshift(lightweightRecord);
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(list.slice(0, 20)));
+            } catch (e) {
+                console.warn('Não foi possível salvar no localStorage:', e);
+            }
+            updateHistoryBadge();
+        }
+
+        function updateHistoryBadge() {
+            const countEl = document.getElementById('history-count');
+            if (countEl) countEl.textContent = getSavedAudits().length;
+        }
+
+        function renderHistoryList() {
+            const listEl = document.getElementById('history-list');
+            const audits = getSavedAudits();
+
+            if (!audits.length) {
+                listEl.innerHTML = `<p class="text-sm text-slate-500 text-center py-8">Nenhuma auditoria salva nesta sessão ainda. Preencha o formulário ou clique em <strong>Preencher Exemplo</strong> para testar.</p>`;
+                return;
+            }
+
+            listEl.innerHTML = audits.map((item, idx) => `
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                        <strong class="text-sm text-slate-900 block">${item.nome_ponto}</strong>
+                        <span class="text-xs text-slate-600">Avaliador: ${item.validado_por} • Data: ${item.data_envio} • Status: <strong>${item.status_validacao}</strong></span>
+                    </div>
+                    <button type="button" data-view-audit="${idx}" class="px-3 py-1.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold cursor-pointer shrink-0">
+                        Ver SQL & Resumo
+                    </button>
+                </div>
+            `).join('');
+
+            listEl.querySelectorAll('[data-view-audit]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = Number(e.target.dataset.viewAudit);
+                    const record = audits[idx];
+                    if (record) {
+                        document.getElementById('history-modal').classList.add('hidden');
+                        openResultModal(record);
+                    }
+                });
+            });
+        }
+
+        /**
+         * Cópia segura para área de transferência (compatível com iframes)
+         */
+        function copyTextToClipboard(text, successMessage) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast(successMessage, 'success');
+            } catch {
+                showToast('Não foi possível copiar automaticamente.', 'error');
+            }
+            document.body.removeChild(textarea);
+        }
+
+        /**
+         * Notificação flutuante acessível (substitui alert())
+         */
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const colors = {
+                success: 'bg-emerald-700 text-white border-emerald-500',
+                error: 'bg-red-700 text-white border-red-500',
+                info: 'bg-navy-900 text-white border-blue-500'
+            };
+
+            const toast = document.createElement('div');
+            toast.className = `pointer-events-auto mb-2 px-4 py-3 rounded-xl border shadow-lg text-xs sm:text-sm font-semibold flex items-center justify-between gap-3 transition-all ${colors[type] || colors.info}`;
+            toast.innerHTML = `<span>${message}</span>`;
+
+            container.innerHTML = '';
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
