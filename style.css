@@ -100,6 +100,10 @@ html.alto-contraste {
     --cor-foco: #FFFFFF !important;
 }
 
+html.alto-contraste .logo-icone {
+    filter: brightness(0) invert(1);
+}
+
 
 
 /* Reset e configurações gerais */
@@ -269,11 +273,17 @@ body {
 
 
 .logo-icone {
-    height: 90px;
+    height: 40px;
     width: auto;
     max-width: none;
     display: block;
     flex-shrink: 0;
+    object-fit: contain;
+    transform: translateY(3px);
+}
+
+.logo-rodape {
+    margin-bottom: 10px;
 }
 
 .logo-nome {
