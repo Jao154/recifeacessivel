@@ -4,29 +4,35 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="Portal de turismo acessível em Recife e Olinda, com detalhes de seis pontos turísticos." name="description" />
+    <meta content="Portal de turismo acessível em Recife e Olinda, com detalhes de seis pontos turísticos."
+        name="description" />
     <title>Rota Livre — Turismo acessível em Recife e Olinda</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+        rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../imagens/logo/favicon/android-chrome-512x512.png" />
 </head>
 
 <body class="pagina-inicio">
     <div aria-label="Controles de acessibilidade da página" class="barra-acessibilidade" role="group">
         <button aria-label="Ativar alto contraste" aria-pressed="false" class="botao-acessibilidade"
-        id="btn-toggle-contrast" type="button">
-        ◐
+            id="btn-toggle-contrast" type="button">
+            ◐
         </button>
         <button aria-label="Aumentar tamanho do texto" aria-pressed="false" class="botao-acessibilidade"
-        id="btn-toggle-font" type="button">
-        A+
+            id="btn-toggle-font" type="button">
+            A+
         </button>
     </div>
 
     <div aria-label="Controles de acessibilidade nas páginas de destino" class="acessibilidade-fixa" role="group">
-        <button aria-label="Ativar alto contraste" aria-pressed="false" id="btn-header-contrast" title="Alternar alto contraste" type="button">◐</button>
-        <button aria-label="Aumentar tamanho do texto" aria-pressed="false" id="btn-header-font" title="Aumentar tamanho do texto" type="button">A+</button>
+        <button aria-label="Ativar alto contraste" aria-pressed="false" id="btn-header-contrast"
+            title="Alternar alto contraste" type="button">◐</button>
+        <button aria-label="Aumentar tamanho do texto" aria-pressed="false" id="btn-header-font"
+            title="Aumentar tamanho do texto" type="button">A+</button>
     </div>
 
     <a class="pular-conteudo" href="#conteudo-principal">
@@ -36,12 +42,10 @@
     <header class="cabecalho">
         <div class="container cabecalho-conteudo">
             <a class="logo" href="#inicio">
-                <span aria-hidden="true" class="logo-icone">
-                    ☀
-                </span>
-                <span>
-                    Rota Livre
-                </span>
+                <img class="logo-icone" src="../imagens/logo/logo-sem-bg.png"
+                    alt="Emblema Rota livre em formato de rosa dos ventos">
+                <img class="logo-nome" src="../imagens/logo/logo-nome-sem-bg.png"
+                    alt="Rota Livre — História e patrimônio Recife e Olinda">
             </a>
 
             <nav aria-label="Menu principal" class="menu-principal">
@@ -80,11 +84,11 @@
                     </button>
                 </form>
                 <a aria-label="Área do usuário" class="botao-perfil" href="pages/perfil.html">
-    <svg aria-hidden="true" class="icone-perfil" viewBox="0 0 24 24">
-        <circle cx="12" cy="8" r="4"></circle>
-        <path d="M4 20c2-4 14-4 16 0"></path>
-    </svg>
-</a>
+                    <svg aria-hidden="true" class="icone-perfil" viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c2-4 14-4 16 0"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </header>
@@ -112,81 +116,84 @@
                 Catálogo de destinos
             </h2>
             <!-- Barra lateral de filtros -->
-           <aside aria-labelledby="titulo-filtros" class="painel-filtros">
-    <div class="topo-filtros">
-        <h3 class="titulo-filtros" id="titulo-filtros">
-            <svg aria-hidden="true" class="icone-filtro" viewbox="0 0 24 24">
-                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3">
-                </polygon>
-            </svg>
-            Filtros de busca
-        </h3>
-        <button class="botao-limpar-filtros" id="btn-clear-filters" type="button">
-            Limpar filtros
-        </button>
-    </div>
-    <div class="grupo-filtro">
-        <label class="rotulo-filtro" for="filtro-local">
-            Buscar local
-        </label>
-        <div class="campo-busca-lateral">
-            <span aria-hidden="true">
-                🔍
-            </span>
-            <input id="filtro-local" placeholder="Ex: Paço do Frevo, Sé..." type="text" />
-        </div>
-    </div>
-    <div class="grupo-filtro">
-        <span class="rotulo-filtro" id="label-municipio">
-            Município
-        </span>
-        <div aria-labelledby="label-municipio" class="seletor-cidade" role="group">
-            <button aria-pressed="true" class="botao-cidade ativo" data-filter-city="all" type="button">
-                Todos
-            </button>
-            <button aria-pressed="false" class="botao-cidade" data-filter-city="recife" type="button">
-                Recife
-            </button>
-            <button aria-pressed="false" class="botao-cidade" data-filter-city="olinda" type="button">
-                Olinda
-            </button>
-        </div>
-    </div>
-    <div class="grupo-filtro">
-        <span class="rotulo-filtro" id="label-recursos">
-            Recursos informados
-        </span>
-        <div aria-labelledby="label-recursos" class="lista-recursos" role="group">
-            <button aria-pressed="false" class="botao-recurso" data-filter-resource="rampas" type="button">
-                Rampas / elevação
-            </button>
-            <button aria-pressed="false" class="botao-recurso" data-filter-resource="piso-tatil" type="button">
-                Piso tátil
-            </button>
-            <button aria-pressed="false" class="botao-recurso" data-filter-resource="audiodescricao" type="button">
-                Audiodescrição
-            </button>
-            <button aria-pressed="false" class="botao-recurso" data-filter-resource="braile" type="button">
-                Braile
-            </button>
-            <button aria-pressed="false" class="botao-recurso" data-filter-resource="maquetes-tateis" type="button">
-                Maquetes táteis / Experiência sensorial
-            </button>
-        </div>
-        <p class="ajuda-filtro">
-            Ao selecionar mais de um recurso, serão exibidos destinos que tenham pelo menos um deles.
-        </p>
-    </div>
-    <div class="aviso-lei">
-        <h3>
-            Lei Estadual nº 14.789/12
-        </h3>
-        <p>
-            Consulte a legislação vigente e confirme com o estabelecimento quais benefícios, documentos e
-            condições se aplicam à sua visita.
-        </p>
-    </div>
-</aside>
+            <aside aria-labelledby="titulo-filtros" class="painel-filtros">
+                <div class="topo-filtros">
+                    <h3 class="titulo-filtros" id="titulo-filtros">
+                        <svg aria-hidden="true" class="icone-filtro" viewbox="0 0 24 24">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3">
+                            </polygon>
+                        </svg>
+                        Filtros de busca
+                    </h3>
+                    <button class="botao-limpar-filtros" id="btn-clear-filters" type="button">
+                        Limpar filtros
+                    </button>
+                </div>
+                <div class="grupo-filtro">
+                    <label class="rotulo-filtro" for="filtro-local">
+                        Buscar local
+                    </label>
+                    <div class="campo-busca-lateral">
+                        <span aria-hidden="true">
+                            🔍
+                        </span>
+                        <input id="filtro-local" placeholder="Ex: Paço do Frevo, Sé..." type="text" />
+                    </div>
+                </div>
+                <div class="grupo-filtro">
+                    <span class="rotulo-filtro" id="label-municipio">
+                        Município
+                    </span>
+                    <div aria-labelledby="label-municipio" class="seletor-cidade" role="group">
+                        <button aria-pressed="true" class="botao-cidade ativo" data-filter-city="all" type="button">
+                            Todos
+                        </button>
+                        <button aria-pressed="false" class="botao-cidade" data-filter-city="recife" type="button">
+                            Recife
+                        </button>
+                        <button aria-pressed="false" class="botao-cidade" data-filter-city="olinda" type="button">
+                            Olinda
+                        </button>
+                    </div>
+                </div>
+                <div class="grupo-filtro">
+                    <span class="rotulo-filtro" id="label-recursos">
+                        Recursos informados
+                    </span>
+                    <div aria-labelledby="label-recursos" class="lista-recursos" role="group">
+                        <button aria-pressed="false" class="botao-recurso" data-filter-resource="rampas" type="button">
+                            Rampas / elevação
+                        </button>
+                        <button aria-pressed="false" class="botao-recurso" data-filter-resource="piso-tatil"
+                            type="button">
+                            Piso tátil
+                        </button>
+                        <button aria-pressed="false" class="botao-recurso" data-filter-resource="audiodescricao"
+                            type="button">
+                            Audiodescrição
+                        </button>
+                        <button aria-pressed="false" class="botao-recurso" data-filter-resource="braile" type="button">
+                            Braile
+                        </button>
+                        <button aria-pressed="false" class="botao-recurso" data-filter-resource="maquetes-tateis"
+                            type="button">
+                            Maquetes táteis / Experiência sensorial
+                        </button>
+                    </div>
+                    <p class="ajuda-filtro">
+                        Ao selecionar mais de um recurso, serão exibidos destinos que tenham pelo menos um deles.
+                    </p>
+                </div>
+                <div class="aviso-lei">
+                    <h3>
+                        Lei Estadual nº 14.789/12
+                    </h3>
+                    <p>
+                        Consulte a legislação vigente e confirme com o estabelecimento quais benefícios, documentos e
+                        condições se aplicam à sua visita.
+                    </p>
+                </div>
+            </aside>
             <!-- Grade de resultados -->
             <div>
                 <div class="barra-resultados">
@@ -209,9 +216,10 @@
                                     Espaço aberto
                                 </span>
                             </div>
-                            <a aria-label="Ver detalhes de Marco Zero" class="link-imagem-destino" href="pages/marco-zero.html">
+                            <a aria-label="Ver detalhes de Marco Zero" class="link-imagem-destino"
+                                href="pages/marco-zero.html">
                                 <img alt="Vista da Praça do Marco Zero no Bairro do Recife com a rosa dos ventos no chão e prédios históricos ao fundo."
-                                decoding="async" loading="lazy" src="imagens/marco-zero/marco-zero.jpg" />
+                                    decoding="async" loading="lazy" src="imagens/marco-zero/marco-zero.jpg" />
                             </a>
                             <span class="etiqueta-preco">
                                 Gratuito
@@ -260,9 +268,11 @@
                                     Museus
                                 </span>
                             </div>
-                            <a aria-label="Ver detalhes de Instituto Ricardo Brennand" class="link-imagem-destino" href="pages/instituto-ricardo-brennand.html">
+                            <a aria-label="Ver detalhes de Instituto Ricardo Brennand" class="link-imagem-destino"
+                                href="pages/instituto-ricardo-brennand.html">
                                 <img alt="Fachada em estilo castelo medieval do Instituto Ricardo Brennand cercada por jardins."
-                                decoding="async" loading="lazy" src="imagens/ricardo-brennand/instituto-ricardo-brennand.jpg" />
+                                    decoding="async" loading="lazy"
+                                    src="imagens/ricardo-brennand/instituto-ricardo-brennand.jpg" />
                             </a>
                             <span class="etiqueta-preco">
                                 Meia PCD / Acomp. Grat.
@@ -279,7 +289,8 @@
                                 Várzea, Recife - PE
                             </p>
                             <h3>
-                                <a class="link-destino" href="pages/instituto-ricardo-brennand.html">Instituto Ricardo Brennand</a>
+                                <a class="link-destino" href="pages/instituto-ricardo-brennand.html">Instituto Ricardo
+                                    Brennand</a>
                             </h3>
                             <ul aria-label="Características e recursos informados para este destino"
                                 class="lista-selo-acessibilidade">
@@ -296,7 +307,8 @@
                             <p class="aviso-detalhes">
                                 Confirme as condições de acesso diretamente com o estabelecimento.
                             </p>
-                            <a class="botao-detalhes" href="pages/instituto-ricardo-brennand.html">Ver detalhes do local</a>
+                            <a class="botao-detalhes" href="pages/instituto-ricardo-brennand.html">Ver detalhes do
+                                local</a>
                         </div>
                     </article>
                     <!-- 3. Centro Cultural Cais do Sertão -->
@@ -310,9 +322,10 @@
                                     Interativo
                                 </span>
                             </div>
-                            <a aria-label="Ver detalhes de Centro Cultural Cais do Sertão" class="link-imagem-destino" href="pages/cais-do-sertao.html">
+                            <a aria-label="Ver detalhes de Centro Cultural Cais do Sertão" class="link-imagem-destino"
+                                href="pages/cais-do-sertao.html">
                                 <img alt="Prédio moderno do Centro Cultural Cais do Sertão com fachada vazada em cobogó."
-                                decoding="async" loading="lazy" src="imagens/cais-do-sertao/cais_do_sertao.jpg" />
+                                    decoding="async" loading="lazy" src="imagens/cais-do-sertao/cais_do_sertao.jpg" />
                             </a>
                             <span class="etiqueta-preco">
                                 Gratuito (terças e PCD)
@@ -329,7 +342,8 @@
                                 Bairro do Recife, Recife - PE
                             </p>
                             <h3>
-                                <a class="link-destino" href="pages/cais-do-sertao.html">Centro Cultural Cais do Sertão</a>
+                                <a class="link-destino" href="pages/cais-do-sertao.html">Centro Cultural Cais do
+                                    Sertão</a>
                             </h3>
                             <ul aria-label="Características e recursos informados para este destino"
                                 class="lista-selo-acessibilidade">
@@ -360,9 +374,11 @@
                                     Barroco
                                 </span>
                             </div>
-                            <a aria-label="Ver detalhes de Mosteiro de São Bento" class="link-imagem-destino" href="pages/mosteiro-de-sao-bento.html">
-                                <img alt="Fachada histórica do Mosteiro de São Bento em Olinda."
-                                decoding="async" loading="lazy" src="imagens/mosteiro-de-sao-bento/mosteiro-sao-bento.jpg" style="object-position: 25% 30%">
+                            <a aria-label="Ver detalhes de Mosteiro de São Bento" class="link-imagem-destino"
+                                href="pages/mosteiro-de-sao-bento.html">
+                                <img alt="Fachada histórica do Mosteiro de São Bento em Olinda." decoding="async"
+                                    loading="lazy" src="imagens/mosteiro-de-sao-bento/mosteiro-sao-bento.jpg"
+                                    style="object-position: 25% 30%">
                             </a>
                             <span class="etiqueta-preco">
                                 Gratuito
@@ -379,7 +395,8 @@
                                 Varadouro, Olinda - PE
                             </p>
                             <h3>
-                                <a class="link-destino" href="pages/mosteiro-de-sao-bento.html">Mosteiro de São Bento</a>
+                                <a class="link-destino" href="pages/mosteiro-de-sao-bento.html">Mosteiro de São
+                                    Bento</a>
                             </h3>
                             <ul aria-label="Características e recursos informados para este destino"
                                 class="lista-selo-acessibilidade">
@@ -411,9 +428,10 @@
                                     Mirante
                                 </span>
                             </div>
-                            <a aria-label="Ver detalhes de Alto da Sé" class="link-imagem-destino" href="pages/alto-da-se.html">
+                            <a aria-label="Ver detalhes de Alto da Sé" class="link-imagem-destino"
+                                href="pages/alto-da-se.html">
                                 <img alt="Vista panorâmica do mirante do Alto da Sé com a Igreja da Sé e o mar ao fundo."
-                                decoding="async" loading="lazy" src="imagens/alto-da-se/alto-da-se3.jpg" />
+                                    decoding="async" loading="lazy" src="imagens/alto-da-se/alto-da-se3.jpg" />
                             </a>
                             <span class="etiqueta-preco">
                                 Gratuito
@@ -462,9 +480,11 @@
                                     Cultura popular
                                 </span>
                             </div>
-                            <a aria-label="Ver detalhes de Museu do Mamulengo" class="link-imagem-destino" href="pages/museu-do-mamulengo.html">
+                            <a aria-label="Ver detalhes de Museu do Mamulengo" class="link-imagem-destino"
+                                href="pages/museu-do-mamulengo.html">
                                 <img alt="Bonecos populares coloridos expostos no Museu do Mamulengo em Olinda."
-                                decoding="async" loading="lazy" src="imagens/museu-do-mamulengo/museu-do-mamulengo2.jpg" />
+                                    decoding="async" loading="lazy"
+                                    src="imagens/museu-do-mamulengo/museu-do-mamulengo2.jpg" />
                             </a>
                             <span class="etiqueta-preco">
                                 Gratuito PCD
@@ -589,13 +609,12 @@
         <div class="container colunas-rodape">
             <div class="coluna-rodape">
                 <a class="logo logo-rodape" href="#inicio">
-                    <span aria-hidden="true" class="logo-icone">
-                        ☀
-                    </span>
-                    <span>
-                        Rota Livre
-                    </span>
+                    <img class="logo-icone" src="../imagens/logo/logo-sem-bg.png"
+                        alt="Emblema Rota livre em formato de rosa dos ventos">
+                    <img class="logo-nome" src="../imagens/logo/logo-nome-sem-bg.png"
+                        alt="Rota Livre — História e patrimônio Recife e Olinda">
                 </a>
+
                 <p>
                     Portal informativo sobre recursos de acessibilidade física, sensorial e comunicacional em Recife e
                     Olinda, Pernambuco.

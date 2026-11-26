@@ -250,55 +250,38 @@ body {
 
 
 .logo {
-
     display: inline-flex;
-
     align-items: center;
-
-    gap: 10px;
-
     text-decoration: none;
-
     color: var(--cor-texto-principal);
-
     font-size: 1.375rem;
-
     font-weight: 700;
-
     min-height: 44px;
-
+    flex-shrink: 0;
 }
 
 
 
 .logo-rodape {
-
     margin-bottom: 10px;
-
 }
 
 
 
 .logo-icone {
+    height: 90px;
+    width: auto;
+    max-width: none;
+    display: block;
+    flex-shrink: 0;
+}
 
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 38px;
-
-    height: 38px;
-
-    border-radius: 50%;
-
-    background-color: var(--cor-fundo-escuro);
-
-    color: var(--cor-destaque);
-
-    border: 2px solid var(--cor-borda-forte);
-
+.logo-nome {
+    height: 40px;
+    width: auto;
+    max-width: none;
+    display: block;
+    flex-shrink: 0;
 }
 
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html data-theme="light" lang="pt-BR">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,10 +8,13 @@
     <title>Perfil e Acesso — Rota Livre</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
     <link href="../style.css" rel="stylesheet" />
-    
+
 </head>
+
 <body>
     <a class="pular-conteudo" href="#conteudo-principal">
         Pular para o conteúdo principal
@@ -19,8 +23,10 @@
     <header class="cabecalho">
         <div class="container cabecalho-conteudo">
             <a class="logo" href="../index.html#inicio">
-                <span aria-hidden="true" class="logo-icone">☀</span>
-                <span>Rota Livre</span>
+                <img class="logo-icone" src="../imagens/logo/logo-sem-bg.png"
+                    alt="Emblema Rota livre em formato de rosa dos ventos">
+                <img class="logo-nome" src="../imagens/logo/logo-nome-sem-bg.png"
+                    alt="Rota Livre — História e patrimônio Recife e Olinda">
             </a>
 
             <nav aria-label="Menu principal" class="menu-principal">
@@ -51,8 +57,10 @@
         </div>
 
         <div aria-label="Controles de acessibilidade da página" class="acessibilidade-fixa" role="group">
-            <button aria-label="Ativar alto contraste" aria-pressed="false" id="btn-header-contrast" title="Alternar alto contraste" type="button">◐</button>
-            <button aria-label="Aumentar tamanho do texto" aria-pressed="false" id="btn-header-font" title="Aumentar tamanho do texto" type="button">A+</button>
+            <button aria-label="Ativar alto contraste" aria-pressed="false" id="btn-header-contrast"
+                title="Alternar alto contraste" type="button">◐</button>
+            <button aria-label="Aumentar tamanho do texto" aria-pressed="false" id="btn-header-font"
+                title="Aumentar tamanho do texto" type="button">A+</button>
         </div>
     </header>
 
@@ -61,10 +69,12 @@
             <a class="link-voltar" href="../index.html">← Voltar para a página inicial</a>
 
             <div aria-label="Alternar entre acesso e perfil" class="seletor-modo-conta" role="tablist">
-                <button aria-controls="painel-login" aria-selected="true" class="aba-conta" id="aba-login" role="tab" type="button">
+                <button aria-controls="painel-login" aria-selected="true" class="aba-conta" id="aba-login" role="tab"
+                    type="button">
                     Entrar
                 </button>
-                <button aria-controls="painel-perfil" aria-selected="false" class="aba-conta" id="aba-perfil" role="tab" type="button">
+                <button aria-controls="painel-perfil" aria-selected="false" class="aba-conta" id="aba-perfil" role="tab"
+                    type="button">
                     Meu Perfil
                 </button>
             </div>
@@ -73,14 +83,15 @@
         <section aria-labelledby="aba-login" id="painel-login" role="tabpanel">
             <div class="cartao-login-split">
                 <div class="painel-boas-vindas">
-                    <div class="marca-boas-vindas">
+                    <!-- <div class="marca-boas-vindas">
                         <span aria-hidden="true" class="logo-icone">☀</span>
                         <span>Rota Livre</span>
-                    </div>
+                    </div> -->
 
                     <div class="texto-boas-vindas">
-                        <h1>Olá,<br>bem-vindo!</h1>
-                        <p>Entre com a sua conta para acessar seu perfil e contribuir com as informações de acessibilidade do portal.</p>
+                        <h1>Olá,<br>bem-vindo ao Rota Livre!</h1>
+                        <p>Entre com a sua conta para acessar seu perfil e contribuir com as informações de
+                            acessibilidade do portal.</p>
                     </div>
                 </div>
 
@@ -92,14 +103,17 @@
                     <form class="formulario-conta" id="form-login" novalidate>
                         <div class="campo-grupo">
                             <label class="rotulo-campo" for="login-email">E-mail</label>
-                            <input autocomplete="email" class="campo-texto" id="login-email" name="email" placeholder="nome@exemplo.com" required type="email" />
+                            <input autocomplete="email" class="campo-texto" id="login-email" name="email"
+                                placeholder="nome@exemplo.com" required type="email" />
                         </div>
 
                         <div class="campo-grupo">
                             <label class="rotulo-campo" for="login-senha">Senha</label>
                             <div class="campo-senha-grupo">
-                                <input autocomplete="current-password" class="campo-texto" id="login-senha" minlength="6" name="senha" placeholder="Sua senha" required type="password" />
-                                <button aria-label="Mostrar ou ocultar senha" aria-pressed="false" class="btn-senha" data-toggle-senha="login-senha" type="button">
+                                <input autocomplete="current-password" class="campo-texto" id="login-senha"
+                                    minlength="6" name="senha" placeholder="Sua senha" required type="password" />
+                                <button aria-label="Mostrar ou ocultar senha" aria-pressed="false" class="btn-senha"
+                                    data-toggle-senha="login-senha" type="button">
                                     Mostrar
                                 </button>
                             </div>
@@ -140,7 +154,8 @@
                         </div>
                     </div>
 
-                    <div aria-live="polite" class="aviso-acao" hidden id="aviso-perfil" role="status" tabindex="-1"></div>
+                    <div aria-live="polite" class="aviso-acao" hidden id="aviso-perfil" role="status" tabindex="-1">
+                    </div>
 
                     <div class="grade-info-perfil" id="perfil-visualizacao">
                         <div class="bloco-info">
@@ -159,7 +174,9 @@
                         <div class="bloco-info">
                             <span aria-hidden="true" class="icone-dado">
                                 <svg viewBox="0 0 24 24">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
                                 </svg>
                             </span>
                             <div>
@@ -175,17 +192,20 @@
                             <div class="grade-campos-edicao">
                                 <div class="campo-grupo campo-span-2">
                                     <label class="rotulo-campo" for="editar-nome">Nome</label>
-                                    <input autocomplete="name" class="campo-texto" id="editar-nome" name="nome" required type="text" />
+                                    <input autocomplete="name" class="campo-texto" id="editar-nome" name="nome" required
+                                        type="text" />
                                 </div>
 
                                 <div class="campo-grupo">
                                     <label class="rotulo-campo" for="editar-email">E-mail</label>
-                                    <input autocomplete="email" class="campo-texto" id="editar-email" name="email" required type="email" />
+                                    <input autocomplete="email" class="campo-texto" id="editar-email" name="email"
+                                        required type="email" />
                                 </div>
 
                                 <div class="campo-grupo">
                                     <label class="rotulo-campo" for="editar-telefone">Telefone</label>
-                                    <input autocomplete="tel" class="campo-texto" id="editar-telefone" name="telefone" placeholder="(81) 99999-9999" type="tel" />
+                                    <input autocomplete="tel" class="campo-texto" id="editar-telefone" name="telefone"
+                                        placeholder="(81) 99999-9999" type="tel" />
                                 </div>
                             </div>
 
@@ -211,19 +231,23 @@
         <form class="formulario-conta" id="form-cadastro" novalidate>
             <div class="campo-grupo">
                 <label class="rotulo-campo" for="cadastro-nome">Nome</label>
-                <input autocomplete="name" class="campo-texto" id="cadastro-nome" name="nome" placeholder="Seu nome" required type="text" />
+                <input autocomplete="name" class="campo-texto" id="cadastro-nome" name="nome" placeholder="Seu nome"
+                    required type="text" />
             </div>
 
             <div class="campo-grupo">
                 <label class="rotulo-campo" for="cadastro-email">E-mail</label>
-                <input autocomplete="email" class="campo-texto" id="cadastro-email" name="email" placeholder="nome@exemplo.com" required type="email" />
+                <input autocomplete="email" class="campo-texto" id="cadastro-email" name="email"
+                    placeholder="nome@exemplo.com" required type="email" />
             </div>
 
             <div class="campo-grupo">
                 <label class="rotulo-campo" for="cadastro-senha">Senha</label>
                 <div class="campo-senha-grupo">
-                    <input autocomplete="new-password" class="campo-texto" id="cadastro-senha" minlength="6" name="senha" placeholder="Mínimo 6 caracteres" required type="password" />
-                    <button aria-label="Mostrar ou ocultar senha" aria-pressed="false" class="btn-senha" data-toggle-senha="cadastro-senha" type="button">
+                    <input autocomplete="new-password" class="campo-texto" id="cadastro-senha" minlength="6"
+                        name="senha" placeholder="Mínimo 6 caracteres" required type="password" />
+                    <button aria-label="Mostrar ou ocultar senha" aria-pressed="false" class="btn-senha"
+                        data-toggle-senha="cadastro-senha" type="button">
                         Mostrar
                     </button>
                 </div>
@@ -240,11 +264,14 @@
         <div class="container colunas-rodape">
             <div class="coluna-rodape">
                 <a class="logo logo-rodape" href="../index.html#inicio">
-                    <span aria-hidden="true" class="logo-icone">☀</span>
-                    <span>Rota Livre</span>
+                    <img class="logo-icone" src="../imagens/logo/logo-sem-bg.png"
+                        alt="Emblema Rota livre em formato de rosa dos ventos">
+                    <img class="logo-nome" src="../imagens/logo/logo-nome-sem-bg.png"
+                        alt="Rota Livre — História e patrimônio Recife e Olinda">
                 </a>
                 <p>
-                    Portal informativo sobre recursos de acessibilidade física, sensorial e comunicacional em Recife e Olinda, Pernambuco.
+                    Portal informativo sobre recursos de acessibilidade física, sensorial e comunicacional em Recife e
+                    Olinda, Pernambuco.
                 </p>
             </div>
 
@@ -286,6 +313,7 @@
     </footer>
 
     <script defer src="../script.js"></script>
-    
+
 </body>
+
 </html>
