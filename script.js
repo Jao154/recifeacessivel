@@ -176,8 +176,12 @@
 
         botoesCidade.forEach((botao) => {
             botao.addEventListener('click', () => {
-                estado.municipio =
-                    botao.dataset.filterCity || 'all';
+                estado.municipio = botao.dataset.filterCity || 'all';
+
+                // Limpa a busca textual ao trocar de município para não bloquear resultados da outra cidade
+                estado.busca = '';
+                if (campoLocal) campoLocal.value = '';
+                if (campoTopo) campoTopo.value = '';
 
                 aplicarFiltros();
             });
