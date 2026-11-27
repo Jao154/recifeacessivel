@@ -127,10 +127,10 @@
                     estado.municipio === 'all' ||
                     municipio === estado.municipio;
 
-                // Lógica OU: basta possuir um dos recursos selecionados.
+                // Lógica E: precisa possuir todos os recursos selecionados.
                 const recursoCorresponde =
                     estado.recursos.size === 0 ||
-                    Array.from(estado.recursos).some(
+                    Array.from(estado.recursos).every(
                         (recurso) => recursosDoCartao.includes(recurso)
                     );
 
@@ -358,7 +358,7 @@
         });
     }
 
-  function iniciarPerfil() {
+    function iniciarPerfil() {
         const abaLogin = document.getElementById('aba-login');
         const abaPerfil = document.getElementById('aba-perfil');
         const painelLogin = document.getElementById('painel-login');
@@ -388,14 +388,14 @@
                         telefone: dados.telefone || ''
                     };
                 }
-            } catch (e) {}
+            } catch (e) { }
             return { ...usuarioInicial };
         }
 
         function gravarUsuario(dados) {
             try {
                 localStorage.setItem(CHAVE_USUARIO, JSON.stringify(dados));
-            } catch (e) {}
+            } catch (e) { }
         }
 
         function gerarIniciais(nome) {
