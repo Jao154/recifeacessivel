@@ -1,0 +1,6 @@
+Verificado (verde): class="verificacao status-verificado"
+
+Verificado com restrições (vermelho): class="verificacao status-restricoes"
+
+Não verificado (preto): class="verificacao status-nao-verificado"
+

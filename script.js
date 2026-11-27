@@ -1,6 +1,107 @@
 (() => {
     'use strict';
 
+    function iniciarNavegacaoTecladoDestinos() {
+        const mainDestino = document.querySelector('.mz-main');
+        if (!mainDestino) return;
+
+        // Removido .mz-como-chegar daqui para o Tab ir direto ao controle do mapa
+        const secoesFocaveis = mainDestino.querySelectorAll(
+            '.mz-sobre, .mz-galeria, .mz-bloco-linha, .mz-recursos'
+        );
+
+        secoesFocaveis.forEach((secao) => {
+            secao.setAttribute('tabindex', '0');
+        });
+    }
+
+    function iniciarRolagemFocoTeclado() {
+        document.addEventListener('focusin', (evento) => {
+            const alvo = evento.target;
+            if (!alvo || typeof alvo.scrollIntoView !== 'function') return;
+
+            // Só age quando o foco vem da navegação por teclado
+            if (alvo.matches(':focus-visible')) {
+                const alturaElemento = alvo.getBoundingClientRect().height;
+                const alturaTela = window.innerHeight;
+
+                // Se couber quase inteiro na tela (seções menores, botões, links), centraliza.
+                // Se for maior que 75% da tela (galeria, tabelas grandes, mapa), alinha no topo.
+                const alinhamento = alturaElemento > alturaTela * 0.75 ? 'start' : 'center';
+
+                alvo.scrollIntoView({
+                    behavior: 'smooth',
+                    block: alinhamento,
+                    inline: 'nearest'
+                });
+            }
+        });
+    }
+
+    function iniciarControleMapaTeclado() {
+        const containersMapa = document.querySelectorAll('.mz-main .mz-mapa');
+
+        containersMapa.forEach((container) => {
+            const iframe = container.querySelector('iframe');
+            if (!iframe || container.querySelector('.mz-mapa-ativar')) return;
+
+            const btnAtivar = document.createElement('button');
+            btnAtivar.type = 'button';
+            btnAtivar.className = 'mz-mapa-ativar';
+            btnAtivar.setAttribute('aria-label', 'Mapa interativo. Pressione Enter para explorar os controles do mapa.');
+
+            const aviso = document.createElement('span');
+            aviso.className = 'mz-mapa-aviso';
+            aviso.setAttribute('aria-hidden', 'true');
+            aviso.textContent = 'Pressione Enter para interagir com o mapa';
+            btnAtivar.appendChild(aviso);
+
+            const btnSair = document.createElement('button');
+            btnSair.type = 'button';
+            btnSair.className = 'mz-mapa-sair';
+            btnSair.textContent = 'Bloquear mapa novamente';
+            btnSair.hidden = true;
+
+            container.insertBefore(btnAtivar, iframe);
+            container.appendChild(btnSair);
+
+            const travarMapa = () => {
+                iframe.setAttribute('inert', '');
+                iframe.setAttribute('tabindex', '-1');
+                btnAtivar.hidden = false;
+                btnSair.hidden = true;
+                container.classList.remove('mapa-ativo');
+            };
+
+            const destravarMapa = () => {
+                iframe.removeAttribute('inert');
+                iframe.removeAttribute('tabindex');
+                btnAtivar.hidden = true;
+                btnSair.hidden = false;
+                container.classList.add('mapa-ativo');
+                iframe.focus();
+            };
+
+            travarMapa();
+
+            btnAtivar.addEventListener('click', () => {
+                destravarMapa();
+            });
+
+            btnSair.addEventListener('click', () => {
+                travarMapa();
+                btnAtivar.focus();
+            });
+
+            document.addEventListener('keydown', (evento) => {
+                if (evento.key === 'Escape' && container.classList.contains('mapa-ativo')) {
+                    travarMapa();
+                    btnAtivar.focus();
+                }
+            });
+        });
+    }
+
     function iniciarFiltros() {
         const catalogo = document.querySelector('#lista-destinos');
         if (!catalogo) return;
@@ -647,6 +748,9 @@
         iniciarBuscaPaginasInternas();
         iniciarControlesAcessibilidade();
         iniciarPerfil();
+        iniciarNavegacaoTecladoDestinos();
+        iniciarRolagemFocoTeclado();
+        iniciarControleMapaTeclado();
     }
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', iniciarTudo, { once: true });
