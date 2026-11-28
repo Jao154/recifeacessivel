@@ -2548,8 +2548,21 @@ html.alto-contraste .mz-check {
     text-align: center;
     box-shadow: var(--sombra-cartao);
 }
+/*
+.mz-recurso-central {
+    grid-column: 1 / -1;
+    width: calc(50% - 12px);
+    justify-self: center;
+}
+*/
 
 .mz-recurso-central {
+    grid-column: auto;
+    width: auto;
+    justify-self: stretch;
+}
+
+.mz-recursos-grade .mz-recurso:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     width: calc(50% - 12px);
     justify-self: center;
@@ -2983,6 +2996,12 @@ html.alto-contraste .mz-lista-comentarios {
 
     .mz-voltar {
         font-size: .95rem;
+    }
+
+    .mz-recurso-central,
+    .mz-recursos-grade .mz-recurso:last-child:nth-child(odd) {
+        grid-column: auto;
+        width: 100%;
     }
 
     .mz-titulo-linha {

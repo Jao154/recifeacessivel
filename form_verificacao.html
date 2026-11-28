@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roteiro Livre PE — Formulário de Auditoria Presencial</title>
+    <title>Rota Livre — Formulário de Auditoria Presencial</title>
     <!-- Tailwind CSS para estilização responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonte Inter para máxima legibilidade -->
@@ -148,6 +148,13 @@
                         Auditoria & Curadoria Interna
                     </div>
                     <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
+                        Rota Livre — Vistoria Técnica
+                    </h1>
+                    <p class="mt-1.5 text-sm text-blue-100/90 max-w-xl">
+                        Formulário de auditoria presencial para validação dos recursos de acessibilidade em Recife e Olinda.
+                    </p>
+                </div>
+
                 <!-- Botões rápidos no cabeçalho: Exemplo de Teste e Histórico -->
                 <div class="shrink-0 flex flex-wrap items-center gap-2.5">
                     <button type="button" id="btn-fill-demo" class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-sm font-bold shadow-sm transition flex items-center justify-center gap-2 cursor-pointer">
@@ -310,7 +317,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <p class="text-xs sm:text-sm text-blue-900 leading-relaxed">
-                        <strong>Instrução de Campo:</strong> Ao marcar que o local possui o recurso (em boas condições ou com problemas), os campos de <strong>descrição técnica</strong> e <strong>evidência fotográfica interna</strong> serão exibidos automaticamente. As fotos enviadas servem apenas para comprovação da curadoria e não são publicadas no site.
+                        <strong>Instrução de Campo:</strong> Ao marcar que o local possui o recurso (em boas condições ou com restrições), os campos de <strong>descrição técnica</strong> e <strong>evidência fotográfica interna</strong> serão exibidos automaticamente. As fotos enviadas servem apenas para comprovação da curadoria e não são publicadas no site.
                     </p>
                 </div>
 
@@ -401,8 +408,8 @@
                                 id="url_formulario"
                                 name="url_formulario"
                                 required
-                                placeholder="https://drive.google.com/drive/folders/roteiro-livre-pe-auditoria"
-                                value="https://drive.google.com/drive/folders/roteiro-livre-pe-vistoria"
+                                placeholder="https://drive.google.com/drive/folders/rota-livre-auditoria"
+                                value="https://drive.google.com/drive/folders/rota-livre-vistoria"
                                 class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
                             >
                         </div>
@@ -486,11 +493,11 @@
                     <div id="modal-resources-list" class="space-y-3"></div>
                 </div>
 
-                <!-- Bloco de Saída SQL (INSERTs prontos para roteiro_livre_pe) -->
+                <!-- Bloco de Saída SQL (INSERTs prontos para rota_livre) -->
                 <div>
                     <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
                         <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
-                            Script SQL Pronto (<code class="font-mono text-xs">roteiro_livre_pe</code>)
+                            Script SQL Pronto (<code class="font-mono text-xs">rota_livre</code>)
                         </h4>
                         <div class="flex items-center gap-2">
                             <button type="button" id="btn-copy-sql" class="px-3 py-1.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
@@ -539,7 +546,7 @@
 
     <!-- Rodapé -->
     <footer class="bg-white border-t border-slate-200 py-6 px-4 text-center text-xs text-slate-500">
-        <p class="font-semibold text-slate-700">Roteiro Livre PE — Projeto Integrador (Análise e Desenvolvimento de Sistemas)</p>
+        <p class="font-semibold text-slate-700">Rota Livre — Projeto Integrador (Análise e Desenvolvimento de Sistemas)</p>
         <p class="mt-1">Sistema interno de validação de acessibilidade turística • Recife e Olinda, Pernambuco.</p>
     </footer>
 
@@ -548,13 +555,13 @@
     ============================================================= -->
     <script>
         /**
-         * Definição dos 5 recursos centrais de acessibilidade do portal Roteiro Livre PE,
+         * Definição dos 5 recursos centrais de acessibilidade do portal Rota Livre,
          * alinhados exatamente com os botões de filtro do site e a tabela `recursos_acess`.
          */
         const ACCESSIBILITY_RESOURCES = [
             {
                 id_recurso: 1,
-                tag: 'rampas-elevacao',
+                tag: 'rampas',
                 nome: 'Rampas / elevação',
                 placeholder: 'Ex: Rampa na entrada principal com corrimão duplo e piso antiderrapante, além de plataforma elevatória funcional dando acesso ao pavimento superior.'
             },
@@ -584,7 +591,7 @@
             }
         ];
 
-        const STORAGE_KEY = 'roteiro_livre_pe_auditorias_v1';
+        const STORAGE_KEY = 'rota_livre_auditorias_v1';
         const attachedPhotos = {}; // { [id_recurso]: { name, dataUrl } }
 
         // Inicialização geral após carregamento do DOM
@@ -646,7 +653,7 @@
                                 <input type="radio" name="status_recurso_${res.id_recurso}" value="COM_PROBLEMAS" data-recurso-id="${res.id_recurso}" class="recurso-radio mt-0.5 w-4 h-4 text-amber-600 focus:ring-amber-600">
                                 <div class="text-xs sm:text-sm">
                                     <span class="font-bold text-amber-800 block">Possui, com problemas</span>
-                                    <span class="text-slate-500 text-xs">Gera NAO_VERIFICADO</span>
+                                    <span class="text-slate-500 text-xs">Gera selo VERIFICADO - COM RESTRIÇÕES</span>
                                 </div>
                             </label>
 
@@ -654,7 +661,7 @@
                                 <input type="radio" name="status_recurso_${res.id_recurso}" value="NAO_POSSUI" data-recurso-id="${res.id_recurso}" class="recurso-radio mt-0.5 w-4 h-4 text-slate-600 focus:ring-slate-600">
                                 <div class="text-xs sm:text-sm">
                                     <span class="font-bold text-slate-700 block">Não possui</span>
-                                    <span class="text-slate-500 text-xs">Inexistente no local</span>
+                                    <span class="text-slate-500 text-xs">Ignorado (não gera selo)</span>
                                 </div>
                             </label>
                         </div>
@@ -751,13 +758,13 @@
                 card.classList.add('border-emerald-300');
             } else if (value === 'COM_PROBLEMAS') {
                 panel.classList.remove('hidden');
-                badge.textContent = 'COM PROBLEMAS (NAO_VERIFICADO)';
+                badge.textContent = 'VERIFICADO - COM RESTRIÇÕES';
                 badge.className = 'self-start sm:self-center px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 accent-badge';
                 card.classList.remove('border-emerald-300', 'border-slate-200');
                 card.classList.add('border-amber-300');
             } else {
                 panel.classList.add('hidden');
-                badge.textContent = 'NÃO POSSUI (NAO_VERIFICADO)';
+                badge.textContent = 'IGNORADO (NÃO POSSUI)';
                 badge.className = 'self-start sm:self-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-700';
                 card.classList.remove('border-emerald-300', 'border-amber-300');
                 card.classList.add('border-slate-200');
@@ -770,7 +777,7 @@
             let verifiedCount = 0;
             ACCESSIBILITY_RESOURCES.forEach(res => {
                 const checked = document.querySelector(`input[name="status_recurso_${res.id_recurso}"]:checked`);
-                if (checked && checked.value === 'FUNCIONAL') {
+                if (checked && (checked.value === 'FUNCIONAL' || checked.value === 'COM_PROBLEMAS')) {
                     verifiedCount++;
                 }
             });
@@ -924,13 +931,20 @@
                         return;
                     }
 
+                    let resultadoSql = null;
+                    if (condicao === 'FUNCIONAL') {
+                        resultadoSql = 'VERIFICADO';
+                    } else if (condicao === 'COM_PROBLEMAS') {
+                        resultadoSql = 'VERIFICADO_COM_RESTRICOES';
+                    }
+
                     recursosData.push({
                         id_recurso: res.id_recurso,
                         tag: res.tag,
                         nome: res.nome,
                         condicao: condicao,
-                        resultado_sql: condicao === 'FUNCIONAL' ? 'VERIFICADO' : 'NAO_VERIFICADO',
-                        descricao: condicao === 'NAO_POSSUI' ? 'Recurso inexistente no atrativo.' : descricao,
+                        resultado_sql: resultadoSql,
+                        descricao: condicao === 'NAO_POSSUI' ? 'Recurso inexistente no atrativo (ignorado no site e banco de dados).' : descricao,
                         foto: attachedPhotos[res.id_recurso] || null
                     });
                 }
@@ -973,19 +987,22 @@
         }
 
         /**
-         * Gera os comandos SQL INSERT 100% compatíveis com o schema RecifeAcessivel / roteiro_livre_pe
+         * Gera os comandos SQL INSERT 100% compatíveis com o schema rota_livre
+         * Ignorando recursos marcados como NAO_POSSUI
          */
         function generateSqlScript(record) {
             const escapeSql = (str) => String(str).replace(/'/g, "''");
             const validadoPorSafe = escapeSql(record.validado_por.slice(0, 50));
             const urlSafe = escapeSql(record.url_formulario.slice(0, 2048));
 
+            const recursosPresentes = record.recursos.filter(r => r.condicao !== 'NAO_POSSUI');
+
             const lines = [
                 `-- =========================================================================`,
                 `-- AUDITORIA PRESENCIAL: ${record.nome_ponto}`,
                 `-- Avaliador(a): ${record.validado_por} | Data: ${record.data_envio}`,
                 `-- =========================================================================`,
-                `USE roteiro_livre_pe;`,
+                `USE rota_livre;`,
                 ``,
                 `-- 1. Inserir registro mestre na tabela 'validacoes'`,
                 `INSERT INTO validacoes (data_envio, status, validado_por, url_formulario)`,
@@ -993,16 +1010,20 @@
                 ``,
                 `SET @id_validacao_gerada = LAST_INSERT_ID();`,
                 ``,
-                `-- 2. Inserir resultado dos 5 recursos na tabela 'validacao_ponto'`
+                `-- 2. Inserir apenas os recursos presentes na tabela 'validacao_ponto'`
             ];
 
-            record.recursos.forEach(r => {
-                lines.push(`-- Recurso: ${r.nome} (${r.condicao})`);
-                lines.push(
-                    `INSERT INTO validacao_ponto (id_ponto, id_recurso, id_validacao, data_validacao, resultado) ` +
-                    `VALUES (${record.id_ponto}, ${r.id_recurso}, @id_validacao_gerada, '${record.data_envio}', '${r.resultado_sql}');`
-                );
-            });
+            if (recursosPresentes.length === 0) {
+                lines.push(`-- Nenhum recurso de acessibilidade encontrado no local (nenhum registro inserido).`);
+            } else {
+                recursosPresentes.forEach(r => {
+                    lines.push(`-- Recurso: ${r.nome} (${r.condicao})`);
+                    lines.push(
+                        `INSERT INTO validacao_ponto (id_ponto, id_recurso, id_validacao, data_validacao, resultado) ` +
+                        `VALUES (${record.id_ponto}, ${r.id_recurso}, @id_validacao_gerada, '${record.data_envio}', '${r.resultado_sql}');`
+                    );
+                });
+            }
 
             return lines.join('\n');
         }
@@ -1027,23 +1048,29 @@
             `;
 
             const verifiedTags = record.recursos
-                .filter(r => r.resultado_sql === 'VERIFICADO')
+                .filter(r => r.resultado_sql === 'VERIFICADO' || r.resultado_sql === 'VERIFICADO_COM_RESTRICOES')
                 .map(r => r.tag);
 
             tagsEl.textContent = `data-resources="${verifiedTags.join(' ')}"`;
 
             listEl.innerHTML = record.recursos.map(r => {
                 const isVerified = r.resultado_sql === 'VERIFICADO';
+                const hasRestrictions = r.resultado_sql === 'VERIFICADO_COM_RESTRICOES';
+
                 const badgeClass = isVerified
                     ? 'bg-emerald-100 text-emerald-800'
-                    : (r.condicao === 'COM_PROBLEMAS' ? 'bg-amber-100 text-amber-900' : 'bg-slate-200 text-slate-700');
+                    : (hasRestrictions ? 'bg-amber-100 text-amber-900' : 'bg-slate-200 text-slate-700');
+
+                const badgeLabel = isVerified
+                    ? 'VERIFICADO'
+                    : (hasRestrictions ? 'VERIFICADO - COM RESTRIÇÕES' : 'IGNORADO (NÃO POSSUI)');
 
                 return `
                     <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/70 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div class="space-y-1">
                             <div class="flex flex-wrap items-center gap-2">
                                 <strong class="text-sm text-slate-900">${r.nome}</strong>
-                                <span class="px-2 py-0.5 rounded-full text-xs font-bold ${badgeClass}">${r.resultado_sql}</span>
+                                <span class="px-2 py-0.5 rounded-full text-xs font-bold ${badgeClass}">${badgeLabel}</span>
                             </div>
                             <p class="text-xs text-slate-600">${r.descricao}</p>
                         </div>
@@ -1111,7 +1138,7 @@
 
             // Preencher Exemplo Realista para Apresentação
             document.getElementById('btn-fill-demo').addEventListener('click', () => {
-                document.getElementById('validado_por').value = 'Equipe ADS - Roteiro Livre PE';
+                document.getElementById('validado_por').value = 'Equipe ADS - Rota Livre';
                 setTodayDate();
                 document.getElementById('id_ponto').value = '105'; // Instituto Ricardo Brennand
                 const isencaoRadio = document.querySelector('input[name="tipo_ingresso"][value="ISENCAO_PCD"]');
